@@ -80,6 +80,39 @@
   .p-kapcsolat .kap__fig{max-width:70%;margin-bottom:1.5rem}
 }
 
+/* ===== miben.css ===== */
+/* miben.css · Miben segítünk */
+.p-miben .hero--spread h1{grid-column:1/span 8;font-size:clamp(2.8rem,5.8vw,6rem)}
+.p-miben .hero--spread .hero__intro{grid-column:8/span 5;grid-row:2;align-self:center;font-size:1.15rem;line-height:1.55;max-width:38ch}
+.p-miben .hero--spread .hero__intro em{color:var(--accent)}
+.p-miben .hero--spread .hero__foot{grid-column:1/span 7;grid-row:3}
+.p-miben .miben__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3rem;border-top:1px solid var(--line-2)}
+.p-miben .miben__row{display:grid;grid-template-columns:4rem minmax(0,1fr);column-gap:1rem;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--line);color:inherit}
+.p-miben .miben__row b{font-family:var(--font-d);font-weight:300;font-size:1.9rem;line-height:1;color:var(--fg-2);grid-row:1/span 2}
+.p-miben .miben__row h3{font-size:1.4rem;font-weight:400}
+.p-miben .miben__row p{grid-column:2;font-size:1rem;color:var(--fg-2);max-width:44ch;margin-top:.3rem}
+.p-miben .miben__row:hover h3{color:var(--accent)}
+.p-miben .amit__head{grid-column:1/span 4;display:grid;gap:1.4rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
+.p-miben .amit__list{grid-column:6/span 7;border-top:1px solid var(--line-2)}
+.p-miben .amit__list a{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--gap);padding:1.4rem 0;border-bottom:1px solid var(--line);color:inherit;align-items:baseline}
+.p-miben .amit__list h3{font-size:1.5rem;font-weight:300}
+.p-miben .amit__list p{font-size:1.02rem;color:var(--fg-2)}
+.p-miben .amit__list a:hover h3{color:var(--accent)}
+.p-miben .hozz{border-top:1px solid var(--line-2);padding-top:0}
+.p-miben .hozz div{display:grid;gap:.9rem;align-content:start;padding:1.6rem 0 0}
+.p-miben .hozz h3{font-size:1.45rem;font-weight:300}
+.p-miben .hozz p{font-size:1rem;color:var(--fg-2)}
+.p-miben .miben__zaro{align-items:center}
+.p-miben .miben__zaro .lead{grid-column:1/span 7}
+.p-miben .miben__zaro .ctas{grid-column:9/span 4;justify-content:flex-end}
+@media (max-width:900px){
+  .p-miben .hero--spread h1,.p-miben .hero--spread .hero__intro,.p-miben .hero--spread .hero__foot,.p-miben .amit__head,.p-miben .amit__list,.p-miben .miben__zaro .lead,.p-miben .miben__zaro .ctas{grid-column:1/-1;grid-row:auto}
+  .p-miben .miben__list{grid-template-columns:1fr}
+  .p-miben .amit__head{position:static}
+  .p-miben .amit__list a{grid-template-columns:1fr;gap:.3rem}
+  .p-miben .miben__zaro .ctas{justify-content:flex-start}
+}
+
 /* ===== profil.css ===== */
 /* profil.css · szakember-profil */
 .p-profil .rolam__h{grid-column:1/span 4}
@@ -91,7 +124,12 @@
 
 /* ===== szakemberek.css ===== */
 /* szakemberek.css · regiszter-oldal */
-.p-szakemberek .hero--tool{gap:1.4rem;padding-bottom:3rem}
+.p-szakemberek .hero--tool{gap:1.2rem;padding-top:1.5rem;padding-bottom:2.5rem;grid-template-rows:1fr auto auto auto auto}
+.p-szakemberek .hero__strip{align-self:start;align-items:start;padding-top:0;margin-bottom:1.5rem;grid-template-columns:repeat(8,minmax(0,1fr))}
+.p-szakemberek .hero__strip figure{display:grid;align-content:start}
+.p-szakemberek .hero__strip img{aspect-ratio:4/5;height:calc(100svh - var(--nav) - 27rem);max-height:320px;min-height:140px;width:100%;object-position:50% 12%}
+.p-szakemberek .hero__strip figure:nth-child(odd),.p-szakemberek .hero__strip figure:nth-child(3n){padding-bottom:0}
+.p-szakemberek .hero__strip figure:nth-child(2n){padding-top:1.8rem}
 .p-szakemberek .hero--tool h1{margin-bottom:.4rem}
 .p-szakemberek .hero__note{font-size:.98rem;color:var(--fg-2);max-width:48ch}
 .p-szakemberek .reg__list{padding-bottom:calc(var(--sec)*.7)}

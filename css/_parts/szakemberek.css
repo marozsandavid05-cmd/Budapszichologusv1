@@ -1,5 +1,10 @@
 /* szakemberek.css · regiszter-oldal */
-.p-szakemberek .hero--tool{gap:1.4rem;padding-bottom:3rem}
+.p-szakemberek .hero--tool{gap:1.2rem;padding-top:1.5rem;padding-bottom:2.5rem;grid-template-rows:1fr auto auto auto auto}
+.p-szakemberek .hero__strip{align-self:start;align-items:start;padding-top:0;margin-bottom:1.5rem;grid-template-columns:repeat(8,minmax(0,1fr))}
+.p-szakemberek .hero__strip figure{display:grid;align-content:start}
+.p-szakemberek .hero__strip img{aspect-ratio:4/5;height:calc(100svh - var(--nav) - 27rem);max-height:320px;min-height:140px;width:100%;object-position:50% 12%}
+.p-szakemberek .hero__strip figure:nth-child(odd),.p-szakemberek .hero__strip figure:nth-child(3n){padding-bottom:0}
+.p-szakemberek .hero__strip figure:nth-child(2n){padding-top:1.8rem}
 .p-szakemberek .hero--tool h1{margin-bottom:.4rem}
 .p-szakemberek .hero__note{font-size:.98rem;color:var(--fg-2);max-width:48ch}
 .p-szakemberek .reg__list{padding-bottom:calc(var(--sec)*.7)}

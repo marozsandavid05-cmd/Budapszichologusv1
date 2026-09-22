@@ -119,7 +119,7 @@ body.no-scroll{overflow:hidden}
 .hero--keret .hero__stage{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));overflow:clip;background:var(--paper)}
 .hero--keret .hero__photo{position:absolute;inset:0;margin:0;--p:0;clip-path:inset(0 calc(var(--p)*6vw) calc(var(--p)*34vh) calc(var(--p)*44vw))}
 .hero--keret .hero__photo img{width:100%;height:100%;object-fit:cover;object-position:var(--focus,50% 45%)}
-.hero--keret .hero__card{position:absolute;left:var(--side);bottom:0;width:min(100% - 2*var(--side),46rem);background:var(--paper);padding:2rem 2.4rem 2.2rem 0;display:flex;flex-direction:column;gap:1.4rem}
+.hero--keret .hero__card{position:absolute;left:var(--side);bottom:0;width:min(100% - 2*var(--side),46rem);background:var(--paper);padding:2.2rem 2.6rem 2.2rem 0;display:flex;flex-direction:column;gap:1.4rem;box-shadow:0 -18px 48px -24px rgba(27,26,24,.35)}
 .hero--keret .hero__card::before{content:"";position:absolute;top:0;bottom:0;right:100%;width:var(--side);background:var(--paper)}
 .hero--keret .hero__card h1{font-size:clamp(2rem,3.2vw,3.3rem);line-height:1.12;font-weight:300;display:block;width:auto;max-width:none;text-wrap:pretty}
 .hero--keret .hero__aside{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.2rem 2rem;align-items:end;font-size:1.02rem;line-height:1.5;color:var(--fg);font-weight:300}
@@ -137,6 +137,12 @@ body.no-scroll{overflow:hidden}
 .hero--cover.is-right .hero__band h1{grid-column:5/span 8;text-align:right}
 .hero--cover.is-right .hero__aside{grid-column:1/span 3;grid-row:1;align-self:end}
 .hero--tool{min-height:calc(100svh - var(--nav));display:grid;align-content:end;gap:1.8rem;padding:3rem var(--side) 2.5rem}
+.hero__strip{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:var(--gap);margin-bottom:auto;align-items:end;padding-top:.5rem}
+.hero__strip a{display:block;color:inherit}
+.hero__strip img{aspect-ratio:4/5;object-fit:cover;width:100%;background:var(--paper-2);filter:saturate(.85)}
+.hero__strip figcaption{font-family:var(--font-u);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-2);margin-top:.5rem}
+.hero__strip figure:nth-child(odd){padding-bottom:1.6rem}
+.hero__strip figure:nth-child(3n){padding-bottom:3.2rem}
 .hero--tool h1{font-size:clamp(3rem,6.6vw,6.6rem)}
 .hero--type{min-height:calc(100svh - var(--nav));display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-content:end;padding:3rem var(--side) 3rem}
 .hero--type h1{grid-column:1/span 10;font-size:clamp(3rem,7.2vw,7.6rem);line-height:1}
@@ -419,6 +425,7 @@ body.no-scroll{overflow:hidden}
   .rows__item,.rows--plain .rows__item{grid-template-columns:2.4rem 1fr}.rows--plain .rows__item{grid-template-columns:1fr}.rows__item>*:nth-child(3){grid-column:2}.rows--plain .rows__item>*{grid-column:1}
   .idx__row{grid-template-columns:2.4rem 1fr auto}.idx__title,.idx__topics{grid-column:2}.idx__price{grid-column:3;grid-row:1}.idx__go{display:none}
   .faces,.faces--6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero__strip{grid-template-columns:repeat(4,minmax(0,1fr))}.hero__strip figure:nth-child(n+5){display:none}
   .price__row{grid-template-columns:1fr auto}.price__row span{grid-column:1/-1}
   .fullimg img{height:60svh}
   .foot__mark{white-space:normal;font-size:clamp(2.2rem,9vw,3.4rem)}.foot__addr,.foot__col,.foot__crisis{grid-column:1/-1}
