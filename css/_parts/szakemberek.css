@@ -1,0 +1,8 @@
+/* szakemberek.css · regiszter-oldal */
+.p-szakemberek .hero--tool{gap:1.4rem;padding-bottom:3rem}
+.p-szakemberek .hero--tool h1{margin-bottom:.4rem}
+.p-szakemberek .hero__note{font-size:.98rem;color:var(--fg-2);max-width:48ch}
+.p-szakemberek .reg__list{padding-bottom:calc(var(--sec)*.7)}
+.p-szakemberek .usz__h{grid-column:1/span 4}
+.p-szakemberek .usz__body{grid-column:6/span 6;display:grid;gap:1.6rem;justify-items:start}
+@media (max-width:900px){.p-szakemberek .usz__h,.p-szakemberek .usz__body{grid-column:1/-1}}
