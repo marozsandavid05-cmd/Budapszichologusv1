@@ -258,7 +258,6 @@ body.no-scroll{overflow:hidden}
 .closer.is-center .closer__body{grid-column:3/span 8;text-align:center;justify-items:center}
 .closer.is-center p{max-width:52ch}
 .closer .ctas{justify-content:inherit}
-.closer.is-right .closer__body{grid-column:5/span 8;text-align:right;justify-items:end}
 .closer h2{font-size:clamp(2.2rem,4vw,4rem)}
 .closer p{font-size:1.15rem;color:var(--fg-2);font-weight:300}
 .coord{display:flex;align-items:center;gap:1rem;font-size:.95rem;text-align:left}
@@ -418,7 +417,7 @@ body.no-scroll{overflow:hidden}
   .nav__links{display:none}.nav__burger{display:inline-block}.panel{display:none}
   .g12,.sec__head,.closer,.story,.faq__group,.hero--type,.hero--statement,.hero--spread,.hero--name,.hero--row .hero__head{grid-template-columns:repeat(6,minmax(0,1fr))}
   .sec__head h2,.sec__head .sec__aside,.sec__head--r h2,.sec__head--r .sec__aside,.sec__head--c h2,.sec__head--c .sec__aside{grid-column:1/-1;text-align:left;grid-row:auto}
-  .hero__band h1,.hero__aside,.hero--cover.is-right .hero__band h1,.hero--cover.is-right .hero__aside,.hero--type h1,.hero--type .lead,.hero--type.is-two h1,.hero--type.is-two .hero__voice,.hero--statement h1,.hero--statement.is-right h1,.hero--spread h1,.hero--spread .hero__intro,.hero--spread .hero__fig,.hero--spread .hero__foot,.hero--name .meta,.hero--name .portrait,.hero--name .help,.hero--row h1,.hero--row .lead,.closer__body,.closer.is-center .closer__body,.closer.is-right .closer__body,.story__media,.story__steps,.faq__group h2,.faq{grid-column:1/-1;grid-row:auto;text-align:left;justify-items:start}
+  .hero__band h1,.hero__aside,.hero--cover.is-right .hero__band h1,.hero--cover.is-right .hero__aside,.hero--type h1,.hero--type .lead,.hero--type.is-two h1,.hero--type.is-two .hero__voice,.hero--statement h1,.hero--statement.is-right h1,.hero--spread h1,.hero--spread .hero__intro,.hero--spread .hero__fig,.hero--spread .hero__foot,.hero--name .meta,.hero--name .portrait,.hero--name .help,.hero--row h1,.hero--row .lead,.closer__body,.closer.is-center .closer__body,.story__media,.story__steps,.faq__group h2,.faq{grid-column:1/-1;grid-row:auto;text-align:left;justify-items:start}
   .hero--keret{height:auto}.hero--keret .hero__stage{position:relative;top:auto;height:auto;min-height:calc(100svh - var(--nav))}
   .hero--keret .hero__photo,.hero--cover .hero__photo{position:relative;height:52svh;clip-path:none}
   .hero__band{position:relative;min-height:0;padding-top:1.5rem;grid-template-columns:repeat(6,minmax(0,1fr))}
