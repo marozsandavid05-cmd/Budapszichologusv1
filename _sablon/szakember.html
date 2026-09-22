@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += ' js';</script>
+<title>{{NEV}} · {{SZINT_CIMKE}} · Budai Pszichológus Központ</title>
+<meta name="description" content="{{DESC}}">
+<link rel="icon" href="../img/favicon.png">
+<link rel="canonical" href="https://budaipszichologus.hu/szakemberek/{{SLUG}}">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:title" content="{{NEV}} · Budai Pszichológus Központ">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:image" content="https://budaipszichologus.hu/img/portrek/{{SLUG}}-nagy.jpg">
+<link rel="stylesheet" href="../vendor/lenis.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/pages.css">
+<script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body class="p-profil">
+<!-- FEJ -->
+<main>
+  <section class="hero hero--name" data-tone="paper">
+    <p class="label h-in">Regiszter {{SORSZAM}} · {{SZINT_CIMKE}}</p>
+    <h1 data-split>{{NEV_TORT}}</h1>
+    <div class="meta h-in">{{META}}</div>
+    <figure class="portrait h-in"><img src="../img/portrek/{{SLUG}}-nagy.jpg" alt="{{NEV}}" width="960" height="1200" fetchpriority="high"></figure>
+    <div class="help h-in"><h2>Amiben segítek</h2><ul>{{AMIBEN_LI}}</ul>{{MOTTO}}</div>
+  </section>
+  <section class="sec" data-tone="paper" id="rolam">
+    <div class="wrap g12">
+      <h2 data-split class="rolam__h">Rólam</h2>
+      <div class="rolam__body" data-reveal>{{ROLAM}}<p class="small muted">{{NEV_ROVID}} {{AR_MONDAT}}</p></div>
+    </div>
+  </section>
+  {{KEPZES}}
+  {{MESTEREK}}
+  {{MONDTAK}}
+  <section class="closer" data-tone="ink" id="idopont">
+    <div class="closer__body" data-reveal>
+      <h2 data-split>Időpont {{NEV_NEL}}</h2>
+      <p>Az ügyfélszolgálat hétköznap 9 és 15 óra között egyeztet. Ha bizonytalan, hogy Ön kihez tartozik, azt is megbeszéljük.</p>
+      <div class="ctas"><a class="btn btn--primary" href="../kapcsolat.html?szakember={{SLUG}}">Időpontkérés</a><a class="btn btn--text" href="../szakembereink.html">Vissza a regiszterhez</a></div>
+    </div>
+  </section>
+  <section class="sec sec--tight" data-tone="paper" id="rokon">
+    <div class="wrap">
+      <div class="sec__head"><h2>Hasonló területen dolgoznak</h2><p class="sec__aside">Három kolléga, akinek a szakterülete a legközelebb áll {{NEV_ROVID}} munkájához.</p></div>
+      <div class="rel">{{ROKON}}</div>
+    </div>
+  </section>
+</main>
+<!-- LAB -->
+<div class="measure" aria-hidden="true"></div>
+</body>
+</html>

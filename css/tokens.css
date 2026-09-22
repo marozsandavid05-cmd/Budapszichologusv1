@@ -1,0 +1,17 @@
+/* tokens.css · weboldal 3 · „Tinta és papír”. A css-ekben CSAK az itt szereplő hexek lehetnek (tokens.json = ugyanez). */
+:root{
+  --paper:#F5F5F2; --paper-2:#ECEDEA; --white:#FFFFFF;
+  --ink:#161A21; --ink-2:#222835; --muted:#5B6270; --muted-ink:#A9AFBB;
+  --accent:#2946A6; --accent-2:#1C327A;
+  --line:rgba(22,26,33,.14); --line-2:rgba(22,26,33,.34);
+  --font-d:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --font-t:'Newsreader',Georgia,'Times New Roman',serif;
+  --nav:64px; --side:clamp(1rem,4vw,4rem); --gap:1.5rem; --maxw:1520px; --sec:clamp(4rem,9vw,8.5rem);
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-io:cubic-bezier(.77,0,.175,1);
+  --t-fast:160ms; --t-ui:220ms; --t-reveal:520ms;
+  --bg:var(--paper); --fg:var(--ink); --fg-2:var(--muted); --surface:var(--white);
+}
+[data-tone="paper"]{--bg:var(--paper);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white)}
+[data-tone="paper-2"]{--bg:var(--paper-2);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white)}
+[data-tone="white"]{--bg:var(--white);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--paper)}
+[data-tone="ink"]{--bg:var(--ink);--fg:var(--paper);--fg-2:var(--muted-ink);--surface:var(--ink-2);--line:rgba(245,245,242,.16);--line-2:rgba(245,245,242,.42)}

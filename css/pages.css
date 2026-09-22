@@ -1,0 +1,8 @@
+/* ===== profil.css ===== */
+/* profil.css · szakember-profil */
+.p-profil .rolam__h{grid-column:1/span 4}
+.p-profil .rolam__body{grid-column:6/span 6}
+.p-profil .rolam__body p+p{margin-top:1rem}
+.p-profil .rolam__body ul{margin:1rem 0;padding-left:1.2rem;list-style:disc}
+.p-profil .mesters{margin:0}
+@media (max-width:900px){.p-profil .rolam__h,.p-profil .rolam__body{grid-column:1/-1}}
