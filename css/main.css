@@ -256,6 +256,8 @@ body.no-scroll{overflow:hidden}
 .closer{padding:var(--sec) var(--side);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
 .closer__body{grid-column:1/span 8;display:grid;gap:1.6rem;justify-items:start}
 .closer.is-center .closer__body{grid-column:3/span 8;text-align:center;justify-items:center}
+.closer.is-center p{max-width:52ch}
+.closer .ctas{justify-content:inherit}
 .closer.is-right .closer__body{grid-column:5/span 8;text-align:right;justify-items:end}
 .closer h2{font-size:clamp(2.2rem,4vw,4rem)}
 .closer p{font-size:1.15rem;color:var(--fg-2);font-weight:300}
