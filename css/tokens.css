@@ -7,7 +7,7 @@
   --font-d:'Sentient',Georgia,'Times New Roman',serif;
   --font-t:'Sentient',Georgia,'Times New Roman',serif;
   --font-u:'Switzer','Helvetica Neue',Arial,sans-serif;
-  --nav:68px; --side:clamp(1.25rem,4.5vw,4.5rem); --gap:1.5rem; --maxw:1520px; --sec:clamp(4.5rem,9vw,8.5rem);
+  --nav:68px; --side:clamp(1.25rem,4.5vw,4.5rem); --gap:1.5rem; --maxw:1520px; --sec:clamp(4rem,7.5vw,7rem);
   --ease-out:cubic-bezier(.23,1,.32,1); --ease-io:cubic-bezier(.77,0,.175,1);
   --t-fast:160ms; --t-ui:220ms; --t-reveal:560ms;
   --bg:var(--paper); --fg:var(--ink); --fg-2:var(--muted); --surface:var(--white);

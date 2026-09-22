@@ -1,0 +1,13 @@
+/* coaching */
+.p-coaching .hero--cover{--focus:50% 35%}
+.p-coaching .rows__item .link{display:inline-block;margin-top:.9rem;font-family:var(--font-u);font-size:.82rem;letter-spacing:.04em}
+.p-coaching .dij{align-items:start}
+.p-coaching .dij__fig{grid-column:1/span 4}
+.p-coaching .dij__fig img{aspect-ratio:2/3}
+.p-coaching .dij__body{grid-column:6/span 7;display:grid;gap:1.4rem}
+.p-coaching .dij__body h2{font-size:clamp(2rem,3.4vw,3.2rem)}
+.p-coaching .dij__body .lead{max-width:38ch}
+.p-coaching .dij__body p{max-width:56ch}
+.p-coaching .dij__body .price{margin-top:1rem}
+.p-coaching .dij__ask{font-size:1rem;font-family:var(--font-u);font-weight:400;color:var(--fg-2)}
+@media (max-width:900px){.p-coaching .dij__fig,.p-coaching .dij__body{grid-column:1/-1}.p-coaching .dij__fig{max-width:60%}}

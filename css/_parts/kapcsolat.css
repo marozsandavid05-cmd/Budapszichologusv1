@@ -1,7 +1,15 @@
 /* kapcsolat.css · kapcsolat, időpontkérés */
-.p-kapcsolat .hero--type h1{grid-column:1/span 7;font-size:clamp(3.4rem,9vw,9.6rem);line-height:.96}
-.p-kapcsolat .hero--type .lead{grid-column:8/span 5;align-self:end;margin-top:0;margin-bottom:.6rem}
-.p-kapcsolat .hero--type .label{grid-column:1/-1;margin-bottom:auto}
+.p-kapcsolat .kap-hero{grid-template-rows:auto 1fr auto auto;align-content:stretch;padding-top:2rem;padding-bottom:2.5rem;row-gap:0}
+.p-kapcsolat .kap-hero .label{grid-column:1/span 6;grid-row:1;align-self:start;padding-top:.5rem}
+.p-kapcsolat .kap-hero__side{grid-column:9/span 4;grid-row:1/span 2;align-self:start;display:grid;gap:1rem;padding-top:.2rem}
+.p-kapcsolat .kap-hero__tel{font-family:var(--font-d);font-weight:300;font-size:clamp(1.8rem,2.6vw,2.6rem);line-height:1.1;text-decoration:none}
+.p-kapcsolat .kap-hero__tel:hover{color:var(--accent)}
+.p-kapcsolat .kap-hero__side p{font-size:.98rem;color:var(--fg-2);max-width:30ch}
+.p-kapcsolat .kap-hero h1{grid-column:1/span 8;grid-row:2/span 2;align-self:end;font-size:clamp(3.4rem,9.4vw,10rem);line-height:.94;letter-spacing:-.015em}
+.p-kapcsolat .kap-hero .lead{grid-column:9/span 4;grid-row:3;align-self:end;margin:0 0 .4rem;font-size:1.08rem;max-width:30ch}
+.p-kapcsolat .kap-hero__facts{grid-column:1/span 12;grid-row:4;margin:2.4rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);border-top:1px solid var(--line-2);padding-top:1.1rem}
+.p-kapcsolat .kap-hero__facts dt{font-family:var(--font-u);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-bottom:.3rem}
+.p-kapcsolat .kap-hero__facts dd{margin:0;font-size:1rem;line-height:1.45}
 .p-kapcsolat .modok{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);border-top:1px solid var(--line-2)}
 .p-kapcsolat .mod{display:grid;gap:.8rem;align-content:start;padding:1.6rem 0 1.4rem;border-bottom:1px solid var(--line);color:inherit;transition:color var(--t-fast) ease}
 .p-kapcsolat .mod b{font-family:var(--font-d);font-weight:300;font-size:clamp(1.3rem,1.9vw,1.7rem);line-height:1.15;word-break:break-word}
@@ -19,6 +27,9 @@
 .p-kapcsolat .kap__formhead{grid-column:1/span 4;display:grid;gap:1.4rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-kapcsolat .kap__form{grid-column:6/span 7;max-width:none}
 @media (max-width:900px){
+  .p-kapcsolat .kap-hero{grid-template-rows:auto}
+  .p-kapcsolat .kap-hero .label,.p-kapcsolat .kap-hero__side,.p-kapcsolat .kap-hero h1,.p-kapcsolat .kap-hero .lead,.p-kapcsolat .kap-hero__facts{grid-column:1/-1;grid-row:auto}
+  .p-kapcsolat .kap-hero__facts{grid-template-columns:1fr}
   .p-kapcsolat .hero--type h1,.p-kapcsolat .hero--type .lead,.p-kapcsolat .kap__fig,.p-kapcsolat .kap__text,.p-kapcsolat .kap__facts,.p-kapcsolat .kap__coord,.p-kapcsolat .kap__formhead,.p-kapcsolat .kap__form{grid-column:1/-1}
   .p-kapcsolat .hero--type .lead{margin-top:1.5rem}
   .p-kapcsolat .modok,.p-kapcsolat .kap__facts{grid-template-columns:1fr}

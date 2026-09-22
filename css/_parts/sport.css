@@ -1,0 +1,19 @@
+/* sportpszichologia */
+.p-sport .hero--cover{--focus:50% 55%}
+.p-sport .hero--cover .hero__band h1{grid-column:5/span 8}
+.p-sport .hero--cover .hero__aside{grid-column:1/span 3;grid-row:1;align-self:end}
+.p-sport .hero__aside b{font-weight:400;color:var(--fg)}
+.p-sport .tenyek{align-items:end;row-gap:3rem}
+.p-sport .tenyek__head{grid-column:1/span 7;display:grid;gap:1rem}
+.p-sport .tenyek__head h2{font-size:clamp(2rem,3.4vw,3.2rem);max-width:18ch}
+.p-sport .tenyek__head p{max-width:52ch}
+.p-sport .tenyek__facts{grid-column:1/span 12}
+.p-sport .facts3 b{font-size:clamp(2.6rem,4vw,3.8rem)}
+.p-sport .mogotte{align-items:start}
+.p-sport .mogotte__pull{grid-column:1/span 6}
+.p-sport .mogotte__list{grid-column:8/span 5;list-style:none;margin:0;padding:0;border-top:2px solid var(--fg)}
+.p-sport .mogotte__list li{display:grid;gap:.25rem;padding:1.1rem 0;border-bottom:1px solid var(--line);max-width:none}
+.p-sport .mogotte__list a{font-family:var(--font-d);font-weight:300;font-size:1.4rem;line-height:1.2;text-decoration:none}
+.p-sport .mogotte__list a:hover{color:var(--accent)}
+.p-sport .mogotte__list span{font-size:.92rem;color:var(--fg-2);font-family:var(--font-u)}
+@media (max-width:900px){.p-sport .tenyek__head,.p-sport .tenyek__facts,.p-sport .mogotte__pull,.p-sport .mogotte__list{grid-column:1/-1}.p-sport .hero--cover .hero__band h1,.p-sport .hero--cover .hero__aside{grid-column:1/-1;grid-row:auto;text-align:left}}

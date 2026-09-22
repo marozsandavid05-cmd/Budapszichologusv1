@@ -20,33 +20,59 @@
 <body class="p-profil">
 <!-- FEJ -->
 <main>
-  <section class="hero hero--name" data-tone="paper">
-    <p class="label h-in">Regiszter {{SORSZAM}} · {{SZINT_CIMKE}}</p>
-    <h1 data-split>{{NEV_TORT}}</h1>
-    <div class="meta h-in">{{META}}</div>
-    <figure class="portrait h-in"><img src="../img/portrek/{{SLUG}}-nagy.jpg" alt="{{NEV}}" width="960" height="1200" fetchpriority="high"></figure>
-    <div class="help h-in"><h2>Amiben segítek</h2><ul>{{AMIBEN_LI}}</ul>{{MOTTO}}</div>
+  <section class="hero prof" data-tone="paper">
+    <figure class="prof__portrait h-in"><img src="../img/portrek/{{SLUG}}-nagy.jpg" alt="{{NEV}}" width="960" height="1200" fetchpriority="high"></figure>
+    <div class="prof__intro">
+      <p class="label h-in">Regiszter {{SORSZAM}} · {{SZINT_CIMKE}}</p>
+      <h1 data-split{{NEV_ATTR}}>{{NEV}}</h1>
+      <div class="prof__titles h-in">{{TITULUS_SOROK}}</div>
+      {{HERO_MOTTO}}
+      {{HERO_PEEK}}
+      <div class="prof__facts h-in">{{META}}</div>
+      <div class="ctas h-in"><a class="btn btn--primary" href="../kapcsolat.html?szakember={{SLUG}}">Időpontkérés</a><a class="btn btn--text" href="#rolam">Bemutatkozás</a></div>
+    </div>
   </section>
-  <section class="sec" data-tone="paper" id="rolam">
+
+  <section class="sec prof__help" data-tone="paper-2" id="amiben">
     <div class="wrap g12">
-      <h2 data-split class="rolam__h">Rólam</h2>
-      <div class="rolam__body" data-reveal>{{ROLAM}}<p class="small muted">{{NEV_ROVID}} {{AR_MONDAT}}</p></div>
+      <div class="prof__helphead">
+        <h2 data-split>Amiben segítek</h2>
+        <p class="sec__aside" data-reveal>{{NEV_ROVID}} saját megfogalmazásában. Ha a listában nem találja a saját helyzetét, az első beszélgetésen ezt is megbeszélik.</p>
+      </div>
+      <ul class="prof__helplist" data-stagger>{{AMIBEN_LI}}</ul>
     </div>
   </section>
-  {{KEPZES}}
-  {{MESTEREK}}
-  {{MONDTAK}}
-  <section class="closer" data-tone="ink" id="idopont">
-    <div class="closer__body" data-reveal>
-      <h2 data-split>Időpont {{NEV_NEL}}</h2>
-      <p>Az ügyfélszolgálat hétköznap 9 és 15 óra között egyeztet. Ha bizonytalan, hogy Ön kihez tartozik, azt is megbeszéljük.</p>
-      <div class="ctas"><a class="btn btn--primary" href="../kapcsolat.html?szakember={{SLUG}}">Időpontkérés</a><a class="btn btn--text" href="../szakembereink.html">Vissza a regiszterhez</a></div>
-    </div>
-  </section>
-  <section class="sec sec--tight" data-tone="paper" id="rokon">
+
+  <section class="sec" data-tone="paper" id="rolam">
     <div class="wrap">
-      <div class="sec__head"><h2>Hasonló területen dolgoznak</h2><p class="sec__aside">Három kolléga, akinek a szakterülete a legközelebb áll {{NEV_ROVID}} munkájához.</p></div>
+      <div class="prof__rolamhead g12">
+        <h2 data-split>Bemutatkozás</h2>
+        <p class="prof__rolamnote" data-reveal>{{NEV_ROVID}} saját szavaival. {{AR_MONDAT_ROVID}} <a href="../arak.html">A díjakról</a></p>
+      </div>
+      <div class="prof__rolambody" data-reveal>
+        {{ROLAM}}
+      </div>
+      <div class="prof__aside g12" data-reveal>
+        {{MOTTO}}
+        {{HITVALLAS}}
+      </div>
+    </div>
+  </section>
+
+  {{KEPZES}}
+  {{MONDTAK}}
+
+  <section class="closer prof__closer" data-tone="ink" id="idopont">
+    <div class="closer__body" data-reveal>
+      <p class="label">Regiszter {{SORSZAM}}</p>
+      <h2 data-split>Időpont {{NEV_NEL}}</h2>
+      <p>Az ügyfélszolgálat hétköznap 9 és 15 óra között egyeztet. Ha bizonytalan, hogy Ön kihez tartozik, azt is megbeszélik, és ha kell, más kollégát javasolnak.</p>
+      <div class="ctas"><a class="btn btn--primary" href="../kapcsolat.html?szakember={{SLUG}}">Időpontkérés</a><a class="btn btn--text" href="tel:+36309611364">+36 30 961 1364</a></div>
+    </div>
+    <div class="prof__rokon" data-reveal>
+      <p class="label">Hasonló területen dolgoznak</p>
       <div class="rel">{{ROKON}}</div>
+      <p class="prof__back"><a href="../szakembereink.html">Vissza a teljes regiszterhez</a></p>
     </div>
   </section>
 </main>

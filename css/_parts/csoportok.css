@@ -1,0 +1,42 @@
+/* csoportok */
+.p-csoportok .hero--collage{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1fr);column-gap:var(--gap);row-gap:var(--gap);place-content:stretch;padding-top:1.5rem;padding-bottom:2rem}
+.p-csoportok .hero__text{grid-column:1/span 5;grid-row:1/span 2;position:relative;z-index:2;display:grid;gap:1.4rem;align-content:end;padding-bottom:.5rem}
+.p-csoportok .hero--collage h1{max-width:12ch;font-size:clamp(2.6rem,5vw,5.4rem);line-height:1}
+.p-csoportok .hero--collage .lead{margin-top:0;max-width:36ch}
+.p-csoportok .hero--collage figure{position:relative;width:auto;inset:auto;transform:none;margin:0;min-height:0}
+.p-csoportok .hero--collage figure img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
+.p-csoportok .hero--collage .col-a{grid-column:7/span 3;grid-row:1;--k:.5}
+.p-csoportok .hero--collage .col-b{grid-column:10/span 3;grid-row:1/span 2;--k:.9}
+.p-csoportok .hero--collage .col-c{grid-column:7/span 3;grid-row:2;--k:.7}
+.p-csoportok .hero--collage .col-a img{object-position:62% 40%}
+.p-csoportok .hero--collage .col-b img{object-position:58% 35%}
+.p-csoportok .hero--collage .col-c img{object-position:66% 45%}
+.p-csoportok .miert{align-items:start}
+.p-csoportok .miert__pull{grid-column:1/span 7}
+.p-csoportok .miert__text{grid-column:9/span 4;display:grid;gap:1rem;padding-top:.6rem}
+.p-csoportok .miert__text p{max-width:none;font-size:1.05rem;line-height:1.6}
+.p-csoportok .rows__item .small{margin-top:.6rem;font-family:var(--font-u);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.p-csoportok .indulo{align-items:start;row-gap:clamp(2.5rem,5vw,4rem)}
+.p-csoportok .indulo__head{grid-column:1/span 5;display:grid;gap:1.2rem}
+.p-csoportok .indulo__head h2{font-size:clamp(2rem,3.4vw,3.2rem)}
+.p-csoportok .indulo__head p{max-width:40ch}
+.p-csoportok .indulo__tel{display:grid;gap:.4rem;padding-top:1.2rem;border-top:1px solid var(--line-2)}
+.p-csoportok .indulo__tel>a{font-family:var(--font-d);font-weight:300;font-size:2rem;line-height:1.1;text-decoration:none}
+.p-csoportok .indulo__tel span{font-size:.95rem;color:var(--fg-2)}
+.p-csoportok .indulo__steps{grid-column:7/span 6;list-style:none;margin:0;padding:0;display:grid;border-top:2px solid var(--fg)}
+.p-csoportok .indulo__steps li{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--line);max-width:none}
+.p-csoportok .indulo__steps .num{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;color:var(--fg-2);padding-top:.5rem}
+.p-csoportok .indulo__steps p{font-family:var(--font-d);font-weight:300;font-size:1.25rem;line-height:1.4;max-width:none}
+.p-csoportok .indulo__keret{grid-column:1/span 12;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);border-top:1px solid var(--line);padding-top:1.5rem}
+.p-csoportok .indulo__keret dt{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-bottom:.7rem}
+.p-csoportok .indulo__keret dd{margin:0;font-size:1rem;line-height:1.55;max-width:none}
+@media (max-width:900px){
+  .p-csoportok .hero--collage{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .p-csoportok .hero__text{grid-column:1/-1;grid-row:1;padding-bottom:1rem}
+  .p-csoportok .hero--collage .col-a{grid-column:1;grid-row:2}
+  .p-csoportok .hero--collage .col-b{grid-column:2;grid-row:2}
+  .p-csoportok .hero--collage .col-c{display:none}
+  .p-csoportok .hero--collage figure img{aspect-ratio:3/4}
+  .p-csoportok .miert__pull,.p-csoportok .miert__text,.p-csoportok .indulo__head,.p-csoportok .indulo__steps,.p-csoportok .indulo__keret{grid-column:1/-1}
+  .p-csoportok .indulo__keret{grid-template-columns:1fr 1fr}
+}

@@ -51,8 +51,8 @@
     var y = scrollY || 0, d = y - lastY;
     if (nav && !body.classList.contains('no-scroll')) {
       if (d > 0) { downAcc += d; upAcc = 0; } else if (d < 0) { upAcc -= d; downAcc = 0; }
-      if (downAcc > 28 && y > 240) { if (!nav.classList.contains('is-hidden')) { nav.classList.add('is-hidden'); closePanels(); } }
-      else if (upAcc > 160 || y <= 240) nav.classList.remove('is-hidden');
+      if (downAcc > 28 && y > 240) { if (!nav.classList.contains('is-hidden')) { nav.classList.add('is-hidden'); body.classList.add('nav-hidden'); closePanels(); } }
+      else if (upAcc > 160 || y <= 240) { nav.classList.remove('is-hidden'); body.classList.remove('nav-hidden'); }
     }
     lastY = y;
   }
@@ -79,7 +79,7 @@
   /* ---------- nav: mobil lap fókusz-csapdával, lenis stop/start ---------- */
   var burger = doc.querySelector('.nav__burger'), sheet = doc.getElementById('sheet'), lastFocus = null;
   function focusables() { return [].slice.call(sheet.querySelectorAll('a[href],button,summary,input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(function (el) { return el.offsetParent !== null; }); }
-  function openSheet() { if (!sheet) return; lastFocus = doc.activeElement; sheet.classList.add('is-open'); sheet.setAttribute('aria-hidden', 'false'); burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Menü bezárása'); burger.textContent = 'Bezár'; body.classList.add('no-scroll'); if (lenis) lenis.stop(); nav && nav.classList.remove('is-hidden'); var f = focusables(); if (f.length) f[0].focus(); }
+  function openSheet() { if (!sheet) return; lastFocus = doc.activeElement; sheet.classList.add('is-open'); sheet.setAttribute('aria-hidden', 'false'); burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Menü bezárása'); burger.textContent = 'Bezár'; body.classList.add('no-scroll'); if (lenis) lenis.stop(); nav && nav.classList.remove('is-hidden'); body.classList.remove('nav-hidden'); var f = focusables(); if (f.length) f[0].focus(); }
   function closeSheet() { if (!sheet || !sheet.classList.contains('is-open')) return; sheet.classList.remove('is-open'); sheet.setAttribute('aria-hidden', 'true'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Menü megnyitása'); burger.textContent = 'Menü'; body.classList.remove('no-scroll'); if (lenis) lenis.start(); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   if (burger && sheet) {
     burger.addEventListener('click', function () { sheet.classList.contains('is-open') ? closeSheet() : openSheet(); });

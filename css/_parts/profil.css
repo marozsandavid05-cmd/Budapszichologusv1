@@ -1,7 +1,126 @@
-/* profil.css · szakember-profil */
-.p-profil .rolam__h{grid-column:1/span 4}
-.p-profil .rolam__body{grid-column:6/span 6}
-.p-profil .rolam__body p+p{margin-top:1rem}
-.p-profil .rolam__body ul{margin:1rem 0;padding-left:1.2rem;list-style:disc}
-.p-profil .mesters{margin:0}
-@media (max-width:900px){.p-profil .rolam__h,.p-profil .rolam__body{grid-column:1/-1}}
+/* profil.css · szakember-profil (37 generált oldal) */
+
+/* NYITÓ: portré bal 5/12 a teljes hajtás-magasságban, jobb oldalt a név, titulus, mottó, tények */
+.p-profil .prof{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);min-height:calc(100svh - var(--nav));padding:0 var(--side) 0 0}
+.p-profil .prof__portrait{grid-column:1/span 5;margin:0;min-height:calc(100svh - var(--nav));background:var(--paper-2)}
+.p-profil .prof__portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.p-profil .prof__intro{grid-column:7/span 6;display:grid;gap:1.7rem;align-content:center;padding-block:2.5rem;max-width:36rem}
+.p-profil .prof__intro h1{font-size:clamp(2.6rem,4.4vw,4.4rem);line-height:1.04;white-space:nowrap}
+.p-profil .prof__intro h1.is-long{font-size:clamp(2.2rem,3.4vw,3.4rem)}
+.p-profil .prof__titles{display:grid;gap:.2rem;font-size:1.05rem;line-height:1.45;color:var(--fg-2);font-weight:300}
+.p-profil .prof__titles b{color:var(--fg);font-weight:400;font-size:1.2rem;margin-bottom:.2rem}
+.p-profil .prof__titles span{display:block;padding-left:1rem;position:relative}
+.p-profil .prof__titles span::before{content:"";position:absolute;left:0;top:.8em;width:.4rem;height:1px;background:var(--accent)}
+.p-profil .prof__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem 1.5rem;padding-top:1.6rem;border-top:1px solid var(--line-2);font-size:1rem}
+.p-profil .prof__facts div{display:grid;gap:.25rem;align-content:start}
+.p-profil .prof__facts b{font-family:var(--font-u);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.p-profil .prof__intro .ctas{margin-top:.2rem}
+.p-profil .prof__peek{display:grid;gap:.2rem;padding-top:1.2rem;border-top:1px solid var(--line-2)}
+.p-profil .prof__peek b{font-family:var(--font-u);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-bottom:.3rem}
+.p-profil .prof__peek li{position:relative;padding:.28rem 0 .28rem 1.2rem;font-size:1rem;line-height:1.4;max-width:34ch}
+.p-profil .prof__peek li::before{content:"";position:absolute;left:0;top:.95rem;width:.35rem;height:.35rem;background:var(--accent)}
+
+/* AMIBEN SEGÍTEK: két oszlopos sorlista bronz pontokkal, fej bal sticky */
+.p-profil .prof__helphead{grid-column:1/span 4;display:grid;gap:1.2rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
+.p-profil .prof__helphead .sec__aside{grid-column:auto;font-size:1rem}
+.p-profil .prof__helplist{grid-column:6/span 7;columns:2;column-gap:3rem;border-top:1px solid var(--line-2);padding-top:.4rem}
+.p-profil .prof__helplist li{break-inside:avoid;padding:.85rem 0 .85rem 1.4rem;border-bottom:1px solid var(--line);font-size:1.08rem;line-height:1.4;position:relative;max-width:none}
+.p-profil .prof__helplist li::before{content:"";position:absolute;left:0;top:1.35rem;width:.4rem;height:.4rem;background:var(--accent)}
+
+/* BEMUTATKOZÁS: fej (cím bal, jegyzet jobb), nyitómondat nagyban, szöveg két hasábban, alul mottó + hitvallás egymás mellett */
+.p-profil .prof__rolamhead{align-items:end;margin-bottom:clamp(1.6rem,3vw,2.4rem)}
+.p-profil .prof__rolamhead h2{grid-column:1/span 6}
+.p-profil .prof__rolamnote{grid-column:8/span 5;color:var(--fg-2);font-size:1rem;line-height:1.55}
+.p-profil .prof__rolambody{max-width:none}
+.p-profil .prof__rolambody{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap)}
+.p-profil .prof__open{grid-column:1/span 10;font-family:var(--font-d);font-weight:300;font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.22;letter-spacing:-.01em;max-width:24ch;margin:0 0 3rem}
+.p-profil .prof__open::first-letter{color:var(--accent)}
+.p-profil .prof__cols{grid-column:1/span 7;font-size:1.08rem;line-height:1.68;font-weight:300;max-width:58ch}
+.p-profil .prof__cols.is-two{grid-column:1/span 12;columns:2;column-gap:4rem;max-width:none}
+.p-profil .prof__cols p{max-width:none;margin:0 0 1.2rem}
+.p-profil .prof__cols p:last-child{margin-bottom:0}
+.p-profil .prof__cols ul{margin:0 0 1.2rem 1.2rem;list-style:disc}
+.p-profil .prof__cols li{max-width:none;padding-block:.15rem;break-inside:avoid}
+.p-profil .prof__cols>*{break-inside:avoid}
+.p-profil .prof__szakmai{grid-column:1/span 12;margin-top:3rem;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap)}
+.p-profil .prof__szakmai .prof__sub{grid-column:1/span 12}
+.p-profil .prof__szakmai .prof__cols{grid-column:1/span 7;max-width:none}
+.p-profil .prof__szakmai .prof__cols.is-two{grid-column:1/span 7;columns:1}
+.p-profil .prof__szakmai .prof__names{grid-column:9/span 4;margin:0}
+.p-profil .prof__szakmai .prof__names+.prof__names{margin-top:2rem}
+.p-profil .prof__sub{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin:0 0 1.4rem;padding-top:1.4rem;border-top:1px solid var(--line-2)}
+.p-profil .prof__names{break-inside:avoid;margin:0 0 1.2rem}
+.p-profil .prof__names h4{font-family:var(--font-u);font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin:.4rem 0 .6rem}
+.p-profil .prof__names ul{list-style:none;margin:0}
+.p-profil .prof__names li{padding:.6rem 0;border-top:1px solid var(--line);font-size:1rem;line-height:1.45;max-width:none}
+.p-profil .prof__names li:last-child{border-bottom:1px solid var(--line)}
+.p-profil .prof__aside{margin-top:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.p-profil .prof__aside .prof__motto{grid-column:1/span 5;margin:0}
+.p-profil .prof__aside .prof__creed{grid-column:7/span 6}
+.p-profil .prof__aside .prof__motto:only-child{grid-column:1/span 7}
+.p-profil .prof__aside .prof__creed:only-child{grid-column:1/span 8}
+.p-profil .prof__creed{margin:0;padding:2rem 2.2rem;background:var(--ink);color:var(--paper);font-style:italic;font-weight:300;font-size:1.15rem;line-height:1.55;max-width:none}
+.p-profil .prof__creed p{max-width:none}
+.p-profil .prof__creed p+p{margin-top:.8rem}
+.p-profil .prof__creed cite{display:block;margin-top:1.2rem;font-style:normal;font-family:var(--font-u);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-ink)}
+.p-profil .prof__motto{margin:0;padding-left:1.4rem;border-left:1px solid var(--accent);font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.5;max-width:34ch;color:var(--fg)}
+.p-profil .prof__motto cite{display:block;font-style:normal;font-family:var(--font-u);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);margin-top:.7rem}
+.p-profil .prof__intro .prof__motto{font-size:1.12rem}
+
+/* KÉPZÉS ÉS ÚT: évszám-oszlop bal, sorok jobb; csoportok (iskolai, módszerspecifikus, munkahelyek) egymás alatt, nem két hasábban */
+.p-profil .prof__cv{grid-column:1/-1}
+.p-profil .prof__cvhead{grid-column:1/span 4;position:sticky;top:calc(var(--nav) + 2rem);align-self:start;display:grid;gap:1.2rem}
+.p-profil .prof__cvbody{grid-column:6/span 7}
+.p-profil .cvsec+.cvsec{margin-top:3rem}
+.p-profil .cvsec h3{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);padding-bottom:.8rem;border-bottom:1px solid var(--line-2);margin-bottom:0}
+.p-profil .cv{display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:1.5rem;padding:.95rem 0;border-bottom:1px solid var(--line);font-size:1.05rem;line-height:1.5}
+.p-profil .cv__y{font-family:var(--font-u);font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--fg-2);padding-top:.25rem;white-space:nowrap}
+.p-profil .cv--noyear .cv__y::before{content:"";display:inline-block;width:.9rem;height:1px;background:var(--line-2);vertical-align:middle}
+.p-profil .cv b{font-weight:400;display:block;max-width:58ch}
+.p-profil .cv span{display:block;color:var(--fg-2);font-size:.95rem;margin-top:.15rem;max-width:58ch}
+.p-profil .prof__mesters{margin-top:3.2rem;padding-top:1.4rem;border-top:1px solid var(--line-2)}
+.p-profil .prof__mesters h3{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-bottom:.6rem}
+.p-profil .prof__mesters ul{columns:2;column-gap:3rem}
+.p-profil .prof__mesters li{break-inside:avoid;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.98rem;max-width:none;display:grid;gap:.1rem}
+.p-profil .prof__mesters li b{font-weight:400;font-size:1.05rem}
+.p-profil .prof__mesters li span{color:var(--fg-2);font-size:.92rem;line-height:1.4}
+
+/* RÓLAM MONDTÁK: idézetek két oszlopban, nagy nyitó idézőjel nélkül, tiszta szedés */
+.p-profil .prof__quotes .quotes{grid-column:1/-1}
+.p-profil .quotes blockquote{font-size:1.15rem;line-height:1.55;padding:1.4rem 0 0}
+
+/* ZÁRÓ: sötét, két oszlop: balra időpont, jobbra a rokon kollégák */
+.p-profil .prof__closer{row-gap:3rem}
+.p-profil .prof__closer .closer__body{grid-column:1/span 6}
+.p-profil .prof__closer .closer__body .label{color:var(--muted-ink)}
+.p-profil .prof__rokon{grid-column:8/span 5;display:grid;gap:1.2rem;align-content:start;padding-top:.3rem}
+.p-profil .prof__rokon .label{color:var(--muted-ink)}
+.p-profil .prof__rokon .rel a{grid-template-columns:2.6rem minmax(0,1fr);column-gap:1.2rem;row-gap:.3rem;padding:1.15rem 0;align-items:start;border-color:var(--ink-2)}
+.p-profil .prof__rokon .rel a:last-child{border-bottom-color:var(--ink-2)}
+.p-profil .prof__rokon .rel .num{grid-row:1/span 2;padding-top:.45rem;color:var(--muted-ink)}
+.p-profil .prof__rokon .rel b{grid-column:2;font-size:1.5rem;font-weight:300;line-height:1.15;white-space:nowrap}
+.p-profil .prof__rokon .rel span{grid-column:2;font-size:.95rem;line-height:1.4;color:var(--muted-ink);max-width:34ch}
+.p-profil .prof__rokon .rel a:hover b{color:var(--paper)}
+.p-profil .prof__back{font-size:.95rem}
+
+@media (max-width:900px){
+  .p-profil .prof{grid-template-columns:1fr;padding:0;min-height:0}
+  .p-profil .prof__portrait{grid-column:1/-1;min-height:0;aspect-ratio:4/5;max-height:70svh}
+  .p-profil .prof__intro{grid-column:1/-1;padding:2rem var(--side) 2.5rem}
+  .p-profil .prof__intro h1,.p-profil .prof__intro h1.is-long{white-space:normal;font-size:clamp(2.2rem,9vw,3rem)}
+  .p-profil .prof__facts{grid-template-columns:1fr 1fr}
+  .p-profil .prof__intro{max-width:none}
+  .p-profil .prof__helphead,.p-profil .prof__helplist,.p-profil .prof__rolamhead h2,.p-profil .prof__rolamnote,.p-profil .prof__aside .prof__motto,.p-profil .prof__aside .prof__creed,.p-profil .prof__cvhead,.p-profil .prof__cvbody,.p-profil .prof__closer .closer__body,.p-profil .prof__rokon{grid-column:1/-1;position:static}
+  .p-profil .prof__rolambody,.p-profil .prof__szakmai{display:block}
+  .p-profil .prof__open,.p-profil .prof__cols{padding-left:0;margin-left:0;max-width:none}
+  .p-profil .prof__cols.is-two{columns:1}
+  .p-profil .prof__szakmai .prof__names{margin-top:1.6rem}
+  .p-profil .prof__helplist{columns:1}
+  .p-profil .cv{grid-template-columns:1fr;gap:.2rem}
+  .p-profil .prof__mesters ul{columns:1}
+}
+
+.p-profil .prof__rolambody em{font-style:italic;color:inherit}
+.p-profil .prof__szakmai .prof__cols{font-size:1.02rem}
+.p-profil .prof__names li{padding:.7rem 0}
+.p-profil .prof__aside .prof__motto{padding:1.6rem 0 1.6rem 1.6rem;border-left:2px solid var(--accent);align-self:stretch;display:flex;flex-direction:column;justify-content:center}

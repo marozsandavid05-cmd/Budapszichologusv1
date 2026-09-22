@@ -94,75 +94,99 @@
 </div>
 
 <main>
-  <section class="hero hero--name" data-tone="paper">
-    <p class="label h-in">Regiszter 17 · Pszichológus</p>
-    <h1 data-split>Kis<br>Ferenc Balázs</h1>
-    <div class="meta h-in"><div><b>Titulus</b>Pszichológus</div><div><b>Kinek</b>felnőtt</div><div><b>Forma</b>egyéni, csoport</div><div><b>Mód</b>személyes</div><div><b>Nyelv</b>magyar</div><div><b>Díj</b><span class="num">15-20 ezer Ft</span> / 50 perc</div></div>
-    <figure class="portrait h-in"><img src="../img/portrek/kis-ferenc-balazs-nagy.jpg" alt="Kis Ferenc Balázs" width="960" height="1200" fetchpriority="high"></figure>
-    <div class="help h-in"><h2>Amiben segítek</h2><ul><li>A munkából vagy a családi életből származó kihívásai már önmagukban is nehezek, esetleg a másik oldalra is kihatnak</li><li>Az aktuális problémához hasonlókat már sikeresen kezelt a múltban, de a jelenlegi helyzetben mégsem túl felülkerekedni rajta</li><li>Vissza kéne menni az irodába, de valahogy képtelen rá, bizonytalan, kifogásokat keres</li><li>Újra kellene rendeznie önmagát</li><li>Távolságot érez a munkáltatójával, a felettesével szemben, és bár előfordulhat, hogy nincs különösebb oka a bizalmatlanságra, de a bizalomra éppúgy nem</li><li>Vezetőként minden próbálkozása ellenére passzivitást tapasztal a beosztottai részéről, és kezd belefáradni a próbálkozásba</li></ul><p class="motto">A szenvedélyeink igazi főnixek. Amint a régi elég, hamvaiból az új rögvest életre kel.&quot;, J. W. Goethe:</p></div>
+  <section class="hero prof" data-tone="paper">
+    <figure class="prof__portrait h-in"><img src="../img/portrek/kis-ferenc-balazs-nagy.jpg" alt="Kis Ferenc Balázs" width="960" height="1200" fetchpriority="high"></figure>
+    <div class="prof__intro">
+      <p class="label h-in">Regiszter 17 · Pszichológus</p>
+      <h1 data-split>Kis Ferenc Balázs</h1>
+      <div class="prof__titles h-in"><b>Pszichológus</b></div>
+      <blockquote class="prof__motto" data-hero>A szenvedélyeink igazi főnixek. Amint a régi elég, hamvaiból az új rögvest életre kel.&quot;, J. W. Goethe:</blockquote>
+      
+      <div class="prof__facts h-in"><div><b>Kinek</b>felnőtt</div><div><b>Forma</b>egyéni, csoport</div><div><b>Mód</b>személyes</div><div><b>Nyelv</b>magyar</div><div><b>Díj</b><span class="num">15-20 ezer Ft</span> / 50 perc</div></div>
+      <div class="ctas h-in"><a class="btn btn--primary" href="../kapcsolat.html?szakember=kis-ferenc-balazs">Időpontkérés</a><a class="btn btn--text" href="#rolam">Bemutatkozás</a></div>
+    </div>
   </section>
-  <section class="sec" data-tone="paper" id="rolam">
+
+  <section class="sec prof__help" data-tone="paper-2" id="amiben">
     <div class="wrap g12">
-      <h2 data-split class="rolam__h">Rólam</h2>
-      <div class="rolam__body" data-reveal><p>Fejlődni Vágyó Kedves Embertársam!</p>
-<p>Eljön az idő, amikor úgy érezzük, hogy azok a keretek, amelyek mentén eddig éltük az életünket, korlátokká válnak: már nem tartanak meg, sőt, inkább akadályoznak. És eljön a pillanat, amikor ezeken a korlátokon át kell lépnünk, hogy új kereteket alkossunk, amelyek segítségével már a saját életünket élhetjük. Ebben a lelkünkben lezajló folyamatban újraértelmezzük, hogy mi ad örömöt, megelégedést és biztonságot, így átalakulhat a karrierünk, megváltozhatnak a kapcsolataink, és markánsan eltolódnak az önmagunkba vetett hitünk hangsúlyai is.</p>
+      <div class="prof__helphead">
+        <h2 data-split>Amiben segítek</h2>
+        <p class="sec__aside" data-reveal>Kis Ferenc Balázs saját megfogalmazásában. Ha a listában nem találja a saját helyzetét, az első beszélgetésen ezt is megbeszélik.</p>
+      </div>
+      <ul class="prof__helplist" data-stagger><li>A munkából vagy a családi életből származó kihívásai már önmagukban is nehezek, esetleg a másik oldalra is kihatnak</li><li>Az aktuális problémához hasonlókat már sikeresen kezelt a múltban, de a jelenlegi helyzetben mégsem túl felülkerekedni rajta</li><li>Vissza kéne menni az irodába, de valahogy képtelen rá, bizonytalan, kifogásokat keres</li><li>Újra kellene rendeznie önmagát</li><li>Távolságot érez a munkáltatójával, a felettesével szemben, és bár előfordulhat, hogy nincs különösebb oka a bizalmatlanságra, de a bizalomra éppúgy nem</li><li>Vezetőként minden próbálkozása ellenére passzivitást tapasztal a beosztottai részéről, és kezd belefáradni a próbálkozásba</li></ul>
+    </div>
+  </section>
+
+  <section class="sec" data-tone="paper" id="rolam">
+    <div class="wrap">
+      <div class="prof__rolamhead g12">
+        <h2 data-split>Bemutatkozás</h2>
+        <p class="prof__rolamnote" data-reveal>Kis Ferenc Balázs saját szavaival. Egy alkalom díja 15-20 ezer forint. <a href="../arak.html">A díjakról</a></p>
+      </div>
+      <div class="prof__rolambody" data-reveal>
+        <p class="prof__open">Fejlődni Vágyó Kedves Embertársam!</p><div class="prof__cols is-two"><p>Eljön az idő, amikor úgy érezzük, hogy azok a keretek, amelyek mentén eddig éltük az életünket, korlátokká válnak: már nem tartanak meg, sőt, inkább akadályoznak. És eljön a pillanat, amikor ezeken a korlátokon át kell lépnünk, hogy új kereteket alkossunk, amelyek segítségével már a saját életünket élhetjük. Ebben a lelkünkben lezajló folyamatban újraértelmezzük, hogy mi ad örömöt, megelégedést és biztonságot, így átalakulhat a karrierünk, megváltozhatnak a kapcsolataink, és markánsan eltolódnak az önmagunkba vetett hitünk hangsúlyai is.</p>
 <p>A megújulás kultúrákon és vallásokon átívelő szimbóluma a főnix madár: olyan erőteljes kép, amely lényegében ragadja meg azt az emberi vágyat és tapasztalatot, hogy az erőt vesztett réginek el kell múlnia, a helyébe pedig már egy lendülettel, erővel és reménnyel teli új lép.</p>
 <p>A Budai Pszichológus Központ pszichológusaként várom azok jelentkezését, akiknél a régi múlófélben, az új pedig születőfélben van. A közös alkalmainkon a megújulást helyezzük figyelmünk központjába:</p>
 <p>• megkeressük a belső, mozgósítható erőforrásokat</p>
 <p>• és feltárjuk a mozgósítás akadályait.</p>
-<p>Ez a folyamat számos finom lépésből áll, miközben a mélyen végbemenő belső munka rendszerint embert próbáló mértékű. Ebben az érzékeny időszakban támogatom Önt, miközben közösen kitekintünk a karrierjében, a családi és egyéb kapcsolataiban felmerülő és megvalósítandó változásokra, és hogy mindezek milyen jelentéssel bírnak az Ön számára.</p><p class="small muted">Kis Ferenc Balázs díja 15-20 ezer forint alkalmanként.</p></div>
+<p>Ez a folyamat számos finom lépésből áll, miközben a mélyen végbemenő belső munka rendszerint embert próbáló mértékű. Ebben az érzékeny időszakban támogatom Önt, miközben közösen kitekintünk a karrierjében, a családi és egyéb kapcsolataiban felmerülő és megvalósítandó változásokra, és hogy mindezek milyen jelentéssel bírnak az Ön számára.</p></div>
+      </div>
+      <div class="prof__aside g12" data-reveal>
+        
+        <blockquote class="prof__creed" data-reveal><p>Istenem, add, hogy ne ítéljek, Mit tudom én, honnan ered,</p><p>Micsoda mélységből a vétek,</p><p>Az enyém és a másoké,</p><p>Az egyesé, a népeké.</p><p>Istenem, add, hogy ne ítéljek.</p><p>Istenem, add, hogy ne bíráljak:</p><p>Erényt, hibát és tévedést</p><p>Egy óriás összhangnak lássak, A dolgok olyan bonyolultak</p><p>És végül mégis mindenek</p><p>Elhalkulnak és kisimulnak</p><p>És lábaidhoz együtt hullnak.&quot;</p><p>, Reményik Sándor</p><cite>Hitvallás</cite></blockquote>
+      </div>
     </div>
   </section>
-  <section class="sec" data-tone="paper-2" id="kepzes">
-    <div class="wrap"><div class="sec__head"><h2 data-split>Képzés és szakmai út</h2><p class="sec__aside">A képzések és a szupervízió az akkreditált szakképzőhely rendjében folynak. <a href="../akkreditacio-es-kepzes.html">Mit jelent ez Önnek</a></p></div>
-    <div class="cvgrid"><div class="cvsec"><h3>Iskolai végzettség</h3><div class="cv"><span class="cv__y num">2017-2019</span><div><b>Pszichológia MA, Szegedi Egyetem, Klinikai és egészségpszichológia szakirány</b></div></div>
-<div class="cv cv--plain"><p>Szakdolgozat: Digitális eszközök és szülő-gyerek kapcsolatok</p></div>
-<div class="cv"><span class="cv__y num">2014-2017</span><div><b>Pszichológia BA, Károli Gáspár Református Egyetem</b></div></div>
-<div class="cv cv--plain"><p>Szakdolgozat: Nyelvi absztrakció az üzleti kommunikációban</p></div>
-<div class="cv"><span class="cv__y num">1998-2003</span><div><b>Műszaki menedzser MSc, Budapesti Műszaki és Gazdaságtudományi Egyetem</b></div></div>
-<div class="cv cv--plain"><p>Termékmenedzsment szakirány</p></div>
-<div class="cv cv--plain"><p>Szakdolgozat: Légiirányítói szoftverergonómia</p></div>
-<div class="cv"><span class="cv__y num">1996-1998</span><div><b>Lay Ministry Graduate (felsőfokú képzés)</b></div></div>
-<div class="cv cv--plain"><p>Lay Ministry Training Center, St Paul, Minnesota, USA</p></div></div>
-<div class="cvsec"><h3>Módszerspecifikus képzések</h3><div class="cv"><span class="cv__y num">2020</span><div><b>Autogén tréner</b></div></div>
-<div class="cv cv--plain"><p>Magyar Relaxációs és Szimbólumterápiás Egyesület</p></div></div>
-<div class="cvsec"><h3>Szakmai tapasztalatok</h3><div class="cv"><span class="cv__y num">2018</span><div><b>Deutsche Telekom IT Solutions Kft.</b></div></div>
-<div class="cv cv--plain"><p>IT szolgáltatási vezető</p></div>
-<div class="cv"><span class="cv__y num">2013-2017</span><div><b>Systemax Business Services Kft.</b></div></div>
-<div class="cv cv--plain"><p>A Közép- és Kelet-Európai értékesítés vezetője</p></div>
-<div class="cv"><span class="cv__y num">2003-2013</span><div><b>IBM</b></div></div>
-<div class="cv cv--plain"><p>Lab Services globális kompetenciavezető</p></div>
-<div class="cv cv--plain"><p>A magyarországi szolgáltatási üzletág üzemeltetési vezetője</p></div></div>
-<div class="cvsec"><h3>Szakmai gyakorlatok</h3><div class="cv"><span class="cv__y num">2019</span><div><b>Nyírő Gyula Kórház Pszichiátriai Ambulancia</b></div></div>
-<div class="cv"><span class="cv__y num">2019</span><div><b>Tűzmadár Alapítvány, Onkopszichológiai csoport</b></div></div></div>
-<div class="cvsec"><h3>További képességek</h3><div class="cv cv--plain"><p>Nyelvtudás: angol C1, német B2, mindkettő aktív</p></div>
-<div class="cv cv--plain"><p>IBM vezetői tréningek és értékelő központ</p></div>
-<div class="cv cv--plain"><p>Projektmenedzsment tréningek</p></div></div>
-<div class="cvsec"><h3>Társadalmi részvétel</h3><div class="cv cv--plain"><p>A fóti Waldorf Iskola szülői köre</p></div>
-<div class="cv cv--plain"><p>Híd magazin szerkesztőbizottsági tag</p></div>
-<div class="cv cv--plain"><p>Újpest-Káposztásmegyeri Református Gyülekezet</p></div></div></div></div>
+
+  <section class="sec" data-tone="white" id="kepzes">
+    <div class="wrap g12">
+      <div class="prof__cvhead"><h2 data-split>Képzés és szakmai út</h2><p class="sec__aside">26 tétel. A képzések és a szupervízió az akkreditált szakképzőhely rendjében folynak. <a href="../akkreditacio-es-kepzes.html">Mit jelent ez Önnek</a></p></div>
+      <div class="prof__cvbody"><div class="cvsec"><h3>Iskolai végzettség</h3><div class="cv"><span class="cv__y">2017-2019</span><div><b>Pszichológia MA, Szegedi Egyetem, Klinikai és egészségpszichológia szakirány</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Szakdolgozat: Digitális eszközök és szülő-gyerek kapcsolatok</b></div></div>
+<div class="cv"><span class="cv__y">2014-2017</span><div><b>Pszichológia BA, Károli Gáspár Református Egyetem</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Szakdolgozat: Nyelvi absztrakció az üzleti kommunikációban</b></div></div>
+<div class="cv"><span class="cv__y">1998-2003</span><div><b>Műszaki menedzser MSc, Budapesti Műszaki és Gazdaságtudományi Egyetem</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Termékmenedzsment szakirány</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Szakdolgozat: Légiirányítói szoftverergonómia</b></div></div>
+<div class="cv"><span class="cv__y">1996-1998</span><div><b>Lay Ministry Graduate (felsőfokú képzés)</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Lay Ministry Training Center, St Paul, Minnesota, USA</b></div></div></div>
+<div class="cvsec"><h3>Módszerspecifikus képzések</h3><div class="cv"><span class="cv__y">2020</span><div><b>Autogén tréner</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Magyar Relaxációs és Szimbólumterápiás Egyesület</b></div></div></div>
+<div class="cvsec"><h3>Szakmai tapasztalatok</h3><div class="cv"><span class="cv__y">2018, ma is</span><div><b>Deutsche Telekom IT Solutions Kft</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>IT szolgáltatási vezető</b></div></div>
+<div class="cv"><span class="cv__y">2013-2017</span><div><b>Systemax Business Services Kft</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>A Közép- és Kelet-Európai értékesítés vezetője</b></div></div>
+<div class="cv"><span class="cv__y">2003-2013</span><div><b>IBM</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Lab Services globális kompetenciavezető</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>A magyarországi szolgáltatási üzletág üzemeltetési vezetője</b></div></div></div>
+<div class="cvsec"><h3>Szakmai gyakorlatok</h3><div class="cv"><span class="cv__y">2019</span><div><b>Nyírő Gyula Kórház Pszichiátriai Ambulancia</b></div></div>
+<div class="cv"><span class="cv__y">2019</span><div><b>Tűzmadár Alapítvány, Onkopszichológiai csoport</b></div></div></div>
+<div class="cvsec"><h3>További képességek</h3><div class="cv cv--noyear"><span class="cv__y"></span><div><b>Nyelvtudás: angol C1, német B2, mindkettő aktív</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>IBM vezetői tréningek és értékelő központ</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Projektmenedzsment tréningek</b></div></div></div>
+<div class="cvsec"><h3>Társadalmi részvétel</h3><div class="cv cv--noyear"><span class="cv__y"></span><div><b>A fóti Waldorf Iskola szülői köre</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Híd magazin szerkesztőbizottsági tag</b></div></div>
+<div class="cv cv--noyear"><span class="cv__y"></span><div><b>Újpest-Káposztásmegyeri Református Gyülekezet</b></div></div></div><div class="prof__mesters"><h3>Tanítómesterek</h3><ul><li><b>Dr. Bill Backus</b><span>klinikai szakpszichológus, evangélikus lelkész, számos pszichológiai témájú könyv szerzője, sokszor beszélgettünk hosszú órákon át irodalomról, történelemről, filozófiáról, kultúráról, Istenről, tudományról, gazdaságról és politikáról</span></li><li><b>Dr. Martos Tamás</b><span>egészségpszichológiai szakpszichológus és egyetemi docens, szegedi témavezetőm, előadásaiban a minőség mindig előnyt élvezett a mennyiséggel szemben</span></li><li><b>Dr. Göbel Orsolya</b><span>pszichológus és egyetemi docens, károlis gyakorlatvezetőm, a fejlődéslélektan elméletét káprázatosan élővé tette a számomra</span></li><li><b>Tóth Ágnes</b><span>pszichológus, irigylésre méltó magabiztossággal és szakmai alapossággal tartott kézben egy pszichoonkológiai csoportot, ahol a résztvevőket sok-sok empátiával fejlődésre sarkallta</span></li><li><b>Eitler Szilvia</b><span>klinikai szakpszichológus, végtelen őszinteséggel mesélt a saját tapasztalatairól a pszichológussá válás útján</span></li><li><b>Dr. Párducz Árpád</b><span>neurológus, egyetemi docens, igencsak felforgatta az addigi szemléletemet a fiziológiáról</span></li><li><b>Gérard Commune</b><span>az üzletfejlesztés regionális elnökhelyetteseként könyörtelenül törekedett a tények megismerésére és a folyamatos egyszerűsítésre; nem mellesleg bátorított a tanulásra</span></li></ul></div></div>
+    </div>
   </section>
-  <section class="sec sec--tight" data-tone="paper" id="mesterek">
-    <div class="wrap g12"><div class="rolam__h"><h2>Tanítómesterek</h2><p class="muted small">Akiknél a módszereket tanulta</p></div>
-    <ul class="mesters rolam__body" data-stagger><li>Dr. Bill Backus, klinikai szakpszichológus, evangélikus lelkész, számos pszichológiai témájú könyv szerzője, sokszor beszélgettünk hosszú órákon át irodalomról, történelemről, filozófiáról, kultúráról, Istenről, tudományról, gazdaságról és politikáról</li><li>Dr. Martos Tamás, egészségpszichológiai szakpszichológus és egyetemi docens, szegedi témavezetőm, előadásaiban a minőség mindig előnyt élvezett a mennyiséggel szemben</li><li>Dr. Göbel Orsolya, pszichológus és egyetemi docens, károlis gyakorlatvezetőm, a fejlődéslélektan elméletét káprázatosan élővé tette a számomra</li><li>Tóth Ágnes, pszichológus, irigylésre méltó magabiztossággal és szakmai alapossággal tartott kézben egy pszichoonkológiai csoportot, ahol a résztvevőket sok-sok empátiával fejlődésre sarkallta</li><li>Eitler Szilvia, klinikai szakpszichológus, végtelen őszinteséggel mesélt a saját tapasztalatairól a pszichológussá válás útján</li><li>Dr. Párducz Árpád, neurológus, egyetemi docens, igencsak felforgatta az addigi szemléletemet a fiziológiáról</li><li>Gérard Commune, az üzletfejlesztés regionális elnökhelyetteseként könyörtelenül törekedett a tények megismerésére és a folyamatos egyszerűsítésre; nem mellesleg bátorított a tanulásra</li></ul></div>
-  </section>
-  <section class="sec" data-tone="white" id="mondtak">
-    <div class="wrap"><div class="sec__head sec__head--r"><h2 data-split>Rólam mondták</h2><p class="sec__aside">Kliensek visszajelzései, a hozzájárulásukkal</p></div>
+  <section class="sec prof__quotes" data-tone="paper-2" id="mondtak">
+    <div class="wrap"><div class="sec__head sec__head--r"><h2 data-split>Rólam mondták</h2><p class="sec__aside">Kliensek visszajelzései, a hozzájárulásukkal, névtelenül.</p></div>
     <div class="quotes" data-stagger><blockquote>Nekem sokat jelentett, hogy Balázsnak őszintén fel tudtam tárni a párkapcsolati nehézségeimet, mert azt éreztem, hogy mindig messzemenőkig elfogulatlan és pártatlan. Sok olyan dologra rávilágított, elsősorban a kérdéseivel, másrészt a különböző viselkedési formák, reakciók tárgyilagos elmagyarázásával, amik segítettek összerakni egy teljesebb képet az adott szituációról.&quot; ,</blockquote><blockquote>Balázsban olyan embert ismertem meg, aki remekül figyel a másikra és könnyen látja meg, fedi fel a lényeges dolgokat. Gondolkodása a probléma megoldására fókuszál. Multinacionális cégeknél szerzett többéves (közép)vezetői gyakorlata, az üzleti élet kultúrájának remek ismerete különlegesen alkalmassá teszi arra, hogy munkahelyi vonatkozású pszichológiai problémákkal foglalkozzon.</blockquote><blockquote>Balázs 15+ éves versenyszférai tapasztalatával kiválóan ismeri a vállalatok működését, a belső konfliktusok, érdekellentétek bonyolult világát. Sebészi pontossággal tudja meghatározni a konfliktusok okait, az emberi tényezőket, motivációkat. Praktikus tanácsokkal segít, hogy ebben a világban jól eligazodjunk, és minimalizáljuk ezeknek a konfliktusoknak a negatív hatásait. Balázs tanácsai alapján a munkahelyi stressz jelentősen csökkenthető, ami a munkavállalóknak és a vállalatnak egyaránt hasznára válik, ezért jó szívvel ajánlom a Balázzsal való konzultációt mindenkinek!</blockquote><blockquote>Balázs nemcsak jól érzi az emberi lélek problémáit, sokszor útvesztőit, hanem analitikus személyiségének köszönhetően ezt el is tudja helyezni egy nagyobb rendszerben annak belső kölcsönhatásaival egyetemben. Így kiválóan kísér és valódi perspektívára világít rá a legösszetettebb helyzetekben is. Tudja, mi a fontos és mi nem. És jól ráérez, hogy mi okozza a legnagyobb gondot a kliensének, és segít neki ebben felemelkedni.</blockquote></div></div>
   </section>
-  <section class="closer" data-tone="ink" id="idopont">
+
+  <section class="closer prof__closer" data-tone="ink" id="idopont">
     <div class="closer__body" data-reveal>
+      <p class="label">Regiszter 17</p>
       <h2 data-split>Időpont Kis Ferenc Balázsnál</h2>
-      <p>Az ügyfélszolgálat hétköznap 9 és 15 óra között egyeztet. Ha bizonytalan, hogy Ön kihez tartozik, azt is megbeszéljük.</p>
-      <div class="ctas"><a class="btn btn--primary" href="../kapcsolat.html?szakember=kis-ferenc-balazs">Időpontkérés</a><a class="btn btn--text" href="../szakembereink.html">Vissza a regiszterhez</a></div>
+      <p>Az ügyfélszolgálat hétköznap 9 és 15 óra között egyeztet. Ha bizonytalan, hogy Ön kihez tartozik, azt is megbeszélik, és ha kell, más kollégát javasolnak.</p>
+      <div class="ctas"><a class="btn btn--primary" href="../kapcsolat.html?szakember=kis-ferenc-balazs">Időpontkérés</a><a class="btn btn--text" href="tel:+36309611364">+36 30 961 1364</a></div>
     </div>
-  </section>
-  <section class="sec sec--tight" data-tone="paper" id="rokon">
-    <div class="wrap">
-      <div class="sec__head"><h2>Hasonló területen dolgoznak</h2><p class="sec__aside">Három kolléga, akinek a szakterülete a legközelebb áll Kis Ferenc Balázs munkájához.</p></div>
+    <div class="prof__rokon" data-reveal>
+      <p class="label">Hasonló területen dolgoznak</p>
       <div class="rel"><a href="ardai_zsolt.html"><span class="num">01</span><b>Ardai Zsolt</b><span>Pszichológus, képzésben lévő személyközpontú tanácsadó</span></a>
 <a href="dr-feher-palma-virag.html"><span class="num">08</span><b>Dr. Fehér Pálma Virág</b><span>Pszichoterapeuta, Klinikai Szakpszichológus</span></a>
 <a href="toth-vajna-rita.html"><span class="num">09</span><b>Dr. Tóth-Vajna Rita</b><span>Pszichológus, pár-és családterapeuta</span></a></div>
+      <p class="prof__back"><a href="../szakembereink.html">Vissza a teljes regiszterhez</a></p>
     </div>
   </section>
 </main>

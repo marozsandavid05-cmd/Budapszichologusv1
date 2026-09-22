@@ -1,0 +1,4 @@
+/* felnott-terapia */
+.p-felnott .hero--cover{--focus:50% 55%}
+.p-felnott .rows__item .link{display:inline-block;margin-top:.9rem;font-family:var(--font-u);font-size:.82rem;letter-spacing:.04em}
+.p-felnott #dij .price{grid-column:1/-1}
