@@ -1,0 +1,30 @@
+/* arak */
+.p-arak .ar-hero{grid-template-rows:auto auto;align-content:end;gap:0;padding-top:clamp(1.2rem,2.4vh,2rem);padding-bottom:clamp(1.4rem,2.6vh,2.5rem)}
+.p-arak .ar-hero__head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:end;padding-bottom:clamp(1.4rem,2.6vh,2.5rem)}
+.p-arak .ar-hero__head .label{grid-column:1/-1;margin-bottom:clamp(.8rem,1.6vh,1.4rem)}
+.p-arak .ar-hero__head h1{grid-column:1/span 6;font-size:clamp(2.8rem,5.4vw,5.8rem);line-height:.98}
+.p-arak .ar-hero__head .lead{grid-column:8/span 5;margin:0;max-width:none;font-size:1.1rem}
+.p-arak .ar-hero .price{align-self:end}
+.p-arak .price__row{grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,3fr);padding:clamp(.9rem,1.6vh,1.35rem) 0}
+.p-arak .price__row strong{font-size:1.35rem}
+.p-arak .price__row span{font-size:.95rem;max-width:44ch}
+.p-arak .price__row b{font-size:clamp(1.7rem,2.6vw,2.5rem)}
+.p-arak .mit{align-items:start}
+.p-arak .mit__title{grid-column:1/span 6;font-size:clamp(2rem,3.4vw,3.4rem);line-height:1.08;position:sticky;top:calc(var(--stick,var(--nav)) + 2rem)}
+.p-arak .mit__text{grid-column:8/span 5;display:grid;gap:1.4rem;padding-top:.5rem}
+.p-arak .mit__text .lead{max-width:none;font-size:1.2rem}
+.p-arak .mit__text p{max-width:none}
+.p-arak .rows__item .link{display:inline-block;margin-top:.9rem;font-family:var(--font-u);font-size:.82rem;letter-spacing:.04em}
+.p-arak .fiz{align-items:start}
+.p-arak .fiz__pull{grid-column:1/span 6;position:sticky;top:calc(var(--stick,var(--nav)) + 2rem)}
+.p-arak .fiz__list{grid-column:8/span 5;margin:0;border-top:2px solid var(--fg)}
+.p-arak .fiz__list div{display:grid;gap:.5rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.p-arak .fiz__list dt{font-family:var(--font-d);font-weight:400;font-size:1.2rem}
+.p-arak .fiz__list dd{margin:0;font-size:1rem;line-height:1.55;color:var(--fg-2);max-width:none}
+.p-arak .faq__more{margin-top:2.2rem;font-family:var(--font-d);font-weight:300;font-size:1.15rem;line-height:1.5;max-width:44ch}
+@media (max-width:900px){
+  .p-arak .ar-hero__head h1,.p-arak .ar-hero__head .lead,.p-arak .mit__title,.p-arak .mit__text,.p-arak .fiz__pull,.p-arak .fiz__list{grid-column:1/-1;position:static}
+  .p-arak .ar-hero__head .lead{margin-top:1.2rem}
+  .p-arak .price__row{grid-template-columns:1fr auto}.p-arak .price__row span{grid-column:1/-1}
+  .p-arak .mit__text,.p-arak .fiz__list{margin-top:1.5rem}
+}

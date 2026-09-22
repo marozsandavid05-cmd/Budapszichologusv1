@@ -1,0 +1,6 @@
+/* 404 */
+.p-404 .hero--type{align-content:center}
+.p-404 .hero--type .label{grid-column:1/-1;margin-bottom:1.5rem}
+.p-404 .hero--type h1{grid-column:1/span 8}
+.p-404 .hero--type .lead{grid-column:1/span 6;margin-top:1.6rem}
+.p-404 .anchors{grid-column:1/-1;margin-top:2.5rem}

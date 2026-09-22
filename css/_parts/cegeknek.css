@@ -1,0 +1,19 @@
+/* cegeknek */
+.p-cegeknek .ceg-hero{grid-template-rows:1fr;align-content:stretch;padding-top:0;padding-bottom:0;padding-left:0;height:calc(100svh - var(--nav));min-height:0;overflow:clip}
+.p-cegeknek .ceg-hero .hero__fig{grid-column:1/span 6;grid-row:1;margin:0;height:100%;align-self:stretch}
+.p-cegeknek .ceg-hero .hero__fig img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:60% 40%}
+.p-cegeknek .ceg-hero__body{grid-column:8/span 5;grid-row:1;display:grid;gap:1.6rem;align-content:center;padding-block:3rem}
+.p-cegeknek .ceg-hero h1{font-size:clamp(2.4rem,4.2vw,4.4rem);line-height:1.04;max-width:12ch}
+.p-cegeknek .ceg-hero .hero__intro{color:var(--fg);font-size:1.08rem;line-height:1.6;max-width:44ch}
+.p-cegeknek .ceg-hero .hero__foot{margin-top:.4rem}
+.p-cegeknek .rows__item .cf{margin-top:.6rem;font-family:var(--font-u);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-2)}
+.p-cegeknek .merce{align-items:start}
+.p-cegeknek .merce__title{grid-column:1/span 5;font-size:clamp(2rem,3.4vw,3.4rem);line-height:1.06}
+.p-cegeknek .merce__text{grid-column:7/span 6;display:grid;gap:1.4rem;padding-top:.4rem}
+.p-cegeknek .merce__text p{max-width:52ch}
+@media (max-width:900px){
+  .p-cegeknek .ceg-hero{height:auto;grid-template-rows:auto auto;padding-inline:0}
+  .p-cegeknek .ceg-hero .hero__fig{grid-column:1/-1;grid-row:1;height:52svh}
+  .p-cegeknek .ceg-hero__body{grid-column:1/-1;grid-row:2;padding:2rem var(--side) 2.5rem}
+  .p-cegeknek .merce__title,.p-cegeknek .merce__text{grid-column:1/-1}
+}

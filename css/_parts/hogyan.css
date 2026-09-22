@@ -1,0 +1,34 @@
+/* hogyan-kezdjuk */
+.p-hogyan .hk-hero{grid-template-rows:auto auto 1fr auto;align-content:stretch;padding-top:2rem;padding-bottom:2.2rem;row-gap:0}
+.p-hogyan .hk-hero .label{grid-column:1/-1;grid-row:1;margin:0 0 1.6rem;padding-top:.5rem}
+.p-hogyan .hk-hero h1{grid-column:1/span 8;grid-row:2;font-size:clamp(2.3rem,4.2vw,4.4rem);line-height:1.1}
+.p-hogyan .hk-hero__lead{grid-column:9/span 4;grid-row:2;align-self:end;font-size:1.02rem;line-height:1.55;color:var(--fg-2);max-width:none}
+.p-hogyan .hero__three{grid-column:1/-1;grid-row:3;list-style:none;margin:clamp(2rem,4vh,3rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);align-content:start;align-self:center;border-top:2px solid var(--fg)}
+.p-hogyan .hero__three li{display:grid;gap:.4rem;padding-top:1.2rem;max-width:none;align-content:start}
+.p-hogyan .hero__three .num{font-family:var(--font-u);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.p-hogyan .hero__three b{font-family:var(--font-d);font-weight:300;font-size:clamp(2rem,3.2vw,3rem);line-height:1}
+.p-hogyan .hero__three p{font-size:1rem;color:var(--fg-2);line-height:1.45;max-width:26ch}
+.p-hogyan .hk-hero .hero__foot{grid-column:1/-1;grid-row:4;gap:1rem 2.6rem;margin-top:clamp(1.6rem,3vh,2.5rem);padding-top:1.2rem;border-top:1px solid var(--line-2)}
+.p-hogyan .hk-hero .hero__foot a{text-decoration:none;font-family:var(--font-d);font-weight:300;font-size:1.2rem}
+.p-hogyan .hk-hero .hero__foot a:hover{color:var(--accent)}
+.p-hogyan .story__media{grid-column:1/span 6}
+.p-hogyan .story__steps{grid-column:8/span 5}
+.p-hogyan .step{min-height:60vh;gap:1.1rem}
+.p-hogyan .step .num{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;color:var(--fg-2)}
+.p-hogyan .step h3{font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.1}
+.p-hogyan .step p{max-width:none;font-size:1.04rem;line-height:1.62}
+.p-hogyan .step .ctas{margin-top:.6rem}
+.p-hogyan .tudni{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--gap);border-top:2px solid var(--fg)}
+.p-hogyan .tudni div{display:grid;gap:.6rem;align-content:start;padding:1.4rem 0 1.6rem;border-bottom:1px solid var(--line)}
+.p-hogyan .tudni dt{font-family:var(--font-u);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.p-hogyan .tudni dd{margin:0;font-size:1rem;line-height:1.55;color:var(--fg-2);max-width:none}
+.p-hogyan .tudni dd b{display:block;font-family:var(--font-d);font-weight:300;font-size:1.3rem;line-height:1.25;color:var(--fg);margin-bottom:.35rem}
+.p-hogyan .faq__more{margin-top:2.2rem;font-family:var(--font-d);font-weight:300;font-size:1.15rem;line-height:1.5;max-width:44ch}
+@media (max-width:900px){
+  .p-hogyan .hk-hero{grid-template-rows:auto}
+  .p-hogyan .hk-hero .label,.p-hogyan .hero__three,.p-hogyan .hk-hero h1,.p-hogyan .hk-hero__lead,.p-hogyan .hk-hero .hero__foot{grid-column:1/-1;grid-row:auto}
+  .p-hogyan .hk-hero__lead{margin-top:1.2rem}
+  .p-hogyan .hero__three{grid-template-columns:1fr;margin:2rem 0 0}
+  .p-hogyan .story__media,.p-hogyan .story__steps{grid-column:1/-1}
+  .p-hogyan .tudni{grid-template-columns:1fr}
+}

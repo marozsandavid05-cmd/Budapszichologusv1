@@ -1,0 +1,29 @@
+/* karrier */
+.p-karrier .pane{align-content:center;padding-block:clamp(2.5rem,5vw,4rem)}
+.p-karrier .pane__body{background:transparent;color:inherit;padding:0;max-width:34rem}
+.p-karrier .pane[data-tone="ink"] .pane__body{color:var(--paper)}
+.p-karrier .pane[data-tone="ink"] .label{color:var(--muted-ink)}
+.p-karrier .pane[data-tone="ink"] .btn--line{border-color:var(--muted-ink);color:var(--paper)}
+.p-karrier .pane h1,.p-karrier .pane h2{font-size:clamp(2.2rem,3.8vw,4rem);line-height:1.04;max-width:12ch}
+.p-karrier .pane__body p{font-size:1.05rem;line-height:1.55;max-width:38ch}
+.p-karrier .csapat{align-items:center}
+.p-karrier .csapat__fig{grid-column:1/span 6}
+.p-karrier .csapat__fig img{aspect-ratio:3/2}
+.p-karrier .csapat__text{grid-column:8/span 5;display:grid;gap:1.3rem}
+.p-karrier .csapat__text h2{font-size:clamp(2rem,3.4vw,3.2rem)}
+.p-karrier .csapat__text p{max-width:none}
+.p-karrier .jel{align-items:start}
+.p-karrier .jel__head{grid-column:1/span 6;display:grid;gap:1.2rem}
+.p-karrier .jel__head h2{font-size:clamp(2rem,3.4vw,3.2rem)}
+.p-karrier .jel__mail{font-family:var(--font-d);font-weight:300;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.2;word-break:break-all;text-decoration:none;border-bottom:1px solid var(--accent);align-self:start;justify-self:start}
+.p-karrier .jel__mail:hover{color:var(--accent)}
+.p-karrier .jel__head .muted{max-width:44ch}
+.p-karrier .jel__list{grid-column:8/span 5;margin:0;border-top:2px solid var(--fg)}
+.p-karrier .jel__list div{display:grid;grid-template-columns:7rem 1fr;gap:1.4rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.p-karrier .jel__list dt{font-family:var(--font-u);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);padding-top:.3rem}
+.p-karrier .jel__list dd{margin:0;font-size:1rem;line-height:1.5;max-width:none}
+@media (max-width:900px){
+  .p-karrier .csapat__fig,.p-karrier .csapat__text,.p-karrier .jel__head,.p-karrier .jel__list{grid-column:1/-1}
+  .p-karrier .csapat__text,.p-karrier .jel__list{margin-top:1.5rem}
+  .p-karrier .jel__list div{grid-template-columns:1fr;gap:.3rem}
+}

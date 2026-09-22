@@ -1,14 +1,15 @@
 /* gyermek-es-serdulo */
-.p-gyermek .hero--type.is-two{grid-template-rows:auto 1fr auto auto;align-content:stretch;padding-top:2rem;padding-bottom:2.5rem}
-.p-gyermek .hero--type .label{grid-column:1/span 6;grid-row:1;align-self:start;padding-top:.5rem}
-.p-gyermek .hero--type.is-two h1{grid-column:1/span 7;grid-row:2;font-size:clamp(2.8rem,6vw,6.4rem);align-self:end;max-width:12ch}
-.p-gyermek .hero--type .lead{grid-column:1/span 5;grid-row:3;margin-top:1.6rem;max-width:40ch}
-.p-gyermek .hero--type.is-two .hero__voice{grid-column:8/span 5;grid-row:2/span 3;align-self:end;display:grid;gap:1rem;padding:1.8rem 2rem 2rem;background:var(--ink);color:var(--paper);margin-bottom:0}
-.p-gyermek .hero__voice .label{grid-column:auto;grid-row:auto;padding:0;color:var(--muted-ink)}
-.p-gyermek .voice__text{font-family:var(--font-d);font-weight:300;font-size:1.28rem;line-height:1.45;max-width:none}
+.p-gyermek .gy-hero{grid-template-rows:auto 1fr;align-content:stretch;padding-top:2rem;padding-bottom:2.5rem;row-gap:0}
+.p-gyermek .gy-hero>.label{grid-column:1/-1;grid-row:1;margin:0 0 1.5rem;padding-top:.5rem}
+.p-gyermek .gy-hero__main{grid-column:1/span 7;grid-row:2;display:grid;gap:1.6rem;align-content:center;align-self:stretch}
+.p-gyermek .gy-hero h1{font-size:clamp(2.8rem,5.6vw,6rem);line-height:1;max-width:11ch}
+.p-gyermek .gy-hero .lead{margin:0;max-width:40ch}
+.p-gyermek .gy-hero .ctas{margin-top:.4rem}
+.p-gyermek .gy-hero .hero__voice{grid-column:9/span 4;grid-row:2;align-self:center;display:grid;gap:1rem;padding:2rem 2rem 2.2rem;background:var(--ink);color:var(--paper)}
+.p-gyermek .hero__voice .label{color:var(--muted-ink)}
+.p-gyermek .voice__text{font-family:var(--font-d);font-weight:300;font-size:1.25rem;line-height:1.45;max-width:none}
 .p-gyermek .voice__crisis{font-size:.95rem;color:var(--muted-ink);padding-top:1rem;border-top:1px solid var(--ink-2);max-width:none}
 .p-gyermek .voice__crisis a{color:var(--paper)}
-.p-gyermek .hero__foot{grid-column:1/span 7;grid-row:4;margin-top:2.2rem;align-self:end}
 .p-gyermek .keret{align-items:start}
 .p-gyermek .keret__pull{grid-column:1/span 6;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-gyermek .keret__list{grid-column:8/span 5;margin:0;border-top:2px solid var(--fg)}
@@ -30,9 +31,9 @@
 .p-gyermek .iskola__list .rows__item h3{font-size:1.3rem;max-width:none}
 .p-gyermek .iskola__list .rows__item p{font-size:1rem;max-width:none}
 @media (max-width:900px){
-  .p-gyermek .hero--type.is-two{grid-template-rows:auto}
-  .p-gyermek .hero--type .label,.p-gyermek .hero--type.is-two h1,.p-gyermek .hero--type .lead,.p-gyermek .hero--type.is-two .hero__voice,.p-gyermek .hero__foot{grid-column:1/-1;grid-row:auto}
-  .p-gyermek .hero--type.is-two .hero__voice{margin-top:2rem;padding:1.4rem}
+  .p-gyermek .gy-hero{grid-template-rows:auto}
+  .p-gyermek .gy-hero>.label,.p-gyermek .gy-hero__main,.p-gyermek .gy-hero .hero__voice{grid-column:1/-1;grid-row:auto}
+  .p-gyermek .gy-hero .hero__voice{margin-top:2rem;padding:1.4rem}
   .p-gyermek .keret__pull,.p-gyermek .keret__list,.p-gyermek .szulo__text,.p-gyermek .szulo__title,.p-gyermek .iskola__fig,.p-gyermek .iskola__list{grid-column:1/-1;position:static;text-align:left}
   .p-gyermek .keret__list{margin-top:2rem}
   .p-gyermek .szulo__title{grid-row:1;margin-bottom:1.5rem}

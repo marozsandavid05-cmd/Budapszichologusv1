@@ -1,0 +1,327 @@
+[
+ {
+  "cim": "Bejelentkezés",
+  "q": [
+   {
+    "id": "hogyan-kerhetek-idopontot",
+    "q": "Hogyan kérhetek időpontot?",
+    "a_html": "<p>Hívja ügyfélszolgálatunkat hétköznap 9 és 15 óra között a +36 30 961 1364 számon, írjon a bejelentkezes@budaipszichologus.hu címre, vagy töltse ki az időpontkérő űrlapot a Kapcsolat oldalon. Fogadó kollégánk visszahívja, és három kérdést tesz fel: kinek, miben, mikor.</p>",
+    "a": "Hívja ügyfélszolgálatunkat hétköznap 9 és 15 óra között a +36 30 961 1364 számon, írjon a bejelentkezes@budaipszichologus.hu címre, vagy töltse ki az időpontkérő űrlapot a Kapcsolat oldalon. Fogadó kollégánk visszahívja, és három kérdést tesz fel: kinek, miben, mikor."
+   },
+   {
+    "id": "kell-beutalo",
+    "q": "Kell beutaló?",
+    "a_html": "<p>Nem. A Központ magánrendelés, beutaló és háziorvosi javaslat nélkül kérhet időpontot.</p>",
+    "a": "Nem. A Központ magánrendelés, beutaló és háziorvosi javaslat nélkül kérhet időpontot."
+   },
+   {
+    "id": "ki-veszi-fel-a-telefont",
+    "q": "Ki veszi fel a telefont?",
+    "a_html": "<p>Vajas Zsuzsanna, pszichológus asszisztens, a Központ fogadó kollégája, illetve az ügyfélszolgálat munkatársai. Ők segítenek választani is, ha nem tudja, kihez forduljon.</p>",
+    "a": "Vajas Zsuzsanna, pszichológus asszisztens, a Központ fogadó kollégája, illetve az ügyfélszolgálat munkatársai. Ők segítenek választani is, ha nem tudja, kihez forduljon."
+   },
+   {
+    "id": "mikor-hivhatom-az-ugyfelszolgalatot",
+    "q": "Mikor hívhatom az ügyfélszolgálatot?",
+    "a_html": "<p>Hétköznap 9 és 15 óra között. A rendelés maga hétköznap 8-tól 20-ig tart, az utolsó időpont 19:00-kor kezdődik. Az űrlapot bármikor kitöltheti, ügyfélszolgálati időben visszahívjuk.</p>",
+    "a": "Hétköznap 9 és 15 óra között. A rendelés maga hétköznap 8-tól 20-ig tart, az utolsó időpont 19:00-kor kezdődik. Az űrlapot bármikor kitöltheti, ügyfélszolgálati időben visszahívjuk."
+   },
+   {
+    "id": "nem-tudom-melyik-szakemberhez",
+    "q": "Nem tudom, melyik szakemberhez menjek. Mi a teendő?",
+    "a_html": "<p>Nem is kell tudnia. A bejelentkezésnél a téma, a korosztály, az időpont és a díjsáv alapján egy vagy két kollégát javaslunk a regiszterből, és megindokoljuk. Ha inkább maga választana, a Szakembereink oldalon szűrhet.</p>",
+    "a": "Nem is kell tudnia. A bejelentkezésnél a téma, a korosztály, az időpont és a díjsáv alapján egy vagy két kollégát javaslunk a regiszterből, és megindokoljuk. Ha inkább maga választana, a Szakembereink oldalon szűrhet."
+   },
+   {
+    "id": "valaszthatok-konkret-szakembert",
+    "q": "Választhatok konkrét szakembert?",
+    "a_html": "<p>Igen. A Szakembereink oldalon minden kolléga profilja olvasható, és a profilról közvetlenül kérhet hozzá időpontot. Ha nála nincs szabad hely, másik nevet javaslunk, és megmondjuk, miért.</p>",
+    "a": "Igen. A Szakembereink oldalon minden kolléga profilja olvasható, és a profilról közvetlenül kérhet hozzá időpontot. Ha nála nincs szabad hely, másik nevet javaslunk, és megmondjuk, miért."
+   },
+   {
+    "id": "mennyi-ido-alatt-kapok-idopontot",
+    "q": "Mennyi idő alatt kapok időpontot?",
+    "a_html": "<p>Ez a választott szakember naptárától függ. Erről a bejelentkezéskor kap pontos tájékoztatást.</p>",
+    "a": "Ez a választott szakember naptárától függ. Erről a bejelentkezéskor kap pontos tájékoztatást."
+   },
+   {
+    "id": "online-is-lehet",
+    "q": "Online is lehet?",
+    "a_html": "<p>Több kollégánk online is fogad. A Szakembereink regiszterében a profiloknál szerepel, ki dolgozik online is; bejelentkezéskor mondja el, ha ezt szeretné.</p>",
+    "a": "Több kollégánk online is fogad. A Szakembereink regiszterében a profiloknál szerepel, ki dolgozik online is; bejelentkezéskor mondja el, ha ezt szeretné."
+   },
+   {
+    "id": "idegen-nyelven-is-lehet",
+    "q": "Idegen nyelven is lehet?",
+    "a_html": "<p>Több kollégánk angolul is dolgozik. A profiloknál a „Nyelv” sorban áll, ki melyik nyelven fogad; bejelentkezéskor kérjük, jelezze az igényt.</p>",
+    "a": "Több kollégánk angolul is dolgozik. A profiloknál a „Nyelv” sorban áll, ki melyik nyelven fogad; bejelentkezéskor kérjük, jelezze az igényt."
+   },
+   {
+    "id": "le-kell-mondanom-az-idopontot",
+    "q": "Mi történik, ha le kell mondanom az időpontot?",
+    "a_html": "<p>Jelezze az ügyfélszolgálatnak, amint tudja, hogy az időpontot más kaphassa. A lemondás rendjéről, a határidőről és a díjról bejelentkezéskor tájékoztatjuk.</p>",
+    "a": "Jelezze az ügyfélszolgálatnak, amint tudja, hogy az időpontot más kaphassa. A lemondás rendjéről, a határidőről és a díjról bejelentkezéskor tájékoztatjuk."
+   },
+   {
+    "id": "surgos-esetben",
+    "q": "Sürgős esetben mit tegyek?",
+    "a_html": "<p>A Központ nem ügyelet, időpontra fogad. Ha most van baj: Lelki Elsősegély Telefonszolgálat 116-123, ingyenes, éjjel-nappal. Életveszélyben hívja a 112-et.</p>",
+    "a": "A Központ nem ügyelet, időpontra fogad. Ha most van baj: Lelki Elsősegély Telefonszolgálat 116-123, ingyenes, éjjel-nappal. Életveszélyben hívja a 112-et."
+   }
+  ]
+ },
+ {
+  "cim": "Első alkalom",
+  "q": [
+   {
+    "id": "mi-tortenik-az-elso-alkalmon",
+    "q": "Mi történik az első alkalmon?",
+    "a_html": "<p>Ötven perc ismerkedés. A szakember kérdez: mi hozta ide, mióta tart, mit várna. Ön annyit mond, amennyit szeretne. A végén közösen megbeszélik, van-e értelme folytatni, és ha igen, milyen keretben.</p>",
+    "a": "Ötven perc ismerkedés. A szakember kérdez: mi hozta ide, mióta tart, mit várna. Ön annyit mond, amennyit szeretne. A végén közösen megbeszélik, van-e értelme folytatni, és ha igen, milyen keretben."
+   },
+   {
+    "id": "mit-vigyek-magammal",
+    "q": "Mit vigyek magammal?",
+    "a_html": "<p>Semmit. Nem kell lelet, beutaló vagy előre megírt történet. Ha van korábbi zárójelentése vagy gyógyszerlistája, hozhatja, de nem feltétel.</p>",
+    "a": "Semmit. Nem kell lelet, beutaló vagy előre megírt történet. Ha van korábbi zárójelentése vagy gyógyszerlistája, hozhatja, de nem feltétel."
+   },
+   {
+    "id": "hogyan-keszuljek-fel",
+    "q": "Hogyan készüljek fel?",
+    "a_html": "<p>Nem kell felkészülnie. Ha segít, gondolja át, mi az a két-három dolog, amit szeretne elmondani; de a szakember dolga, hogy kérdezzen.</p>",
+    "a": "Nem kell felkészülnie. Ha segít, gondolja át, mi az a két-három dolog, amit szeretne elmondani; de a szakember dolga, hogy kérdezzen."
+   },
+   {
+    "id": "mennyi-ideig-tart-egy-alkalom",
+    "q": "Mennyi ideig tart egy alkalom?",
+    "a_html": "<p>Ötven perc. Pár- és családterápiánál, csoportnál az alkalom hossza eltérhet, erről bejelentkezéskor tájékoztatjuk.</p>",
+    "a": "Ötven perc. Pár- és családterápiánál, csoportnál az alkalom hossza eltérhet, erről bejelentkezéskor tájékoztatjuk."
+   },
+   {
+    "id": "hova-menjek-pontosan",
+    "q": "Hova menjek pontosan?",
+    "a_html": "<p>1016 Budapest, Mészáros utca 18. A Központ az I. emelet 15. és a II. emelet 18. alatt rendel; a visszaigazolás megmondja, melyikbe várjuk. A bejárati kód is a visszaigazolásban áll.</p>",
+    "a": "1016 Budapest, Mészáros utca 18. A Központ az I. emelet 15. és a II. emelet 18. alatt rendel; a visszaigazolás megmondja, melyikbe várjuk. A bejárati kód is a visszaigazolásban áll."
+   },
+   {
+    "id": "van-lift",
+    "q": "Van lift?",
+    "a_html": "<p>Nincs. Ha a lépcső gondot jelent, jelezze bejelentkezéskor.</p>",
+    "a": "Nincs. Ha a lépcső gondot jelent, jelezze bejelentkezéskor."
+   },
+   {
+    "id": "hol-parkolhatok",
+    "q": "Hol parkolhatok?",
+    "a_html": "<p>Az utcán, fizetős zónában. Számoljon néhány perc keresési idővel.</p>",
+    "a": "Az utcán, fizetős zónában. Számoljon néhány perc keresési idővel."
+   },
+   {
+    "id": "titoktartas",
+    "q": "Kinek mondja el a pszichológus, amit elmondok?",
+    "a_html": "<p>Senkinek. A pszichológust titoktartás köti; kivétel csak a törvényben meghatározott esetben van, például közvetlen életveszélynél.</p>",
+    "a": "Senkinek. A pszichológust titoktartás köti; kivétel csak a törvényben meghatározott esetben van, például közvetlen életveszélynél."
+   },
+   {
+    "id": "nem-illik-hozzam-a-szakember",
+    "q": "Mi van, ha nem illik hozzám a szakember?",
+    "a_html": "<p>Az első egy-három alkalom erre is való. Ha nem alakul ki a bizalom, házon belül lehet váltani; ezt elég jeleznie az ügyfélszolgálatnak, indokolnia nem kell.</p>",
+    "a": "Az első egy-három alkalom erre is való. Ha nem alakul ki a bizalom, házon belül lehet váltani; ezt elég jeleznie az ügyfélszolgálatnak, indokolnia nem kell."
+   },
+   {
+    "id": "hanyszor-kell-jonnom",
+    "q": "Hányszor kell jönnöm?",
+    "a_html": "<p>Ezt nem előre döntjük el. Az első alkalmak után Ön és a szakember közösen egyeznek meg a keretről: gyakoriság, cél, várható hossz. A keret menet közben módosítható.</p>",
+    "a": "Ezt nem előre döntjük el. Az első alkalmak után Ön és a szakember közösen egyeznek meg a keretről: gyakoriság, cél, várható hossz. A keret menet közben módosítható."
+   }
+  ]
+ },
+ {
+  "cim": "Árak és fizetés",
+  "q": [
+   {
+    "id": "mennyibe-kerul-egy-alkalom",
+    "q": "Mennyibe kerül egy alkalom?",
+    "a_html": "<p>15 és 30 ezer forint között, a szakember képzettsége szerint: pszichológus 15-20, klinikai szakpszichológus és szakpszichológus-jelölt 18-25, szakpszichoterapeuta 25-30 ezer forint. Coaching 15-18 ezer forint. Minden alkalom 50 perc.</p>",
+    "a": "15 és 30 ezer forint között, a szakember képzettsége szerint: pszichológus 15-20, klinikai szakpszichológus és szakpszichológus-jelölt 18-25, szakpszichoterapeuta 25-30 ezer forint. Coaching 15-18 ezer forint. Minden alkalom 50 perc."
+   },
+   {
+    "id": "miert-sav",
+    "q": "Miért sáv, miért nem egy ár?",
+    "a_html": "<p>Mert a díj a képzettséget követi. A szakvizsga, a második szakvizsga és a kiképző szintű módszertudás évek munkája; ezt tükrözi a sáv.</p>",
+    "a": "Mert a díj a képzettséget követi. A szakvizsga, a második szakvizsga és a kiképző szintű módszertudás évek munkája; ezt tükrözi a sáv."
+   },
+   {
+    "id": "mikor-es-hogyan-fizetek",
+    "q": "Mikor és hogyan fizetek?",
+    "a_html": "<p>Alkalmanként. A fizetés módjáról az ügyfélszolgálat tájékoztat bejelentkezéskor.</p>",
+    "a": "Alkalmanként. A fizetés módjáról az ügyfélszolgálat tájékoztat bejelentkezéskor."
+   },
+   {
+    "id": "egeszsegpenztar",
+    "q": "Elszámolható egészségpénztárral?",
+    "a_html": "<p>Az egészségpénztári elszámolás lehetőségéről az ügyfélszolgálat ad tájékoztatást. Kérjük, bejelentkezéskor jelezze, ha pénztárral fizetne, és mondja meg, melyikkel.</p>",
+    "a": "Az egészségpénztári elszámolás lehetőségéről az ügyfélszolgálat ad tájékoztatást. Kérjük, bejelentkezéskor jelezze, ha pénztárral fizetne, és mondja meg, melyikkel."
+   },
+   {
+    "id": "par-es-csaladterapia-dija",
+    "q": "Mennyibe kerül a pár- vagy családterápia?",
+    "a_html": "<p>A vezető szakember díjsávja szerint. A pontos díjról és az alkalom hosszáról bejelentkezéskor tájékoztatjuk.</p>",
+    "a": "A vezető szakember díjsávja szerint. A pontos díjról és az alkalom hosszáról bejelentkezéskor tájékoztatjuk."
+   },
+   {
+    "id": "csoport-dija",
+    "q": "Mennyibe kerül a csoport?",
+    "a_html": "<p>A csoportok díjáról és induló időpontjáról az ügyfélszolgálat tájékoztat.</p>",
+    "a": "A csoportok díjáról és induló időpontjáról az ügyfélszolgálat tájékoztat."
+   },
+   {
+    "id": "ceges-arlista",
+    "q": "Van céges árlista?",
+    "a_html": "<p>Cégeknek egyedi ajánlatot adunk a feladat és a létszám alapján. Írjon a bejelentkezes@budaipszichologus.hu címre.</p>",
+    "a": "Cégeknek egyedi ajánlatot adunk a feladat és a létszám alapján. Írjon a bejelentkezes@budaipszichologus.hu címre."
+   },
+   {
+    "id": "ha-nem-fer-bele",
+    "q": "Mi van, ha nem fér bele?",
+    "a_html": "<p>Mondja el bejelentkezéskor, indokolnia nem kell. Megmondjuk, hol tud jó helyre kerülni olcsóbban.</p>",
+    "a": "Mondja el bejelentkezéskor, indokolnia nem kell. Megmondjuk, hol tud jó helyre kerülni olcsóbban."
+   },
+   {
+    "id": "lemondas-dija",
+    "q": "Kell fizetnem, ha lemondom az időpontot?",
+    "a_html": "<p>A lemondás rendjéről bejelentkezéskor tájékoztatjuk. Kérjük, a lemondást jelezze az ügyfélszolgálatnak, amint tudja, hogy az időpontot más kaphassa.</p>",
+    "a": "A lemondás rendjéről bejelentkezéskor tájékoztatjuk. Kérjük, a lemondást jelezze az ügyfélszolgálatnak, amint tudja, hogy az időpontot más kaphassa."
+   }
+  ]
+ },
+ {
+  "cim": "Gyerek és család",
+  "q": [
+   {
+    "id": "hany-eves-kortol",
+    "q": "Hány éves kortól fogadnak gyereket?",
+    "a_html": "<p>Tizenkét éves kortól fogadunk gyereket és serdülőt. Kisebb gyerek esetében szülőkonzultációt tudunk ajánlani; hívja az ügyfélszolgálatot, és elmondjuk, mi a lehetőség.</p>",
+    "a": "Tizenkét éves kortól fogadunk gyereket és serdülőt. Kisebb gyerek esetében szülőkonzultációt tudunk ajánlani; hívja az ügyfélszolgálatot, és elmondjuk, mi a lehetőség."
+   },
+   {
+    "id": "ott-lehetek-a-gyerekem-ulesen",
+    "q": "Ott lehetek a gyerekem ülésén?",
+    "a_html": "<p>Ezt a szakember az első alkalmon egyezteti a szülővel és a gyerekkel. Serdülőknél a szakember jellemzően külön, szülőkonzultációs alkalmon beszél a szülővel, a serdülő ülése az övé.</p>",
+    "a": "Ezt a szakember az első alkalmon egyezteti a szülővel és a gyerekkel. Serdülőknél a szakember jellemzően külön, szülőkonzultációs alkalmon beszél a szülővel, a serdülő ülése az övé."
+   },
+   {
+    "id": "megtudom-mit-mond-a-gyerekem",
+    "q": "Megtudom, mit mond a gyerekem az ülésen?",
+    "a_html": "<p>A serdülőt is titoktartás védi. A szakember arról tájékoztatja a szülőt, ami a gyerek biztonságához és a közös munkához szükséges; ennek részleteit az első alkalmon egyeztetik.</p>",
+    "a": "A serdülőt is titoktartás védi. A szakember arról tájékoztatja a szülőt, ami a gyerek biztonságához és a közös munkához szükséges; ennek részleteit az első alkalmon egyeztetik."
+   },
+   {
+    "id": "gyermek-vagy-csaladterapia",
+    "q": "Mi a különbség a gyermek- és a családterápia között?",
+    "a_html": "<p>A gyermek- és serdülőterápiában a gyerek a kliens, a szülő konzultációs partner. A családterápiában a család együtt van a szobában, és a családi működés a téma. Hogy melyik illik a helyzetükhöz, azt a bejelentkezésnél segítünk eldönteni.</p>",
+    "a": "A gyermek- és serdülőterápiában a gyerek a kliens, a szülő konzultációs partner. A családterápiában a család együtt van a szobában, és a családi működés a téma. Hogy melyik illik a helyzetükhöz, azt a bejelentkezésnél segítünk eldönteni."
+   },
+   {
+    "id": "parterapiara-egyutt",
+    "q": "Párterápiára külön vagy együtt jöjjünk?",
+    "a_html": "<p>Együtt. Ha egyikük először egyedül szeretne beszélni, arra egyéni alkalmon van mód; erről bejelentkezéskor egyeztetünk.</p>",
+    "a": "Együtt. Ha egyikük először egyedül szeretne beszélni, arra egyéni alkalmon van mód; erről bejelentkezéskor egyeztetünk."
+   },
+   {
+    "id": "a-parom-nem-akar-jonni",
+    "q": "Mi van, ha a párom nem akar jönni?",
+    "a_html": "<p>Egyedül is kérhet időpontot: a párkapcsolati témával egyéni terápiában is lehet dolgozni. A regiszterben a „Párkapcsolat” témára szűrhet.</p>",
+    "a": "Egyedül is kérhet időpontot: a párkapcsolati témával egyéni terápiában is lehet dolgozni. A regiszterben a „Párkapcsolat” témára szűrhet."
+   },
+   {
+    "id": "a-kamaszom-maga-kerhet-idopontot",
+    "q": "A kamaszom maga is kérhet időpontot?",
+    "a_html": "<p>Tizenkét év felett fogadunk serdülőt, de a bejelentkezést és a keret egyeztetését a szülővel végezzük. Kérjük, a szülő hívjon.</p>",
+    "a": "Tizenkét év felett fogadunk serdülőt, de a bejelentkezést és a keret egyeztetését a szülővel végezzük. Kérjük, a szülő hívjon."
+   },
+   {
+    "id": "iskolai-es-tanulasi-nehezseg",
+    "q": "Iskolai vagy tanulási nehézségnél is segítenek?",
+    "a_html": "<p>Igen. A Gyermek és serdülő oldalon külön írunk erről. Bejelentkezéskor mondja el, mit tapasztalnak otthon és az iskolában.</p>",
+    "a": "Igen. A Gyermek és serdülő oldalon külön írunk erről. Bejelentkezéskor mondja el, mit tapasztalnak otthon és az iskolában."
+   },
+   {
+    "id": "ki-fogadja-a-gyereket",
+    "q": "Bármelyik szakember fogad gyereket?",
+    "a_html": "<p>Nem. Gyereket és serdülőt azok a kollégák fogadnak, akiknek ez a szakterülete. A regiszterben a „Gyereknek, kamasznak” szűrővel látja őket.</p>",
+    "a": "Nem. Gyereket és serdülőt azok a kollégák fogadnak, akiknek ez a szakterülete. A regiszterben a „Gyereknek, kamasznak” szűrővel látja őket."
+   }
+  ]
+ },
+ {
+  "cim": "A Központ",
+  "q": [
+   {
+    "id": "akkreditalt-szakkepzohely",
+    "q": "Mit jelent, hogy akkreditált szakképzőhely?",
+    "a_html": "<p>2020 óta felnőtt klinikai és mentálhigiéniai szakpszichológus, 2022 óta pszichoterapeuta szakképzőhely vagyunk, állami akkreditációval, a Pécsi Tudományegyetem mellett. Önnek ez azt jelenti, hogy a kollégák munkáját rendszeres szupervízió kíséri, és a módszereket államilag elismert képzésben tanítjuk.</p>",
+    "a": "2020 óta felnőtt klinikai és mentálhigiéniai szakpszichológus, 2022 óta pszichoterapeuta szakképzőhely vagyunk, állami akkreditációval, a Pécsi Tudományegyetem mellett. Önnek ez azt jelenti, hogy a kollégák munkáját rendszeres szupervízió kíséri, és a módszereket államilag elismert képzésben tanítjuk."
+   },
+   {
+    "id": "ki-a-szakmai-vezeto",
+    "q": "Ki a szakmai vezető?",
+    "a_html": "<p>Kasza Zsuzsanna, szakpszichoterapeuta, klinikai szakpszichológus.</p>",
+    "a": "Kasza Zsuzsanna, szakpszichoterapeuta, klinikai szakpszichológus."
+   },
+   {
+    "id": "hany-szakember",
+    "q": "Hány szakember dolgozik a Központban?",
+    "a_html": "<p><!-- GEN:letszam -->44<!-- /GEN --> szakember egy szakmai vezetés alatt. A Szakembereink regiszterében <!-- GEN:n-klinikus -->37<!-- /GEN --> kolléga profilja olvasható, a többiek az időpontkérő legördülőjében választhatók.</p>",
+    "a": "44 szakember egy szakmai vezetés alatt. A Szakembereink regiszterében 37 kolléga profilja olvasható, a többiek az időpontkérő legördülőjében választhatók."
+   },
+   {
+    "id": "ki-mukodteti",
+    "q": "Ki működteti a Központot?",
+    "a_html": "<p>A Soulshine Egészségügyi Szolgáltató Kft.</p>",
+    "a": "A Soulshine Egészségügyi Szolgáltató Kft."
+   },
+   {
+    "id": "van-pszichiater",
+    "q": "Van pszichiáter a Központban?",
+    "a_html": "<p>Van pszichiátriai szakrendelés. Ha gyógyszeres kezelés kérdése merül fel, a pszichológus ide irányítja; a részletek a Pszichiátria oldalon állnak.</p>",
+    "a": "Van pszichiátriai szakrendelés. Ha gyógyszeres kezelés kérdése merül fel, a pszichológus ide irányítja; a részletek a Pszichiátria oldalon állnak."
+   },
+   {
+    "id": "egyetemi-egyuttmukodes",
+    "q": "Milyen egyetemekkel dolgoznak együtt?",
+    "a_html": "<p>A Pécsi Tudományegyetem az akkreditáló egyetem. Az ELTE PPK-val 2022 óta működünk együtt: mesterszakos hallgatók klinikai gyakorlata zajlik nálunk.</p>",
+    "a": "A Pécsi Tudományegyetem az akkreditáló egyetem. Az ELTE PPK-val 2022 óta működünk együtt: mesterszakos hallgatók klinikai gyakorlata zajlik nálunk."
+   },
+   {
+    "id": "mikor-van-nyitva",
+    "q": "Mikor van nyitva a Központ?",
+    "a_html": "<p>Hétköznap 8-20, az utolsó időpont 19:00-kor kezdődik. Az ügyfélszolgálat hétköznap 9 és 15 óra között érhető el.</p>",
+    "a": "Hétköznap 8-20, az utolsó időpont 19:00-kor kezdődik. Az ügyfélszolgálat hétköznap 9 és 15 óra között érhető el."
+   },
+   {
+    "id": "hol-van-a-kozpont",
+    "q": "Hol van a Központ?",
+    "a_html": "<p>1016 Budapest, Mészáros utca 18., I. emelet 15. és II. emelet 18. Nincs lift; parkolás az utcán, fizetős zónában.</p>",
+    "a": "1016 Budapest, Mészáros utca 18., I. emelet 15. és II. emelet 18. Nincs lift; parkolás az utcán, fizetős zónában."
+   },
+   {
+    "id": "csoportok-indulnak",
+    "q": "Csoportok is indulnak?",
+    "a_html": "<p>Igen: önismereti, pszichodráma, Bálint- és művészetterápiás csoportok. Az aktuális indulásról az ügyfélszolgálat tájékoztat.</p>",
+    "a": "Igen: önismereti, pszichodráma, Bálint- és művészetterápiás csoportok. Az aktuális indulásról az ügyfélszolgálat tájékoztat."
+   },
+   {
+    "id": "cegeknek-is-dolgoznak",
+    "q": "Cégeknek is dolgoznak?",
+    "a_html": "<p>Igen: munkahelyi támogató programok, workshopok, vezetői coaching és állapotfelmérés. Egyedi ajánlatot adunk; a részletek a Cégeknek oldalon állnak.</p>",
+    "a": "Igen: munkahelyi támogató programok, workshopok, vezetői coaching és állapotfelmérés. Egyedi ajánlatot adunk; a részletek a Cégeknek oldalon állnak."
+   },
+   {
+    "id": "szakemberkent-hogyan-kapcsolodhatok",
+    "q": "Szakemberként hogyan kapcsolódhatok?",
+    "a_html": "<p>Az Akkreditáció és képzés oldalon írunk a szakképzőhelyről, a gyakorlatról és a szupervízióról, a Karrier oldalon a nyitott pozíciókról és a jelentkezés módjáról.</p>",
+    "a": "Az Akkreditáció és képzés oldalon írunk a szakképzőhelyről, a gyakorlatról és a szupervízióról, a Karrier oldalon a nyitott pozíciókról és a jelentkezés módjáról."
+   }
+  ]
+ }
+]
