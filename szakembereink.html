@@ -101,6 +101,7 @@
 <!-- GEN:FEJ:end -->
 <main id="tartalom" tabindex="-1">
   <section class="hero sz-hero" data-tone="forest">
+    <div class="sz-hero__main">
     <div class="sz-hero__head">
       <p class="label h-in">Regiszter 01-<!-- GEN:n-klinikus -->37<!-- /GEN --></p>
       <h1 data-split>Kivel <em>kezdjük?</em></h1>
@@ -121,22 +122,30 @@
         </select> dolgozik.</p>
       <div class="finder__chips" role="group" aria-label="Gyors választás terület szerint">
         <!-- GEN:chips-reg:start -->
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="szorongas" aria-pressed="false">Szorongás, pánik</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="hangulat" aria-pressed="false">Hangulat, depresszió</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="kieges" aria-pressed="false">Kiégés, stressz</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="gyasz" aria-pressed="false">Gyász, veszteség, trauma</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="parkapcsolat" aria-pressed="false">Párkapcsolat</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="csalad" aria-pressed="false">Család, gyereknevelés</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="fuggoseg" aria-pressed="false">Függőség</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="test" aria-pressed="false">Evés, test, alvás</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="onismeret" aria-pressed="false">Önismeret, önértékelés</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="eletvezetes" aria-pressed="false">Életvezetés, döntés</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="karrier" aria-pressed="false">Karrier, vezetés</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="krizis" aria-pressed="false">Krízis, változás</button>
-<button type="button" class="chip chip--btn" data-chip="miben" data-val="sport" aria-pressed="false">Sport, teljesítmény</button>
+<button type="button" class="chip chip--btn chip--any" data-chip="miben" data-val="" aria-pressed="true"><span class="chip__t">Bármelyik terület</span><span class="chip__n num" aria-hidden="true">37</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="szorongas" aria-pressed="false"><span class="chip__t">Szorongás, pánik</span><span class="chip__n num" aria-hidden="true">25</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="hangulat" aria-pressed="false"><span class="chip__t">Hangulat, depresszió</span><span class="chip__n num" aria-hidden="true">13</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="kieges" aria-pressed="false"><span class="chip__t">Kiégés, stressz</span><span class="chip__n num" aria-hidden="true">25</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="gyasz" aria-pressed="false"><span class="chip__t">Gyász, veszteség, trauma</span><span class="chip__n num" aria-hidden="true">16</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="parkapcsolat" aria-pressed="false"><span class="chip__t">Párkapcsolat</span><span class="chip__n num" aria-hidden="true">23</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="csalad" aria-pressed="false"><span class="chip__t">Család, gyereknevelés</span><span class="chip__n num" aria-hidden="true">21</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="fuggoseg" aria-pressed="false"><span class="chip__t">Függőség</span><span class="chip__n num" aria-hidden="true">4</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="test" aria-pressed="false"><span class="chip__t">Evés, test, alvás</span><span class="chip__n num" aria-hidden="true">12</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="onismeret" aria-pressed="false"><span class="chip__t">Önismeret, önértékelés</span><span class="chip__n num" aria-hidden="true">27</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="eletvezetes" aria-pressed="false"><span class="chip__t">Életvezetés, döntés</span><span class="chip__n num" aria-hidden="true">27</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="karrier" aria-pressed="false"><span class="chip__t">Karrier, vezetés</span><span class="chip__n num" aria-hidden="true">18</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="krizis" aria-pressed="false"><span class="chip__t">Krízis, változás</span><span class="chip__n num" aria-hidden="true">21</span></button>
+<button type="button" class="chip chip--btn" data-chip="miben" data-val="sport" aria-pressed="false"><span class="chip__t">Sport, teljesítmény</span><span class="chip__n num" aria-hidden="true">2</span></button>
 <!-- GEN:chips-reg:end -->
       </div>
-      <p class="finder__foot"><span><b data-reg-count>37</b> szakember felel meg</span><button type="button" class="btn btn--text" data-reg-reset hidden>Alaphelyzet</button><a class="btn btn--line" href="#regiszter">Mutassa őket</a></p>
+      <div class="finder__res" aria-live="polite">
+        <p class="finder__n"><b class="num" data-reg-count>37</b><span>szakember felel meg</span></p>
+        <div class="finder__act">
+          <a class="btn btn--line finder__go" href="#regiszter">Mutassa őket</a>
+          <button type="button" class="btn btn--text finder__reset" data-reg-reset hidden>Alaphelyzet</button>
+        </div>
+      </div>
+    </div>
     </div>
     <div class="wall" aria-label="Mind a <!-- GEN:n-klinikus -->37<!-- /GEN --> kollégánk">
       <!-- GEN:wall:start -->

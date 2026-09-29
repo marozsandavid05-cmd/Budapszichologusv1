@@ -415,7 +415,7 @@
 
 /* ---------- záró: óriás 19:00 a cím mögött ---------- */
 .p-index .closer{position:relative;overflow:clip}
-.p-index .closer__clock{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-family:var(--font-d);font-weight:300;font-size:clamp(9rem,28vw,26rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(242,237,228,.16);white-space:nowrap;pointer-events:none;margin:0;max-width:none}
+.p-index .closer__clock{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-family:var(--font-d);font-weight:300;font-size:clamp(9rem,28vw,26rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(244,237,232,.16);white-space:nowrap;pointer-events:none;margin:0;max-width:none}
 .p-index .closer__body{position:relative}
 .p-index .closer .coord{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);justify-self:center}
 
@@ -818,27 +818,50 @@
 /* szakemberek.css · regiszter-oldal · weboldal 4
    Hero: erdőzöld, óriás cím + szám, papír szűrő-kártya, alatta a 37 portré egy arcfalban (a szűrésre élőben halványul).
    Alapnézet: szakember-kártyák (fotó, név, titulus, téma-chipek, ár, hover). A Névsor-nézet a v3 táblázata. */
-.p-szakemberek .sz-hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr) auto;column-gap:var(--gap);row-gap:clamp(1rem,2.4vh,2rem);height:calc(100svh - var(--nav));min-height:640px;padding:clamp(1.6rem,4vh,3rem) var(--side) 0;overflow:clip;position:relative}
-.p-szakemberek .sz-hero::before{content:"";position:absolute;left:-10vw;top:-30vh;width:60vw;height:90vh;background:radial-gradient(closest-side,rgba(224,169,94,.13),rgba(224,169,94,0));pointer-events:none}
-.p-szakemberek .sz-hero__head{grid-column:1/span 7;grid-row:1;position:relative;display:grid;gap:.9rem;align-content:start}
-.p-szakemberek .sz-hero h1{font-size:clamp(3.4rem,8.4vw,9rem);line-height:.98;letter-spacing:-.03em}
-.p-szakemberek .sz-hero__count{grid-column:1/span 5;grid-row:2;align-self:end;display:grid;gap:.8rem;position:relative;max-width:none;padding-bottom:1rem}
-.p-szakemberek .sz-hero__count b{font-family:var(--font-d);font-weight:300;font-size:clamp(5rem,10vw,10.5rem);line-height:.8;letter-spacing:-.05em;color:var(--lamp)}
-.p-szakemberek .sz-hero__count span{font-family:var(--font-u);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-ink);max-width:34ch;line-height:1.5}
-.p-szakemberek .finder{grid-column:7/span 6;grid-row:1/span 2;align-self:center;position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:clamp(1.4rem,2.6vw,2.4rem);display:grid;gap:1.3rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.55)}
-.p-szakemberek .finder .madlib{font-size:clamp(1.3rem,1.9vw,1.85rem);line-height:1.55}
+/* HERO v2 (2026-09-29, David: „igénytelen”): két oszlop egy közös magasságon.
+   Bal: cím fent, lent a 44 és a mondata EGY egységben (sorvezetőn). Jobb: a szűrő-kártya; a téma-választó egy 2x7-es billentyűzet
+   (13 téma + „Bármelyik terület” = 14 cella, árva elem nincs), minden cellán élő szám; alul a találat és egy valódi gomb.
+   A bal oszlop teteje és alja a kártya tetejéhez és aljához igazodik (sor-span), így a két oszlop ritmusa azonos. */
+.p-szakemberek .sz-hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;row-gap:clamp(1rem,2.4vh,2rem);height:calc(100svh - var(--nav));min-height:640px;padding:clamp(1.2rem,3vh,2.6rem) var(--side) 0;overflow:clip;position:relative}
+.p-szakemberek .sz-hero::before{content:"";position:absolute;left:-10vw;top:-30vh;width:60vw;height:90vh;background:radial-gradient(closest-side,rgba(207,167,94,.13),rgba(207,167,94,0));pointer-events:none}
+.p-szakemberek .sz-hero__main{grid-row:1;align-self:center;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr);column-gap:var(--gap);position:relative;min-height:0}
+.p-szakemberek .sz-hero__head{grid-column:1/span 6;grid-row:1;display:grid;gap:1.1rem;align-content:start}
+.p-szakemberek .sz-hero h1{font-size:clamp(3.2rem,8.2vw,9rem);line-height:1;letter-spacing:-.03em}
+.p-szakemberek .sz-hero__count{grid-column:1/span 5;grid-row:2;align-self:end;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;column-gap:1.4rem;max-width:30rem;padding-top:1.4rem;border-top:1px solid var(--line-2)}
+.p-szakemberek .sz-hero__count b{font-family:var(--font-d);font-weight:300;font-size:clamp(4.2rem,6.4vw,6.6rem);line-height:.74;letter-spacing:-.05em;color:var(--lamp)}
+.p-szakemberek .sz-hero__count span{font-family:var(--font-d);font-weight:300;font-size:clamp(1.05rem,1.3vw,1.3rem);line-height:1.35;color:var(--paper);max-width:24ch;padding-bottom:.1em}
+.p-szakemberek .finder{grid-column:7/span 6;grid-row:1/span 2;position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:clamp(1.3rem,2.2vw,2.2rem);display:grid;gap:clamp(1rem,2vh,1.4rem);box-shadow:0 40px 80px -40px rgba(0,0,0,.55)}
+.p-szakemberek .finder .madlib{font-size:clamp(1.2rem,1.6vw,1.6rem);line-height:1.6}
 .p-szakemberek .finder .madlib select{background-color:var(--white);border:1px solid var(--line-2);border-bottom:2px solid var(--accent);padding:.05em 1.3em .05em .35em;background-position:right .35em center;transition:border-color var(--t-fast) ease,background-color var(--t-fast) ease}
 .p-szakemberek .finder .madlib select:hover{border-color:var(--accent)}
-.p-szakemberek .finder__chips{display:flex;flex-wrap:wrap;gap:.45rem}
-.p-szakemberek .finder__foot{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;max-width:none;padding-top:1rem;border-top:1px solid var(--line);font-family:var(--font-u);font-size:.92rem;color:var(--muted)}
-.p-szakemberek .finder__foot span b{font-family:var(--font-d);font-weight:300;font-size:2.2rem;color:var(--accent);margin-right:.35rem;vertical-align:-.12em}
-.p-szakemberek .finder__foot .btn--primary{margin-left:auto}
+/* téma-billentyűzet: 2 oszlop, egyforma cellák, a szám jobbra zárva (tabular) */
+.p-szakemberek .finder__chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.p-szakemberek .finder__chips .chip{justify-content:space-between;gap:.8rem;width:100%;min-height:2.35rem;padding:.55rem .8rem;border:0;border-radius:0;background:var(--white);color:var(--ink);font-size:.84rem;font-weight:500;letter-spacing:0;text-align:left;white-space:normal;line-height:1.2;box-shadow:inset 0 0 0 1px var(--line)}
+.p-szakemberek .finder__chips .chip__n{font-family:var(--font-d);font-weight:400;font-size:.95rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
+.p-szakemberek .finder__chips .chip--any{font-style:normal;box-shadow:inset 0 0 0 1px var(--line-2)}
+.p-szakemberek .finder__chips .chip:hover{background:var(--paper-2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
+.p-szakemberek .finder__chips .chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.p-szakemberek .finder__chips .chip[aria-pressed="true"]{background:var(--forest);color:var(--paper);box-shadow:none}
+.p-szakemberek .finder__chips .chip[aria-pressed="true"] .chip__n{color:var(--lamp)}
+.p-szakemberek .finder__chips .chip.is-zero:not([aria-pressed="true"]){color:var(--muted);background:transparent}
+/* találat + gomb: egy sáv, a szám a bal oszlop 44-esével egy vonalban zár */
+.p-szakemberek .finder__res{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.4rem;padding-top:clamp(.9rem,1.8vh,1.2rem);border-top:1px solid var(--line-2)}
+.p-szakemberek .finder__n{display:flex;align-items:baseline;gap:.6rem;max-width:none;margin:0;font-family:var(--font-u);font-size:.95rem;color:var(--muted)}
+.p-szakemberek .finder__n b{font-family:var(--font-d);font-weight:300;font-size:clamp(2.4rem,3.2vw,3.2rem);line-height:.8;letter-spacing:-.03em;color:var(--ink)}
+.p-szakemberek .finder__act{display:flex;align-items:center;gap:1.2rem}
+.p-szakemberek .finder__act .finder__reset{order:-1;color:var(--ink)}
+/* a kitöltött gomb az Időpontkérésé (QA-szabály), ez keretes, de tömör: vastag tinta keret, hoverre kitöltődik */
+.p-szakemberek .finder__go{padding:1rem 1.6rem;border:1.5px solid var(--ink);color:var(--ink);font-weight:600}
+.p-szakemberek .finder__go:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.p-szakemberek .finder__go::after{content:"";width:.5rem;height:.5rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform var(--t-ui) var(--ease-out)}
+.p-szakemberek .finder__go:hover::after{transform:translateY(1px) rotate(45deg)}
 .chip{display:inline-flex;align-items:center;font-family:var(--font-u);font-size:.78rem;font-weight:500;letter-spacing:.01em;line-height:1;padding:.5rem .7rem;border:1px solid var(--line-2);color:var(--fg);background:transparent;border-radius:999px;white-space:nowrap}
 .chip--btn{cursor:pointer;transition:background-color var(--t-fast) ease,border-color var(--t-fast) ease,color var(--t-fast) ease}
 .chip--btn:hover{border-color:var(--accent);color:var(--accent)}
 .chip--btn[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--paper)}
-.p-szakemberek .wall{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(37,minmax(0,1fr));gap:3px;margin-inline:calc(var(--side)*-1);position:relative}
-.p-szakemberek .wall a{display:block;aspect-ratio:3/5;overflow:clip;background:var(--forest-2);transition:opacity 420ms ease,filter 420ms ease}
+.p-szakemberek .wall{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(37,minmax(0,1fr));gap:3px;margin-inline:calc(var(--side)*-1);position:relative}
+.p-szakemberek .wall{height:clamp(76px,10.5vh,118px)}
+.p-szakemberek .wall a{display:block;min-height:0;overflow:clip;background:var(--forest-2);transition:opacity 420ms ease,filter 420ms ease}
 .p-szakemberek .wall img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform 500ms var(--ease-soft)}
 .p-szakemberek .wall a:hover img,.p-szakemberek .wall a:focus-visible img{transform:scale(1.08)}
 .p-szakemberek .wall a.is-off{opacity:.18;filter:grayscale(1)}
@@ -867,15 +890,23 @@
 .p-szakemberek .usz__body{grid-column:6/span 6;display:grid;gap:1.6rem;justify-items:start}
 @media (max-width:1100px){.p-szakemberek .faces{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:900px){
-  .p-szakemberek .sz-hero{height:auto;min-height:0;grid-template-columns:1fr;grid-template-rows:auto;padding-bottom:0}
-  .p-szakemberek .sz-hero__head,.p-szakemberek .sz-hero__count,.p-szakemberek .finder,.p-szakemberek .wall{grid-column:1;grid-row:auto}
-  .p-szakemberek .sz-hero__count{grid-auto-flow:column;justify-content:start;align-items:end;gap:1rem;padding-bottom:0}
-  .p-szakemberek .sz-hero__count b{font-size:4.6rem}
+  .p-szakemberek .sz-hero{height:auto;min-height:0;padding-top:1.6rem}
+  .p-szakemberek .sz-hero__main{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;row-gap:1.6rem}
+  .p-szakemberek .sz-hero__head,.p-szakemberek .sz-hero__count,.p-szakemberek .finder{grid-column:1;grid-row:auto}
+  .p-szakemberek .sz-hero__count{max-width:none;padding-top:1.1rem}
+  .p-szakemberek .sz-hero__count b{font-size:4.2rem}
   .p-szakemberek .finder{margin-inline:calc(var(--side)*-.4)}
   .p-szakemberek .finder .madlib{font-size:1.2rem}
   .p-szakemberek .finder .madlib select{max-width:100%}
-  .p-szakemberek .finder__foot .btn--primary{margin-left:0}
-  .p-szakemberek .wall{grid-template-columns:repeat(13,minmax(0,1fr));margin-top:.5rem}
+  .p-szakemberek .finder__chips .chip{font-size:.8rem;padding:.55rem .65rem;min-height:3rem}
+  .p-szakemberek .finder__res{flex-direction:column;align-items:stretch}
+  .p-szakemberek .finder__act{flex-direction:column;align-items:stretch;gap:.8rem}
+  .p-szakemberek .finder__act .finder__reset{order:1;align-self:center}
+  .p-szakemberek .finder__go{justify-content:center}
+  /* mobilon a 37 arc egy vízszintesen húzható sáv (37 prímszám: rácsban mindig árva sor maradna) */
+  .p-szakemberek .wall{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:58px;height:auto;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;margin-top:.5rem}
+  .p-szakemberek .wall::-webkit-scrollbar{display:none}
+  .p-szakemberek .wall a{aspect-ratio:3/4}
   .p-szakemberek .faces{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1rem}
   .p-szakemberek .face__name{font-size:1.1rem}
   .p-szakemberek .face__chips .chip:nth-child(n+3){display:none}

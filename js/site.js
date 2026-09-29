@@ -186,7 +186,14 @@
       rows.forEach(function (r) { var ok = match(r); r.classList.toggle('is-hidden', !ok); if (ok) n++; });
       faces.forEach(function (f) { f.classList.toggle('is-hidden', !match(f)); });
       wall.forEach(function (w) { var ok = match(w); w.classList.toggle('is-off', !ok); w.tabIndex = ok ? 0 : -1; });
-      chips.forEach(function (c) { c.setAttribute('aria-pressed', active[c.dataset.chip] === c.dataset.val ? 'true' : 'false'); });
+      chips.forEach(function (c) {
+        var k = c.dataset.chip; c.setAttribute('aria-pressed', (active[k] || '') === c.dataset.val ? 'true' : 'false');
+        /* téma-mutató: a chip száma = hány profil felelne meg, ha ezt a témát választaná (a többi feltétel marad) */
+        var cn = c.querySelector('.chip__n'); if (!cn) return;
+        var keep = active[k]; active[k] = c.dataset.val || null;
+        var m = 0; rows.forEach(function (r) { if (match(r)) m++; }); active[k] = keep;
+        cn.textContent = m; c.classList.toggle('is-zero', m === 0);
+      });
       countEls.forEach(function (c) { c.textContent = n; });
       reg.classList.toggle('is-empty', n === 0);
       reg.classList.toggle('is-filtered', KEYS.some(function (k) { return !!active[k]; }));
