@@ -1,13 +1,67 @@
-/* szakemberek.css · regiszter-oldal */
-.p-szakemberek .hero--tool{gap:1.2rem;padding-top:1.5rem;padding-bottom:2.5rem;grid-template-rows:1fr auto auto auto auto}
-.p-szakemberek .hero__strip{align-self:start;align-items:start;padding-top:0;margin-bottom:1.5rem;grid-template-columns:repeat(8,minmax(0,1fr))}
-.p-szakemberek .hero__strip figure{display:grid;align-content:start}
-.p-szakemberek .hero__strip img{aspect-ratio:4/5;height:calc(100svh - var(--nav) - 27rem);max-height:320px;min-height:140px;width:100%;object-position:50% 12%}
-.p-szakemberek .hero__strip figure:nth-child(odd),.p-szakemberek .hero__strip figure:nth-child(3n){padding-bottom:0}
-.p-szakemberek .hero__strip figure:nth-child(2n){padding-top:1.8rem}
-.p-szakemberek .hero--tool h1{margin-bottom:.4rem}
-.p-szakemberek .hero__note{font-size:.98rem;color:var(--fg-2);max-width:48ch}
+/* szakemberek.css · regiszter-oldal · weboldal 4
+   Hero: erdőzöld, óriás cím + szám, papír szűrő-kártya, alatta a 37 portré egy arcfalban (a szűrésre élőben halványul).
+   Alapnézet: szakember-kártyák (fotó, név, titulus, téma-chipek, ár, hover). A Névsor-nézet a v3 táblázata. */
+.p-szakemberek .sz-hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr) auto;column-gap:var(--gap);row-gap:clamp(1rem,2.4vh,2rem);height:calc(100svh - var(--nav));min-height:640px;padding:clamp(1.6rem,4vh,3rem) var(--side) 0;overflow:clip;position:relative}
+.p-szakemberek .sz-hero::before{content:"";position:absolute;left:-10vw;top:-30vh;width:60vw;height:90vh;background:radial-gradient(closest-side,rgba(224,169,94,.13),rgba(224,169,94,0));pointer-events:none}
+.p-szakemberek .sz-hero__head{grid-column:1/span 7;grid-row:1;position:relative;display:grid;gap:.9rem;align-content:start}
+.p-szakemberek .sz-hero h1{font-size:clamp(3.4rem,8.4vw,9rem);line-height:.98;letter-spacing:-.03em}
+.p-szakemberek .sz-hero__count{grid-column:1/span 5;grid-row:2;align-self:end;display:grid;gap:.8rem;position:relative;max-width:none;padding-bottom:1rem}
+.p-szakemberek .sz-hero__count b{font-family:var(--font-d);font-weight:300;font-size:clamp(5rem,10vw,10.5rem);line-height:.8;letter-spacing:-.05em;color:var(--lamp)}
+.p-szakemberek .sz-hero__count span{font-family:var(--font-u);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-ink);max-width:34ch;line-height:1.5}
+.p-szakemberek .finder{grid-column:7/span 6;grid-row:1/span 2;align-self:center;position:relative;z-index:2;background:var(--paper);color:var(--ink);padding:clamp(1.4rem,2.6vw,2.4rem);display:grid;gap:1.3rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.55)}
+.p-szakemberek .finder .madlib{font-size:clamp(1.3rem,1.9vw,1.85rem);line-height:1.55}
+.p-szakemberek .finder .madlib select{background-color:var(--white);border:1px solid var(--line-2);border-bottom:2px solid var(--accent);padding:.05em 1.3em .05em .35em;background-position:right .35em center;transition:border-color var(--t-fast) ease,background-color var(--t-fast) ease}
+.p-szakemberek .finder .madlib select:hover{border-color:var(--accent)}
+.p-szakemberek .finder__chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.p-szakemberek .finder__foot{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;max-width:none;padding-top:1rem;border-top:1px solid var(--line);font-family:var(--font-u);font-size:.92rem;color:var(--muted)}
+.p-szakemberek .finder__foot span b{font-family:var(--font-d);font-weight:300;font-size:2.2rem;color:var(--accent);margin-right:.35rem;vertical-align:-.12em}
+.p-szakemberek .finder__foot .btn--primary{margin-left:auto}
+.chip{display:inline-flex;align-items:center;font-family:var(--font-u);font-size:.78rem;font-weight:500;letter-spacing:.01em;line-height:1;padding:.5rem .7rem;border:1px solid var(--line-2);color:var(--fg);background:transparent;border-radius:999px;white-space:nowrap}
+.chip--btn{cursor:pointer;transition:background-color var(--t-fast) ease,border-color var(--t-fast) ease,color var(--t-fast) ease}
+.chip--btn:hover{border-color:var(--accent);color:var(--accent)}
+.chip--btn[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--paper)}
+.p-szakemberek .wall{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(37,minmax(0,1fr));gap:3px;margin-inline:calc(var(--side)*-1);position:relative}
+.p-szakemberek .wall a{display:block;aspect-ratio:3/5;overflow:clip;background:var(--forest-2);transition:opacity 420ms ease,filter 420ms ease}
+.p-szakemberek .wall img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform 500ms var(--ease-soft)}
+.p-szakemberek .wall a:hover img,.p-szakemberek .wall a:focus-visible img{transform:scale(1.08)}
+.p-szakemberek .wall a.is-off{opacity:.18;filter:grayscale(1)}
+.p-szakemberek .reg__bar{background:var(--paper);align-items:baseline}
+.p-szakemberek .reg__note{font-family:var(--font-u);font-size:.82rem;color:var(--muted);max-width:none}
 .p-szakemberek .reg__list{padding-bottom:calc(var(--sec)*.7)}
+.p-szakemberek .faces{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(2rem,3.5vw,3.5rem) var(--gap);padding-top:2.5rem}
+.p-szakemberek .face{display:flex;flex-direction:column;position:relative;padding-bottom:1.1rem}
+.p-szakemberek .face::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 420ms var(--ease-soft)}
+.p-szakemberek .face figure{position:relative;background:var(--paper-2)}
+.p-szakemberek .face img{transition:transform 700ms var(--ease-soft)}
+.p-szakemberek .face__n{margin-top:1rem}
+.p-szakemberek .face__name{font-size:1.35rem;line-height:1.2}
+.p-szakemberek .face__title{margin-top:.25rem;line-height:1.4}
+.p-szakemberek .face__chips{display:flex!important;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.9rem}
+.p-szakemberek .face__chips .chip{font-size:.72rem;padding:.4rem .55rem;border-color:var(--line)}
+.p-szakemberek .face__price{display:block!important;margin-top:.9rem;font-size:.85rem;color:var(--muted)}
+.p-szakemberek .face__go{display:block!important;position:absolute;right:0;bottom:1.1rem;font-family:var(--font-u);font-size:.82rem;font-weight:500;color:var(--accent);opacity:0;transform:translateX(-6px);transition:opacity var(--t-ui) ease,transform var(--t-ui) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .p-szakemberek .face:hover img{transform:scale(1.05)}
+  .p-szakemberek .face:hover::after{transform:scaleX(1)}
+  .p-szakemberek .face:hover .face__go{opacity:1;transform:none}
+}
+.p-szakemberek .face:focus-visible::after{transform:scaleX(1)}
 .p-szakemberek .usz__h{grid-column:1/span 4}
 .p-szakemberek .usz__body{grid-column:6/span 6;display:grid;gap:1.6rem;justify-items:start}
-@media (max-width:900px){.p-szakemberek .usz__h,.p-szakemberek .usz__body{grid-column:1/-1}}
+@media (max-width:1100px){.p-szakemberek .faces{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){
+  .p-szakemberek .sz-hero{height:auto;min-height:0;grid-template-columns:1fr;grid-template-rows:auto;padding-bottom:0}
+  .p-szakemberek .sz-hero__head,.p-szakemberek .sz-hero__count,.p-szakemberek .finder,.p-szakemberek .wall{grid-column:1;grid-row:auto}
+  .p-szakemberek .sz-hero__count{grid-auto-flow:column;justify-content:start;align-items:end;gap:1rem;padding-bottom:0}
+  .p-szakemberek .sz-hero__count b{font-size:4.6rem}
+  .p-szakemberek .finder{margin-inline:calc(var(--side)*-.4)}
+  .p-szakemberek .finder .madlib{font-size:1.2rem}
+  .p-szakemberek .finder .madlib select{max-width:100%}
+  .p-szakemberek .finder__foot .btn--primary{margin-left:0}
+  .p-szakemberek .wall{grid-template-columns:repeat(13,minmax(0,1fr));margin-top:.5rem}
+  .p-szakemberek .faces{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1rem}
+  .p-szakemberek .face__name{font-size:1.1rem}
+  .p-szakemberek .face__chips .chip:nth-child(n+3){display:none}
+  .p-szakemberek .reg__note{display:none}
+  .p-szakemberek .usz__h,.p-szakemberek .usz__body{grid-column:1/-1}
+}

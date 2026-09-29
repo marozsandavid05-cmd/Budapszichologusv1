@@ -10,7 +10,7 @@
 .p-hogyan .hero__three p{font-size:1rem;color:var(--fg-2);line-height:1.45;max-width:26ch}
 .p-hogyan .hk-hero .hero__foot{grid-column:1/-1;grid-row:4;gap:1rem 2.6rem;margin-top:clamp(1.6rem,3vh,2.5rem);padding-top:1.2rem;border-top:1px solid var(--line-2)}
 .p-hogyan .hk-hero .hero__foot a{text-decoration:none;font-family:var(--font-d);font-weight:300;font-size:1.2rem}
-.p-hogyan .hk-hero .hero__foot a:hover{color:var(--accent)}
+.p-hogyan .hk-hero .hero__foot a:hover{color:var(--hi)}
 .p-hogyan .story__media{grid-column:1/span 6}
 .p-hogyan .story__steps{grid-column:8/span 5}
 .p-hogyan .step{min-height:60vh;gap:1.1rem}

@@ -1,18 +1,23 @@
-/* tokens.css · weboldal 3 · „Papír és tinta”. A css-ekben CSAK az itt szereplő hexek lehetnek (tokens.json = ugyanez). */
+/* tokens.css · weboldal 4 · „Esti ház” (budai lámpafény). A css-ekben CSAK az itt szereplő hexek lehetnek (tokens.json = ugyanez).
+   A paletta a rendelők fotóinak árnyék-színeiből jön: krém fal, zsálya kanapé, erdőzöld fotel, Chesterfield-bőr, lámpafény, madaras tapéta.
+   Kontraszt mérve (Claude tesztelés/budaipszicho-v4-2026-09-29/kontraszt-v4.py): terrakotta kis szövegen csak papír/papír-2/fehér alapon. */
 :root{
-  --paper:#F4F2ED; --paper-2:#EBE8E1; --white:#FBFAF7;
-  --ink:#1B1A18; --ink-2:#26241F; --muted:#6B675E; --muted-ink:#B5B0A6;
-  --accent:#8A5A32; --accent-2:#6E4524;
-  --line:rgba(27,26,24,.14); --line-2:rgba(27,26,24,.34);
+  --paper:#F2EDE4; --paper-2:#E7DFD1; --white:#FBF8F2; --sage:#D5DCCD;
+  --ink:#1A1F1C; --muted:#565B53;
+  --forest:#1D3A32; --forest-2:#264A40; --ink-2:#264A40; --muted-ink:#B8C6BD;
+  --accent:#A2461F; --accent-2:#7F3515; --lamp:#E0A95E; --gold:#C2A761; --plum:#2E1D28;
+  --line:rgba(26,31,28,.14); --line-2:rgba(26,31,28,.34);
   --font-d:'Sentient',Georgia,'Times New Roman',serif;
   --font-t:'Sentient',Georgia,'Times New Roman',serif;
   --font-u:'Switzer','Helvetica Neue',Arial,sans-serif;
-  --nav:68px; --side:clamp(1.25rem,4.5vw,4.5rem); --gap:1.5rem; --maxw:1520px; --sec:clamp(4rem,7.5vw,7rem);
-  --ease-out:cubic-bezier(.23,1,.32,1); --ease-io:cubic-bezier(.77,0,.175,1);
-  --t-fast:160ms; --t-ui:220ms; --t-reveal:560ms;
-  --bg:var(--paper); --fg:var(--ink); --fg-2:var(--muted); --surface:var(--white);
+  --nav:68px; --side:clamp(1.25rem,4.5vw,4.5rem); --gap:1.5rem; --maxw:1520px; --sec:clamp(4.5rem,8vw,8rem);
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-io:cubic-bezier(.77,0,.175,1); --ease-soft:cubic-bezier(.16,1,.3,1);
+  --t-fast:160ms; --t-ui:240ms; --t-reveal:700ms;
+  --bg:var(--paper); --fg:var(--ink); --fg-2:var(--muted); --surface:var(--white); --hi:var(--accent);
 }
-[data-tone="paper"]{--bg:var(--paper);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white)}
-[data-tone="paper-2"]{--bg:var(--paper-2);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white)}
-[data-tone="white"]{--bg:var(--white);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--paper)}
-[data-tone="ink"]{--bg:var(--ink);--fg:var(--paper);--fg-2:var(--muted-ink);--surface:var(--ink-2);--line:rgba(244,242,237,.16);--line-2:rgba(244,242,237,.42)}
+[data-tone="paper"]{--bg:var(--paper);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white);--hi:var(--accent)}
+[data-tone="paper-2"]{--bg:var(--paper-2);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white);--hi:var(--accent)}
+[data-tone="white"]{--bg:var(--white);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--paper);--hi:var(--accent)}
+[data-tone="sage"]{--bg:var(--sage);--fg:var(--ink);--fg-2:var(--muted);--surface:var(--white);--hi:var(--forest);--line:rgba(26,31,28,.18)}
+[data-tone="ink"],[data-tone="forest"]{--bg:var(--forest);--fg:var(--paper);--fg-2:var(--muted-ink);--surface:var(--forest-2);--hi:var(--lamp);--line:rgba(242,237,228,.16);--line-2:rgba(242,237,228,.42)}
+[data-tone="plum"]{--bg:var(--plum);--fg:var(--paper);--fg-2:var(--muted-ink);--surface:var(--forest-2);--hi:var(--lamp);--line:rgba(242,237,228,.16);--line-2:rgba(242,237,228,.42)}

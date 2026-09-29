@@ -12,7 +12,7 @@
 .p-kozpont .vez__body h2{font-size:clamp(2.4rem,4vw,4rem);line-height:1.02}
 .p-kozpont .vez__body .lead{max-width:40ch}
 .p-kozpont .vez__body p{max-width:52ch}
-.p-kozpont .vez__quote{margin:.6rem 0;padding:1.6rem 0 1.6rem 1.6rem;border-left:2px solid var(--accent);font-style:italic;font-weight:300;font-size:1.3rem;line-height:1.45;max-width:38ch}
+.p-kozpont .vez__quote{margin:.6rem 0;padding:1.6rem 0 1.6rem 1.6rem;border-left:2px solid var(--hi);font-style:italic;font-weight:300;font-size:1.3rem;line-height:1.45;max-width:38ch}
 @media (max-width:900px){
   .p-kozpont .tl4{grid-template-columns:1fr}
   .p-kozpont .vez__fig,.p-kozpont .vez__body{grid-column:1/-1;position:static}

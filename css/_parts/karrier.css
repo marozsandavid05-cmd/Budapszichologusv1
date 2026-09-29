@@ -16,7 +16,7 @@
 .p-karrier .jel__head{grid-column:1/span 6;display:grid;gap:1.2rem}
 .p-karrier .jel__head h2{font-size:clamp(2rem,3.4vw,3.2rem)}
 .p-karrier .jel__mail{font-family:var(--font-d);font-weight:300;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.2;word-break:break-all;text-decoration:none;border-bottom:1px solid var(--accent);align-self:start;justify-self:start}
-.p-karrier .jel__mail:hover{color:var(--accent)}
+.p-karrier .jel__mail:hover{color:var(--hi)}
 .p-karrier .jel__head .muted{max-width:44ch}
 .p-karrier .jel__list{grid-column:8/span 5;margin:0;border-top:2px solid var(--fg)}
 .p-karrier .jel__list div{display:grid;grid-template-columns:7rem 1fr;gap:1.4rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}

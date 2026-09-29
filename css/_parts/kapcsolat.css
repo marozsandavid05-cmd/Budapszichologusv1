@@ -4,7 +4,7 @@
 .p-kapcsolat .kap-hero__main{grid-column:1/span 7;grid-row:2;display:grid;gap:1.3rem;align-content:center;align-self:stretch}
 .p-kapcsolat .kap-hero h1{font-size:clamp(2.8rem,5.4vw,5.8rem);line-height:1.02;max-width:12ch;margin-bottom:1.4rem}
 .p-kapcsolat .kap-hero__tel{font-family:var(--font-d);font-weight:300;font-size:clamp(2rem,3.6vw,3.6rem);line-height:1;text-decoration:none;font-variant-numeric:tabular-nums;justify-self:start;white-space:nowrap}
-.p-kapcsolat .kap-hero__tel:hover{color:var(--accent)}
+.p-kapcsolat .kap-hero__tel:hover{color:var(--hi)}
 .p-kapcsolat .kap-hero__sub{font-size:1.02rem;color:var(--fg-2);max-width:none}
 .p-kapcsolat .kap-hero__main .ctas{margin-top:.6rem}
 .p-kapcsolat .kap-hero__facts{grid-column:9/span 4;grid-row:2;align-self:center;margin:0;border-top:2px solid var(--fg)}
@@ -16,7 +16,7 @@
 .p-kapcsolat .mod b{font-family:var(--font-d);font-weight:300;font-size:clamp(1.3rem,1.9vw,1.7rem);line-height:1.15;word-break:break-word}
 .p-kapcsolat .mod b.num{font-family:var(--font-d);font-weight:300}
 .p-kapcsolat .mod p{font-size:1rem;color:var(--fg-2)}
-.p-kapcsolat .mod:hover b{color:var(--accent)}
+.p-kapcsolat .mod:hover b{color:var(--hi)}
 .p-kapcsolat .kap__fig{grid-column:1/span 4;align-self:start;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-kapcsolat .kap__fig img{aspect-ratio:3/4}
 .p-kapcsolat .kap__text{grid-column:6/span 7;display:grid;gap:2rem;align-content:start}

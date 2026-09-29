@@ -12,20 +12,20 @@
 .p-index .ledger__what{font-size:1.1rem;line-height:1.45}
 .p-index .ledger__by{font-family:var(--font-u);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-2)}
 .p-index .eh__head{grid-column:1/span 4;display:grid;gap:1.4rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
-.p-index .eh__quote{margin:1.4rem 0 0;padding:2rem;background:var(--ink);color:var(--paper);display:grid;gap:1.6rem;max-width:36rem}
+.p-index .eh__quote{margin:1.4rem 0 0;padding:2rem;background:var(--forest);color:var(--paper);display:grid;gap:1.6rem;max-width:36rem}
 .p-index .eh__quote blockquote{font-size:1.35rem;line-height:1.45;font-weight:300;font-style:italic;max-width:none}
 .p-index .eh__who{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:1rem;align-items:center;font-size:.92rem;color:var(--muted-ink)}
 .p-index .eh__who img{width:4.5rem;height:5.6rem;object-fit:cover;object-position:50% 15%;background:var(--ink-2)}
 .p-index .eh__who b{display:block;color:var(--paper);font-family:var(--font-d);font-weight:400;font-size:1.05rem}
 .p-index .eh__who span{display:block;line-height:1.4}
-.p-index .eh__who a{display:inline-block;margin-top:.35rem;font-family:var(--font-u);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:.3em}
+.p-index .eh__who a{display:inline-block;margin-top:.35rem;font-family:var(--font-u);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:.3em}
 .p-index .eh__list{grid-column:6/span 7;display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;border-top:1px solid var(--line-2)}
 .p-index .eh__list a{display:grid;grid-template-columns:4.2rem minmax(0,1fr);column-gap:.8rem;align-items:baseline;padding:1rem 0;border-top:0;border-bottom:1px solid var(--line)}
 .p-index .eh__list a b{font-family:var(--font-d);font-weight:300;font-size:1.6rem;color:var(--fg);grid-row:1/span 2;line-height:1;display:grid}
 .p-index .eh__list a b i{font-family:var(--font-u);font-style:normal;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-2);margin-top:.35rem}
 .p-index .eh__list a span{font-size:1.15rem;font-weight:400}
 .p-index .eh__list a small{grid-column:2;font-size:.9rem;color:var(--fg-2);max-width:40ch;flex-basis:auto;line-height:1.45}
-.p-index .eh__list a:hover span{color:var(--accent)}
+.p-index .eh__list a:hover span{color:var(--hi)}
 .p-index .eh__foot{grid-column:6/span 7;margin-top:1.6rem;display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;font-size:.95rem;color:var(--fg-2)}
 .p-index .arcok__more{margin-top:2.5rem;text-align:right}
 .p-index .hogyan__more{margin-top:2.5rem}

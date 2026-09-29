@@ -10,7 +10,7 @@
 .p-profil .prof__titles{display:grid;gap:.2rem;font-size:1.05rem;line-height:1.45;color:var(--fg-2);font-weight:300}
 .p-profil .prof__titles b{color:var(--fg);font-weight:400;font-size:1.2rem;margin-bottom:.2rem}
 .p-profil .prof__titles span{display:block;padding-left:1rem;position:relative}
-.p-profil .prof__titles span::before{content:"";position:absolute;left:0;top:.8em;width:.4rem;height:1px;background:var(--accent)}
+.p-profil .prof__titles span::before{content:"";position:absolute;left:0;top:.8em;width:.4rem;height:1px;background:var(--hi)}
 .p-profil .prof__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem 1.5rem;padding-top:1.6rem;border-top:1px solid var(--line-2);font-size:1rem}
 .p-profil .prof__facts div{display:grid;gap:.25rem;align-content:start}
 .p-profil .prof__facts b{font-family:var(--font-u);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
@@ -18,14 +18,14 @@
 .p-profil .prof__peek{display:grid;gap:.2rem;padding-top:1.2rem;border-top:1px solid var(--line-2)}
 .p-profil .prof__peek b{font-family:var(--font-u);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-bottom:.3rem}
 .p-profil .prof__peek li{position:relative;padding:.28rem 0 .28rem 1.2rem;font-size:1rem;line-height:1.4;max-width:34ch}
-.p-profil .prof__peek li::before{content:"";position:absolute;left:0;top:.95rem;width:.35rem;height:.35rem;background:var(--accent)}
+.p-profil .prof__peek li::before{content:"";position:absolute;left:0;top:.95rem;width:.35rem;height:.35rem;background:var(--hi)}
 
 /* AMIBEN SEGÍTEK: két oszlopos sorlista bronz pontokkal, fej bal sticky */
 .p-profil .prof__helphead{grid-column:1/span 4;display:grid;gap:1.2rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-profil .prof__helphead .sec__aside{grid-column:auto;font-size:1rem}
 .p-profil .prof__helplist{grid-column:6/span 7;columns:2;column-gap:3rem;border-top:1px solid var(--line-2);padding-top:.4rem}
 .p-profil .prof__helplist li{break-inside:avoid;padding:.85rem 0 .85rem 1.4rem;border-bottom:1px solid var(--line);font-size:1.08rem;line-height:1.4;position:relative;max-width:none}
-.p-profil .prof__helplist li::before{content:"";position:absolute;left:0;top:1.35rem;width:.4rem;height:.4rem;background:var(--accent)}
+.p-profil .prof__helplist li::before{content:"";position:absolute;left:0;top:1.35rem;width:.4rem;height:.4rem;background:var(--hi)}
 
 /* BEMUTATKOZÁS: fej (cím bal, jegyzet jobb), nyitómondat nagyban, szöveg két hasábban, alul mottó + hitvallás egymás mellett */
 .p-profil .prof__rolamhead{align-items:end;margin-bottom:clamp(1.6rem,3vw,2.4rem)}
@@ -34,7 +34,7 @@
 .p-profil .prof__rolambody{max-width:none}
 .p-profil .prof__rolambody{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap)}
 .p-profil .prof__open{grid-column:1/span 10;font-family:var(--font-d);font-weight:300;font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.22;letter-spacing:-.01em;max-width:24ch;margin:0 0 3rem}
-.p-profil .prof__open::first-letter{color:var(--accent)}
+.p-profil .prof__open::first-letter{color:var(--hi)}
 .p-profil .prof__cols{grid-column:1/span 7;font-size:1.08rem;line-height:1.68;font-weight:300;max-width:58ch}
 .p-profil .prof__cols.is-two{grid-column:1/span 12;columns:2;column-gap:4rem;max-width:none}
 .p-profil .prof__cols p{max-width:none;margin:0 0 1.2rem}
@@ -59,11 +59,11 @@
 .p-profil .prof__aside .prof__creed{grid-column:7/span 6}
 .p-profil .prof__aside .prof__motto:only-child{grid-column:1/span 7}
 .p-profil .prof__aside .prof__creed:only-child{grid-column:1/span 8}
-.p-profil .prof__creed{margin:0;padding:2rem 2.2rem;background:var(--ink);color:var(--paper);font-style:italic;font-weight:300;font-size:1.15rem;line-height:1.55;max-width:none}
+.p-profil .prof__creed{margin:0;padding:2rem 2.2rem;background:var(--forest);color:var(--paper);font-style:italic;font-weight:300;font-size:1.15rem;line-height:1.55;max-width:none}
 .p-profil .prof__creed p{max-width:none}
 .p-profil .prof__creed p+p{margin-top:.8rem}
 .p-profil .prof__creed cite{display:block;margin-top:1.2rem;font-style:normal;font-family:var(--font-u);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-ink)}
-.p-profil .prof__motto{margin:0;padding-left:1.4rem;border-left:1px solid var(--accent);font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.5;max-width:34ch;color:var(--fg)}
+.p-profil .prof__motto{margin:0;padding-left:1.4rem;border-left:1px solid var(--hi);font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.5;max-width:34ch;color:var(--fg)}
 .p-profil .prof__motto cite{display:block;font-style:normal;font-family:var(--font-u);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);margin-top:.7rem}
 .p-profil .prof__intro .prof__motto{font-size:1.12rem}
 
@@ -123,4 +123,4 @@
 .p-profil .prof__rolambody em{font-style:italic;color:inherit}
 .p-profil .prof__szakmai .prof__cols{font-size:1.02rem}
 .p-profil .prof__names li{padding:.7rem 0}
-.p-profil .prof__aside .prof__motto{padding:1.6rem 0 1.6rem 1.6rem;border-left:2px solid var(--accent);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.p-profil .prof__aside .prof__motto{padding:1.6rem 0 1.6rem 1.6rem;border-left:2px solid var(--hi);align-self:stretch;display:flex;flex-direction:column;justify-content:center}

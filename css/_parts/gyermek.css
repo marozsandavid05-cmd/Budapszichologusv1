@@ -6,7 +6,7 @@
 .p-gyermek .gy-hero h1{font-size:clamp(2.6rem,5vw,5.4rem);line-height:1.02;max-width:12ch}
 .p-gyermek .gy-hero .lead{margin:0;max-width:44ch;font-size:clamp(1.15rem,1.5vw,1.35rem)}
 .p-gyermek .gy-hero .ctas{margin-top:.4rem}
-.p-gyermek .gy-hero .hero__voice{grid-column:9/span 4;grid-row:2;align-self:center;display:grid;gap:1rem;padding:2rem 2rem 2.2rem;background:var(--ink);color:var(--paper)}
+.p-gyermek .gy-hero .hero__voice{grid-column:9/span 4;grid-row:2;align-self:center;display:grid;gap:1rem;padding:2rem 2rem 2.2rem;background:var(--forest);color:var(--paper)}
 .p-gyermek .hero__voice .label{color:var(--muted-ink)}
 .p-gyermek .voice__text{font-family:var(--font-d);font-weight:300;font-size:1.25rem;line-height:1.45;max-width:none}
 .p-gyermek .voice__crisis{font-size:.95rem;color:var(--muted-ink);padding-top:1rem;border-top:1px solid var(--ink-2);max-width:none}

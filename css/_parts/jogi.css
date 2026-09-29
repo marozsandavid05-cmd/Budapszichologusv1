@@ -3,13 +3,13 @@
 .p-jogi .jogi-hero .label{grid-column:1/-1;margin-bottom:1.5rem}
 .p-jogi .jogi-hero h1{grid-column:1/span 8;font-size:clamp(2.2rem,4.2vw,4.2rem);line-height:1.04}
 .p-jogi .jogi-hero__meta{grid-column:1/span 8;margin-top:1.6rem;font-size:.95rem;color:var(--fg-2);max-width:none;line-height:1.6}
-.p-jogi .todo{background:transparent;color:var(--accent);font-style:italic;font-family:var(--font-u);font-size:.85em;letter-spacing:.02em}
+.p-jogi .todo{background:transparent;color:var(--hi);font-style:italic;font-family:var(--font-u);font-size:.85em;letter-spacing:.02em}
 .p-jogi .jogi{align-items:start}
 .p-jogi .jogi__toc{grid-column:1/span 3;top:calc(var(--stick,var(--nav)) + 1.5rem)}
 .p-jogi .jogi__toc ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-2)}
 .p-jogi .jogi__toc li{max-width:none;padding:0}
 .p-jogi .jogi__toc a{display:grid;grid-template-columns:2rem 1fr;gap:.6rem;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.9rem;line-height:1.35;text-decoration:none;color:var(--fg-2)}
-.p-jogi .jogi__toc a:hover{color:var(--accent)}
+.p-jogi .jogi__toc a:hover{color:var(--hi)}
 .p-jogi .jogi__toc .num{font-family:var(--font-u);font-size:.72rem;font-weight:500;letter-spacing:.08em;padding-top:.15rem}
 .p-jogi .jogi__body{grid-column:5/span 7;font-size:1.02rem;line-height:1.65;font-weight:300}
 .p-jogi .jogi__sec{padding:1.8rem 0 2.2rem;border-top:1px solid var(--line)}

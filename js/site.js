@@ -1,5 +1,5 @@
 /* ============================================================
-   Budai Pszichológus Központ · weboldal 3 · site.js
+   Budai Pszichológus Központ · weboldal 4 · site.js
    GSAP nélkül is teljes: motion-override, reveal, Lenis, nav (rejtés, panel, mobil lap),
    hero keret-kontrakció, forgó szó, madlib-fit, regiszter (szűrő, kapcsoló, URL), story-kép,
    kollázs egér-parallax, drag-scroll sor, GYIK-kereső, űrlap (Web3Forms / mailto), tiszta URL, mérő-sáv.
@@ -133,14 +133,14 @@
   var fits = [];
   [].forEach.call(doc.querySelectorAll('.madlib select'), function (s) {
     var cv = doc.createElement('canvas').getContext('2d');
-    function fit() { var cs = getComputedStyle(s); cv.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily; var t = s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ''; s.style.width = Math.ceil(cv.measureText(t).width + parseFloat(cs.fontSize) * 1.3) + 'px'; }
+    function fit() { var cs = getComputedStyle(s); cv.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily; var t = s.options[s.selectedIndex] ? s.options[s.selectedIndex].text : ''; var pad = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth); s.style.width = Math.ceil(cv.measureText(t).width + Math.max(pad, parseFloat(cs.fontSize) * 1.1) + 4) + 'px'; }
     fits.push(fit); s.addEventListener('change', fit); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(fit); addEventListener('resize', fit); fit();
   });
 
   /* ---------- regiszter: szűrő (select + URL), Névsor/Arcok kapcsoló, számláló, üres állapot ---------- */
   var reg = doc.querySelector('.reg');
   if (reg) {
-    var rows = [].slice.call(reg.querySelectorAll('.idx__row')), faces = [].slice.call(reg.querySelectorAll('.face'));
+    var rows = [].slice.call(reg.querySelectorAll('.idx__row')), faces = [].slice.call(reg.querySelectorAll('.face')), wall = [].slice.call(doc.querySelectorAll('.wall a[data-miben]')), chips = [].slice.call(doc.querySelectorAll('[data-chip]'));
     var selects = [].slice.call(doc.querySelectorAll('select[data-filter]')), countEls = [].slice.call(doc.querySelectorAll('[data-reg-count]'));
     var resetBtns = [].slice.call(doc.querySelectorAll('[data-reg-reset]')), segBtns = [].slice.call(doc.querySelectorAll('button[data-view]'));
     var active = {}, KEYS = ['kinek', 'miben', 'forma', 'mod', 'nyelv', 'ar', 'szerep'];
@@ -149,24 +149,36 @@
       var n = 0;
       rows.forEach(function (r) { var ok = match(r); r.classList.toggle('is-hidden', !ok); if (ok) n++; });
       faces.forEach(function (f) { f.classList.toggle('is-hidden', !match(f)); });
+      wall.forEach(function (w) { var ok = match(w); w.classList.toggle('is-off', !ok); w.tabIndex = ok ? 0 : -1; });
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', active[c.dataset.chip] === c.dataset.val ? 'true' : 'false'); });
       countEls.forEach(function (c) { c.textContent = n; });
       reg.classList.toggle('is-empty', n === 0);
       var any = KEYS.some(function (k) { return !!active[k]; });
       resetBtns.forEach(function (b) { b.hidden = !any; });
       selects.forEach(function (s) { var v = active[s.dataset.filter] || ''; if (s.value !== v) s.value = v; });
       fits.forEach(function (f) { f(); });
-      if (push && /^https?:/.test(location.protocol)) { try { var p = new URLSearchParams(); KEYS.forEach(function (k) { if (active[k]) p.set(k, active[k]); }); if (reg.dataset.view === 'arcok') p.set('nezet', 'arcok'); var qs = p.toString(); history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) {} }
+      if (push && /^https?:/.test(location.protocol)) { try { var p = new URLSearchParams(); KEYS.forEach(function (k) { if (active[k]) p.set(k, active[k]); }); if (reg.dataset.view === 'nevsor') p.set('nezet', 'nevsor'); var qs = p.toString(); history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) {} }
     }
     selects.forEach(function (s) { s.addEventListener('change', function () { active[s.dataset.filter] = s.value || null; apply(true); }); });
     resetBtns.forEach(function (b) { b.addEventListener('click', function () { active = {}; apply(true); }); });
+    chips.forEach(function (c) { c.addEventListener('click', function () { var k = c.dataset.chip; active[k] = active[k] === c.dataset.val ? null : c.dataset.val; apply(true); }); });
     KEYS.forEach(function (k) { if (q.get(k)) active[k] = q.get(k); });
-    var view = null; try { view = localStorage.getItem('bp3-view'); } catch (e) {}
+    var view = null; try { view = localStorage.getItem('bp4-view'); } catch (e) {}
     if (q.get('nezet')) view = q.get('nezet');
-    function setView(v) { reg.dataset.view = v; segBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.view === v ? 'true' : 'false'); }); try { localStorage.setItem('bp3-view', v); } catch (e) {} }
+    function setView(v) { reg.dataset.view = v; segBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.view === v ? 'true' : 'false'); }); try { localStorage.setItem('bp4-view', v); } catch (e) {} }
     segBtns.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); apply(true); }); });
-    setView(view === 'arcok' ? 'arcok' : 'nevsor');
+    setView(view === 'nevsor' ? 'nevsor' : 'arcok');
     apply(false);
   }
+
+  /* ---------- számláló [data-count]: a HTML-ben kész szám áll; mozgással 0-ról fut fel, amikor látszik (IO + rAF, GSAP nélkül) ---------- */
+  [].forEach.call(doc.querySelectorAll('[data-count]'), function (el) {
+    var n = parseInt(el.dataset.count, 10); if (reduce || !n || !('IntersectionObserver' in window)) return;
+    var done = false; el.textContent = '0';
+    function run() { if (done) return; done = true; var t0 = null; (function f(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1500), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(n * e); if (k < 1) requestAnimationFrame(f); else el.textContent = n; })(performance.now()); }
+    var cio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { run(); cio.disconnect(); } }, { threshold: .4 }); cio.observe(el);
+    setTimeout(function () { if (!done) { done = true; el.textContent = n; } }, 5000);
+  });
 
   /* ---------- story: sticky kép vált a lépésnél (data-img) ---------- */
   var story = doc.querySelector('.story');
