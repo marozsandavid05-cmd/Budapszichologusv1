@@ -15,7 +15,7 @@
 .p-hogyan .story__steps{grid-column:8/span 5}
 .p-hogyan .step{min-height:60vh;gap:1.1rem}
 .p-hogyan .step .num{font-family:var(--font-u);font-size:.74rem;font-weight:500;letter-spacing:.12em;color:var(--fg-2)}
-.p-hogyan .step h3{font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.1}
+.p-hogyan .step .step__h{font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.1}
 .p-hogyan .step p{max-width:none;font-size:1.04rem;line-height:1.62}
 .p-hogyan .step .ctas{margin-top:.6rem}
 .p-hogyan .tudni{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--gap);border-top:2px solid var(--fg)}

@@ -20,6 +20,7 @@
 <body class="p-profil">
 <!-- FEJLÉC · minden oldalra ugyanez (gyökér-oldalon relatív linkek; szakemberek/ és blog/ almappában a build ../ előtagot rak).
      Aktuális menüpontra aria-current="page" JS-ből. A panel csak a „Miben segítünk” alatt nyílik, kattintásra. -->
+<a class="skip-link" href="#tartalom">Ugrás a tartalomhoz</a>
 <header class="nav" id="nav">
   <a class="nav__logo" href="../index.html" aria-label="Budai Pszichológus Központ, főoldal"><img src="../img/logo.png" alt="Budai Pszichológus Központ" width="168" height="43"></a>
   <nav class="nav__links" aria-label="Főmenü">
@@ -93,7 +94,7 @@
   </div>
 </div>
 
-<main>
+<main id="tartalom" tabindex="-1">
   <section class="hero prof" data-tone="paper">
     <figure class="prof__portrait h-in"><img src="../img/portrek/szelenyi-bence-nagy.jpg" alt="Szelényi Bence" width="960" height="1200" fetchpriority="high"></figure>
     <div class="prof__intro">
