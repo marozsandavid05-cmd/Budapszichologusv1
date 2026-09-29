@@ -223,7 +223,7 @@ html:not(.js) .kz__slot{display:none}
 .hero--panels{height:calc(100svh - var(--nav));display:grid;grid-template-columns:1fr 1fr;transition:grid-template-columns 400ms var(--ease-out)}
 .pane{position:relative;overflow:clip;display:grid;align-content:end;padding:2rem var(--side);background:var(--bg);color:var(--fg)}
 .pane--photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--focus,50% 40%)}
-.pane__body{position:relative;background:var(--paper);color:var(--ink);--fg:var(--ink);--fg-2:var(--muted);--hi:var(--accent);--line:rgba(26,31,28,.14);--line-2:rgba(26,31,28,.34);padding:1.75rem;max-width:34rem;display:grid;gap:1rem}
+.pane__body{position:relative;background:var(--paper);color:var(--ink);--fg:var(--ink);--fg-2:var(--muted);--hi:var(--accent);--line:rgba(34,22,30,.14);--line-2:rgba(34,22,30,.34);padding:1.75rem;max-width:34rem;display:grid;gap:1rem}
 .pane h1,.pane h2{font-size:clamp(2rem,3.4vw,3.4rem)}
 @media (hover:hover) and (pointer:fine){.hero--panels:has(.pane:last-child:hover){grid-template-columns:2fr 3fr}.hero--panels:has(.pane:first-child:hover){grid-template-columns:3fr 2fr}}
 .hero--collage{min-height:calc(100svh - var(--nav));position:relative;display:grid;place-content:center;padding:3rem var(--side);overflow:clip}
@@ -392,7 +392,7 @@ html:not(.js) .kz__slot{display:none}
 
 /* ---------- 7. regiszter (szakembereink + index kiemelt) ---------- */
 .madlib{font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.6;max-width:none;font-weight:300}
-.madlib select{appearance:none;-webkit-appearance:none;color:var(--hi);border-bottom:2px solid var(--hi);padding:0 1.1em 0 0;cursor:pointer;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 3l4 4 4-4' fill='none' stroke='%23A2461F' stroke-width='1.3'/></svg>") no-repeat right center/.55em;font-family:inherit;font-size:inherit}
+.madlib select{appearance:none;-webkit-appearance:none;color:var(--hi);border-bottom:2px solid var(--hi);padding:0 1.1em 0 0;cursor:pointer;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 3l4 4 4-4' fill='none' stroke='%23835423' stroke-width='1.3'/></svg>") no-repeat right center/.55em;font-family:inherit;font-size:inherit}
 .reg__bar{position:sticky;top:var(--stick,var(--nav));z-index:5;transition:top 260ms var(--ease-out);background:var(--paper);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem;border-top:2px solid var(--fg);border-bottom:1px solid var(--line);margin-inline:var(--side)}
 .reg__bar .count{font-family:var(--font-u);font-size:.88rem;color:var(--fg-2)}
 .reg__bar .count b{color:var(--fg);font-weight:600}
@@ -438,7 +438,7 @@ html:not(.js) .kz__slot{display:none}
 
 /* ---------- 8. lábléc ---------- */
 .foot{padding:calc(var(--sec)*.8) var(--side) 2rem;position:relative;overflow:clip}
-.foot::before{content:"";position:absolute;right:-18vw;top:-30%;width:70vw;height:120%;background:radial-gradient(closest-side,rgba(224,169,94,.10),rgba(224,169,94,0));pointer-events:none}
+.foot::before{content:"";position:absolute;right:-18vw;top:-30%;width:70vw;height:120%;background:radial-gradient(closest-side,rgba(207,167,94,.10),rgba(207,167,94,0));pointer-events:none}
 .foot>*{position:relative}
 .foot__mark em{font-style:italic;color:var(--lamp)}
 .foot__mark{font-family:var(--font-d);font-weight:300;font-size:clamp(2rem,5.6vw,5.8rem);line-height:1;letter-spacing:-.015em;white-space:nowrap;margin-bottom:3.5rem;max-width:none}
