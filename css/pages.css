@@ -421,7 +421,7 @@
 
 @media (max-width:900px){
   .p-index .muhely__grid,.p-index .arcok__grid,.p-index .lepcso__grid{grid-template-columns:1fr}
-  .p-index .muhely__label,.p-index .muhely__h,.p-index .muhely__fig,.p-index .muhely__text,.p-index .ledger,.p-index .arcok__h,.p-index .arcok__aside,.p-index .lepcso__h,.p-index .lepcso__aside,.p-index .lepcso__step{grid-column:1;grid-row:auto}
+  .p-index .muhely__label,.p-index .muhely__h,.p-index .muhely__fig,.p-index .muhely__text,.p-index .ledger,.p-index .arcok__h,.p-index .arcok__aside,.p-index .lepcso__h,.p-index .lepcso__aside,.p-index .lepcso__step,.p-index .lepcso__step:nth-of-type(n){grid-column:1;grid-row:auto}
   .p-index .muhely__fig{width:78%;justify-self:end;margin:2rem calc(var(--side)*-1) 0 0}
   .p-index .muhely__text{padding-left:1rem}
   .p-index .ledger{grid-template-columns:1fr;row-gap:1.8rem}
@@ -655,6 +655,17 @@
 .p-profil .prof__peek li{position:relative;padding:.28rem 0 .28rem 1.2rem;font-size:1rem;line-height:1.4;max-width:34ch}
 .p-profil .prof__peek li::before{content:"";position:absolute;left:0;top:.95rem;width:.35rem;height:.35rem;background:var(--hi)}
 
+/* alacsony asztali képernyőn (1366x768) a nyitó pontosan egy képernyő: sűrűbb ritmus, a peek legfeljebb 2 tétel */
+@media (min-width:901px) and (max-height:820px){
+  .p-profil .prof{height:calc(100svh - var(--nav));min-height:0}
+  .p-profil .prof__portrait{min-height:0;height:100%}
+  .p-profil .prof__intro{gap:1.1rem;padding-block:1.4rem}
+  .p-profil .prof__intro h1{font-size:clamp(2.4rem,3.6vw,3.6rem)}
+  .p-profil .prof__facts{gap:.8rem 1.5rem;padding-top:1rem;font-size:.95rem}
+  .p-profil .prof__peek{padding-top:.8rem}.p-profil .prof__peek li{padding-block:.15rem}
+  .p-profil .prof__peek li:nth-child(n+3){display:none}
+}
+
 /* AMIBEN SEGÍTEK: két oszlopos sorlista bronz pontokkal, fej bal sticky */
 .p-profil .prof__helphead{grid-column:1/span 4;display:grid;gap:1.2rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-profil .prof__helphead .sec__aside{grid-column:auto;font-size:1rem}
@@ -871,3 +882,16 @@
   .p-szakemberek .reg__note{display:none}
   .p-szakemberek .usz__h,.p-szakemberek .usz__body{grid-column:1/-1}
 }
+/* rács-szünet: a 10. kártya után két hasábos idézet-csempe, a végén egy ügyfélszolgálat-csempe (37 + 2 + 1 = 40, teli sorok). Szűréskor eltűnnek. */
+.p-szakemberek .faces>.face:nth-child(n+11){order:2}
+.p-szakemberek .reg__pause{order:1;grid-column:span 2;align-self:stretch;display:grid;align-content:center;margin:0;max-width:none;padding:clamp(1.6rem,3vw,3rem);background:var(--forest);color:var(--paper);font-family:var(--font-d);font-weight:300;font-size:clamp(1.6rem,2.4vw,2.5rem);line-height:1.2;letter-spacing:-.01em}
+.p-szakemberek .reg__pause em{color:var(--lamp)}
+.p-szakemberek .reg__tail{order:3;display:grid;align-content:space-between;gap:1.5rem;padding:1.6rem;border:1px solid var(--line-2);background:var(--paper-2);transition:background var(--t-ui) ease,color var(--t-ui) ease}
+.p-szakemberek .reg__tail b{font-family:var(--font-d);font-weight:300;font-size:clamp(1.8rem,2.4vw,2.4rem);line-height:1.08}
+.p-szakemberek .reg__tail span{font-family:var(--font-u);font-size:.85rem;color:var(--muted);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:.3em}
+.p-szakemberek .reg__tail:hover{background:var(--forest);color:var(--paper)}.p-szakemberek .reg__tail:hover span{color:var(--muted-ink)}
+.p-szakemberek .reg.is-filtered .reg__pause,.p-szakemberek .reg.is-filtered .reg__tail{display:none}
+@media (max-width:1100px){.p-szakemberek .faces>.face:nth-child(n+11){order:0}.p-szakemberek .reg__pause{order:0;grid-column:1/-1}.p-szakemberek .reg__tail{order:4;grid-column:1/-1}}
+/* Akik tanítanak is: kis portré a név előtt */
+.oktatok a{align-items:center}
+.oktatok img{width:2.6rem;height:3.2rem;object-fit:cover;object-position:50% 15%;flex:none;background:var(--paper)}

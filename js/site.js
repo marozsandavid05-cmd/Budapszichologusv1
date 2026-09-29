@@ -189,6 +189,7 @@
       chips.forEach(function (c) { c.setAttribute('aria-pressed', active[c.dataset.chip] === c.dataset.val ? 'true' : 'false'); });
       countEls.forEach(function (c) { c.textContent = n; });
       reg.classList.toggle('is-empty', n === 0);
+      reg.classList.toggle('is-filtered', KEYS.some(function (k) { return !!active[k]; }));
       var any = KEYS.some(function (k) { return !!active[k]; });
       resetBtns.forEach(function (b) { b.hidden = !any; });
       selects.forEach(function (s) { var v = active[s.dataset.filter] || ''; if (s.value !== v) s.value = v; });

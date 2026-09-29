@@ -20,6 +20,17 @@
 .p-profil .prof__peek li{position:relative;padding:.28rem 0 .28rem 1.2rem;font-size:1rem;line-height:1.4;max-width:34ch}
 .p-profil .prof__peek li::before{content:"";position:absolute;left:0;top:.95rem;width:.35rem;height:.35rem;background:var(--hi)}
 
+/* alacsony asztali képernyőn (1366x768) a nyitó pontosan egy képernyő: sűrűbb ritmus, a peek legfeljebb 2 tétel */
+@media (min-width:901px) and (max-height:820px){
+  .p-profil .prof{height:calc(100svh - var(--nav));min-height:0}
+  .p-profil .prof__portrait{min-height:0;height:100%}
+  .p-profil .prof__intro{gap:1.1rem;padding-block:1.4rem}
+  .p-profil .prof__intro h1{font-size:clamp(2.4rem,3.6vw,3.6rem)}
+  .p-profil .prof__facts{gap:.8rem 1.5rem;padding-top:1rem;font-size:.95rem}
+  .p-profil .prof__peek{padding-top:.8rem}.p-profil .prof__peek li{padding-block:.15rem}
+  .p-profil .prof__peek li:nth-child(n+3){display:none}
+}
+
 /* AMIBEN SEGÍTEK: két oszlopos sorlista bronz pontokkal, fej bal sticky */
 .p-profil .prof__helphead{grid-column:1/span 4;display:grid;gap:1.2rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
 .p-profil .prof__helphead .sec__aside{grid-column:auto;font-size:1rem}

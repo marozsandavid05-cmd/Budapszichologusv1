@@ -105,7 +105,7 @@
 
 @media (max-width:900px){
   .p-index .muhely__grid,.p-index .arcok__grid,.p-index .lepcso__grid{grid-template-columns:1fr}
-  .p-index .muhely__label,.p-index .muhely__h,.p-index .muhely__fig,.p-index .muhely__text,.p-index .ledger,.p-index .arcok__h,.p-index .arcok__aside,.p-index .lepcso__h,.p-index .lepcso__aside,.p-index .lepcso__step{grid-column:1;grid-row:auto}
+  .p-index .muhely__label,.p-index .muhely__h,.p-index .muhely__fig,.p-index .muhely__text,.p-index .ledger,.p-index .arcok__h,.p-index .arcok__aside,.p-index .lepcso__h,.p-index .lepcso__aside,.p-index .lepcso__step,.p-index .lepcso__step:nth-of-type(n){grid-column:1;grid-row:auto}
   .p-index .muhely__fig{width:78%;justify-self:end;margin:2rem calc(var(--side)*-1) 0 0}
   .p-index .muhely__text{padding-left:1rem}
   .p-index .ledger{grid-template-columns:1fr;row-gap:1.8rem}
