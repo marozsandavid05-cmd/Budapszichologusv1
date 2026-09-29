@@ -1,0 +1,60 @@
+/* motion.css · weboldal 4 · a mozgásrendszer CSS-oldala (a build a pages.css-be fűzi, oldal-scope nélkül, mert minden oldalra érvényes).
+   Elv: SEMMI nem indul CSS-ből rejtve. A rejtett kezdőállapotot a motion.js adja inline, csak ha a GSAP él és nincs reduced motion.
+   Opt-in data-attribútumok (a motion.js olvassa):
+     [data-split]              cím sor-maszk reveal (SplitText lines + mask). data-split="words": szavanként.
+     [data-clip]               kép-keret alulról nyílik (clip-path inset), a kép közben 1.1-ről 1-re áll.
+     [data-parallax]           kép a keretén belül úszik (scrub). Érték: az elmozdulás %-ban (alap 6).
+     [data-count]              számláló (site.js, GSAP nélkül; a HTML-ben a végérték áll).
+     [data-hscroll]            vízszintes szakasz (site.js, sticky + görgetés-arány).
+     [data-drift]              lassú függőleges úszás szövegblokkon vagy díszszámon (scrub). Érték: px (alap 60).
+     data-motion="off"         a szekción belül semmit ne animáljon a rendszer.
+   Automatikus (jelölés nélkül): .fullimg és main .framed kép-nyitás + parallax, .hero--cover fotó lassú kiúszása, .pane--photo parallax. */
+
+/* ---------- ALAP: semmi nem indul CSS-ből rejtve. A main.css régi rejtett kezdőállapotait (reveal, stagger, hero .h-in) itt felülírjuk:
+   a tartalom JS és GSAP nélkül is azonnal látszik. A belépőt a motion.js adja inline, csak a hajtás alatti elemekre (nincs villanás). ---------- */
+.js [data-reveal],.js [data-stagger]>*,.hero .h-in{opacity:1;transform:none}
+html:not(.js) .story__media img:first-child{opacity:1}
+
+/* ---------- SplitText maszk: az ékezet (Ő, Ű, É) ne vágódjon le a sor-maszkon ---------- */
+.split .line-mask{display:block;padding-block:.09em;margin-block:-.09em}
+.split .line{display:block}
+.sec__head--hang h2.split .line-mask .line{margin-left:0}
+.sec__head--hang h2.split .line-mask:first-child{margin-left:var(--hang)}
+.split .word-mask{display:inline-block;padding-block:.09em;margin-block:-.09em;vertical-align:top}
+
+/* ---------- parallax-keret: a motion.js ebbe csomagolja a képet, ha a szülő nem vág ---------- */
+.pxw{display:block;overflow:clip;position:relative}
+.pxw>img{display:block;width:100%}
+.hero--cover .hero__photo,.pane--photo{overflow:clip}
+
+/* ---------- kártya-hover: portré enyhén nagyít, alul sárgaréz vonal töltődik ki balról, a név akcentszínű.
+   A .face szabályok a main.css-sel azonos specificitásúak (később töltődnek, így nyernek), az oldal-scope-os
+   (.p-szakemberek …) szabályok felülírják őket. A többi kártya :where()-rel nulla specificitású. ---------- */
+@media (hover:hover) and (pointer:fine){
+  .face figure{position:relative}
+  .face figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--hi);transform:scaleX(0);transform-origin:0 50%;transition:transform 520ms var(--ease-soft)}
+  .face:hover figure::after,.face:focus-visible figure::after{transform:scaleX(1)}
+  .face img{transition:transform 700ms var(--ease-soft)}
+  .face:hover img,.face:focus-visible img{transform:scale(1.045)}
+  .face:hover .face__name,.face:focus-visible .face__name{color:var(--hi)}
+  /* sor-kártyák (miben, kapcsolati módok, szolgáltatás-sorok, kapcsolódó linkek): a cím finoman beljebb csúszik, a vonal sárgaréz */
+  :where(.miben__row,.rel a,.mod){transition:border-color var(--t-ui) ease,color var(--t-fast) ease}
+  :where(.miben__row,.rel a,.mod) :where(h3,b){display:inline-block;transition:transform 420ms var(--ease-soft),color var(--t-fast) ease}
+  :where(.miben__row:hover,.rel a:hover,.mod:hover){border-color:var(--hi)}
+  :where(.miben__row:hover,.rel a:hover,.mod:hover) :where(h3,b){transform:translateX(.35rem)}
+  /* kiemelt kártyák (blog kiemelt, „mind a 37” csempe): a felület egy tónussal mélyül, finom emelés */
+  :where(.blog-hero__featured,.face--all){transition:background-color var(--t-ui) ease,color var(--t-ui) ease,transform 420ms var(--ease-soft)}
+  :where(.blog-hero__featured:hover,.face--all:hover){transform:translateY(-3px)}
+}
+.face:focus-visible{outline:2px solid var(--hi);outline-offset:4px}
+
+/* ---------- reduced motion és motion-off: komponált végállapot (a motion.js ilyenkor el sem indul) ---------- */
+.motion-off .pxw>img,.motion-off [data-parallax]{transform:none!important}
+@media (prefers-reduced-motion:reduce){
+  .face img,.face figure::after,:where(.miben__row,.rel a,.mod) :where(h3,b){transition:none}
+}
+
+/* ---------- layout-stabilitás (CLS): a madlib select natívan a kiválasztott opcióra méreteződik, mielőtt a site.js fit() lefut.
+   Nélküle a szűrő-mondat 163 px-ről 126 px-re ugrik betöltéskor (Szakembereink hero, CLS 0,18). Ahol a field-sizing nem ismert
+   (Firefox, Safari), ott marad a JS-es méretezés. ---------- */
+@supports (field-sizing:content){.madlib select{field-sizing:content;min-width:0}}
