@@ -1,7 +1,7 @@
 /* ============================================================
    Budai Pszichológus Központ · weboldal 4 · site.js
    GSAP nélkül is teljes: motion-override, reveal, Lenis, nav (rejtés, panel, mobil lap),
-   hero keret-kontrakció, forgó szó, madlib-fit, regiszter (szűrő, kapcsoló, URL), story-kép,
+   Küszöb hero, forgó szó, madlib-fit, regiszter (szűrő, kapcsoló, URL), story-kép,
    kollázs egér-parallax, drag-scroll sor, GYIK-kereső, űrlap (Web3Forms / mailto), tiszta URL, mérő-sáv.
    ============================================================ */
 (function () {
@@ -91,15 +91,51 @@
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closePanels(); closeSheet(); } });
   BP.closeSheet = closeSheet;
 
-  /* ---------- SIGNATURE 1: hero keret-kontrakció (sticky + --p, rAF-lerp) ---------- */
-  var keret = doc.querySelector('.hero--keret');
-  if (keret && !reduce && innerWidth > 900) {
-    var stage = keret.querySelector('.hero__stage'), photo = keret.querySelector('.hero__photo'), cur = 0, target = 0, raf = null;
-    function calc() { var range = keret.offsetHeight - stage.offsetHeight; var top = keret.getBoundingClientRect().top; target = range > 0 ? Math.min(1, Math.max(0, (NAV() - top) / range)) : 0; }
-    function frame() { cur += (target - cur) * 0.14; if (Math.abs(target - cur) < 0.0008) cur = target; photo.style.setProperty('--p', cur.toFixed(4)); if (cur !== target) raf = requestAnimationFrame(frame); else raf = null; }
-    function kick() { calc(); if (!raf) raf = requestAnimationFrame(frame); }
-    addEventListener('scroll', kick, { passive: true }); addEventListener('resize', kick); kick();
+  /* ---------- SIGNATURE 1: Küszöb hero. A boltív az ajtó (slot mérete), görgetésre kinyílik teljes képernyőre, a cím két fele kiúszik.
+     Élő: a fotó lassan „lélegzik”, finom egér-parallax. rAF csak amíg a hero látszik. Mobilon és reduced alatt álló boltív. ---------- */
+  var kz = doc.querySelector('.hero--kuszob');
+  if (kz) {
+    var kst = kz.querySelector('.kz__stage'), kslot = kz.querySelector('[data-slot]'), karch = kz.querySelector('[data-arch]'), kimg = karch.querySelector('img');
+    var kl = kz.querySelector('.kz__l'), kr = kz.querySelector('.kz__r'), kft = kz.querySelector('.kz__foot'), box = {}, kp = 0, kpt = 0;
+    var kmeasure = function () { var st = kst.getBoundingClientRect(), r = kslot.getBoundingClientRect(); box = { t: r.top - st.top, l: r.left - st.left, r: st.right - r.right, b: st.bottom - r.bottom, w: r.width }; };
+    var kset = function (e) { var k = 1 - e; karch.style.setProperty('--t', (box.t * k).toFixed(1) + 'px'); karch.style.setProperty('--l', (box.l * k).toFixed(1) + 'px'); karch.style.setProperty('--r', (box.r * k).toFixed(1) + 'px'); karch.style.setProperty('--b', (box.b * k).toFixed(1) + 'px'); karch.style.setProperty('--rad', (box.w / 2 * k).toFixed(1) + 'px'); };
+    var krefresh = function () { kmeasure(); kset(kp * kp * (3 - 2 * kp)); };
+    krefresh(); addEventListener('resize', krefresh); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(krefresh); addEventListener('load', krefresh);
+    if (!reduce) {
+      var kmx = 0, kmy = 0, ktx = 0, kty = 0, kt0 = performance.now(), kvis = true, kraf = null;
+      if (fine) addEventListener('mousemove', function (e) { ktx = (e.clientX / innerWidth - .5) * -18; kty = (e.clientY / innerHeight - .5) * -12; }, { passive: true });
+      var kcalc = function () { if (innerWidth <= 900) { kpt = 0; return; } var range = kz.offsetHeight - kst.offsetHeight; kpt = range > 0 ? Math.min(1, Math.max(0, (NAV() - kz.getBoundingClientRect().top) / range)) : 0; };
+      addEventListener('scroll', kcalc, { passive: true }); addEventListener('resize', kcalc); kcalc();
+      var kframe = function (now) {
+        kmx += (ktx - kmx) * .06; kmy += (kty - kmy) * .06; kp += (kpt - kp) * .12; if (Math.abs(kpt - kp) < .0005) kp = kpt;
+        kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kimg.style.setProperty('--br', (1.03 + Math.sin((now - kt0) / 2600) * .025).toFixed(4));
+        var e = kp * kp * (3 - 2 * kp); kset(e);
+        kl.style.transform = e ? 'translateX(' + (-e * 24).toFixed(2) + 'vw)' : ''; kr.style.transform = e ? 'translateX(' + (e * 24).toFixed(2) + 'vw)' : '';
+        kl.style.opacity = kr.style.opacity = e ? Math.max(0, 1 - e * 1.6).toFixed(3) : ''; kft.style.opacity = e ? Math.max(0, 1 - e * 2.2).toFixed(3) : '';
+        kraf = kvis ? requestAnimationFrame(kframe) : null;
+      };
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { kvis = es[0].isIntersecting; if (kvis && !kraf) kraf = requestAnimationFrame(kframe); }).observe(kz);
+      kraf = requestAnimationFrame(kframe);
+    }
   }
+
+  /* ---------- vízszintes ház-szakasz: sticky + görgetés-arány, rAF-lerp (GSAP nélkül). Mobilon és reduced alatt húzható sor marad ---------- */
+  [].forEach.call(doc.querySelectorAll('.haz'), function (hz) {
+    var tr = hz.querySelector('[data-hscroll]'); if (!tr || reduce) return;
+    var dist = 0, hcur = 0, htar = 0, hraf = null, on = false;
+    function hsize() {
+      var want = innerWidth > 900;
+      if (want !== on) { on = want; hz.classList.toggle('is-h', on); if (!on) { hz.style.height = ''; tr.style.transform = ''; } }
+      if (!on) return;
+      dist = Math.max(0, tr.scrollWidth - innerWidth); hz.style.height = (innerHeight + dist) + 'px'; hcalc(); hcur = htar; hdraw();
+    }
+    function hcalc() { if (!on) return; var r = hz.getBoundingClientRect(), range = hz.offsetHeight - innerHeight; htar = range > 0 ? Math.min(1, Math.max(0, -r.top / range)) * dist : 0; }
+    function hdraw() { tr.style.transform = 'translate3d(' + (-hcur).toFixed(1) + 'px,0,0)'; }
+    function hframe() { hcur += (htar - hcur) * 0.14; if (Math.abs(htar - hcur) < 0.3) hcur = htar; hdraw(); hraf = hcur !== htar ? requestAnimationFrame(hframe) : null; }
+    addEventListener('scroll', function () { if (!on) return; hcalc(); if (!hraf) hraf = requestAnimationFrame(hframe); }, { passive: true });
+    addEventListener('resize', hsize); addEventListener('load', hsize); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(hsize);
+    hsize();
+  });
 
   /* ---------- SIGNATURE 2: forgó szó (csak látható állapotban, reduced alatt statikus) ---------- */
   [].forEach.call(doc.querySelectorAll('.rot[data-words]'), function (el) {

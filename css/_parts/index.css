@@ -1,51 +1,125 @@
-/* index.css · főoldal */
-.p-index .hero--keret .hero__photo img{--focus:50% 62%}
-.p-index .intez{align-items:start}
-.p-index .intez__fig{grid-column:1/span 4}
-.p-index .intez__fig img{aspect-ratio:3/4}
-.p-index .intez__text{grid-column:6/span 7;display:grid;gap:2rem;align-content:start}
-.p-index .intez__text h2{max-width:22ch}
-.p-index .intez__text .lead{max-width:50ch}
-.p-index .ledger{border-top:1px solid var(--line-2);margin-top:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap)}
-.p-index .ledger__row{display:grid;gap:.6rem;padding:1.6rem 0 1.4rem;border-bottom:1px solid var(--line);align-content:start}
-.p-index .ledger__y{font-family:var(--font-d);font-weight:300;font-size:3.2rem;line-height:1;font-variant-numeric:tabular-nums;margin-bottom:.3rem}
-.p-index .ledger__what{font-size:1.1rem;line-height:1.45}
-.p-index .ledger__by{font-family:var(--font-u);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-2)}
-.p-index .eh__head{grid-column:1/span 4;display:grid;gap:1.4rem;align-content:start;position:sticky;top:calc(var(--nav) + 2rem)}
-.p-index .eh__quote{margin:1.4rem 0 0;padding:2rem;background:var(--forest);color:var(--paper);display:grid;gap:1.6rem;max-width:36rem}
-.p-index .eh__quote blockquote{font-size:1.35rem;line-height:1.45;font-weight:300;font-style:italic;max-width:none}
-.p-index .eh__who{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:1rem;align-items:center;font-size:.92rem;color:var(--muted-ink)}
-.p-index .eh__who img{width:4.5rem;height:5.6rem;object-fit:cover;object-position:50% 15%;background:var(--ink-2)}
-.p-index .eh__who b{display:block;color:var(--paper);font-family:var(--font-d);font-weight:400;font-size:1.05rem}
+/* index.css · főoldal (weboldal 4). Szekciónként más tipográfiai kompozíció, két egymást követő nem azonos igazítású:
+   műhely (óriás cím balra, álló kép jobbra a margóba lógva, évszámok vízszintes sávban) · élethelyzet (lépcsőzetes kétsoros cím, középre húzott mondat, három hasábos téma-index, nagy idézet)
+   · arcok (cím jobbra, bento: vezető nagy portré + a 37-es csempe) · lépcső (a négy lépés átlósan lefelé halad) · ház (vízszintesen haladó szobák) · záró (óriás 19:00 a cím mögött) */
+
+/* ---------- műhely ---------- */
+.p-index .muhely__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:0;align-items:start}
+.p-index .muhely__label{grid-column:1/span 12;grid-row:1;margin-bottom:1.6rem}
+.p-index .muhely__h{grid-column:1/span 8;grid-row:2;font-size:clamp(2.2rem,4.1vw,4.3rem);line-height:1.06;max-width:none}
+.p-index .muhely__fig{grid-column:9/span 4;grid-row:2/span 2;margin:0 calc(var(--side)*-1) 0 0;position:relative}
+.p-index .muhely__fig .px{overflow:clip;aspect-ratio:3/4;background:var(--paper-2)}
+.p-index .muhely__fig img{width:100%;height:112%;object-fit:cover;margin-top:-6%}
+.p-index .muhely__fig figcaption{font-family:var(--font-u);font-size:.78rem;letter-spacing:.04em;color:var(--fg-2);margin-top:.8rem;max-width:30ch}
+.p-index .muhely__text{grid-column:3/span 5;grid-row:3;margin-top:clamp(2rem,4vw,3.5rem);display:grid;gap:1.4rem;padding-left:1.4rem;border-left:1px solid var(--line-2)}
+.p-index .muhely__text .lead{max-width:46ch}
+.p-index .ledger{grid-column:1/-1;grid-row:4;margin-top:clamp(3.5rem,7vw,6rem);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap)}
+.p-index .ledger__row{display:grid;gap:.5rem;align-content:start;padding-top:1rem;border-top:1px solid var(--fg)}
+.p-index .ledger__y{font-family:var(--font-d);font-weight:300;font-size:clamp(3.4rem,6vw,6.2rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--hi)}
+.p-index .ledger__what{font-size:1.08rem;line-height:1.45;max-width:34ch}
+.p-index .ledger__by{font-family:var(--font-u);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-2)}
+
+/* ---------- élethelyzet ---------- */
+.p-index .eh__head{display:grid;justify-items:center;text-align:center;gap:1.4rem;margin-bottom:clamp(3rem,6vw,5rem)}
+.p-index .eh__h{font-size:clamp(2.4rem,5.2vw,5.4rem);line-height:1.02;max-width:none;display:grid;width:100%}
+.p-index .eh__h>span{display:block}
+.p-index .eh__h>span:first-child{justify-self:start;padding-left:4vw}
+.p-index .eh__h>span:last-child{justify-self:end;padding-right:4vw;font-style:italic;color:var(--forest)}
+.p-index .eh__rot{max-width:40ch;text-align:center}
+.p-index .eh__rot .rot{font-style:italic;border-bottom:1px solid var(--forest)}
+.p-index .eh__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(1.5rem,3vw,3rem);border-top:1px solid var(--line-2)}
+.p-index .eh__list a{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:1rem;align-items:baseline;padding:1.1rem 0 1.2rem;border-bottom:1px solid var(--line);transition:padding var(--t-ui) var(--ease-out)}
+.p-index .eh__list a b{grid-row:1/span 2;font-family:var(--font-d);font-weight:300;font-size:2.3rem;line-height:1;color:var(--fg);min-width:2.6ch;display:grid}
+.p-index .eh__list a b i{font-family:var(--font-u);font-style:normal;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);margin-top:.3rem}
+.p-index .eh__list a span{font-size:1.18rem;font-weight:400;line-height:1.25}
+.p-index .eh__list a small{grid-column:2;font-size:.9rem;color:var(--fg-2);line-height:1.45;margin-top:.3rem}
+@media (hover:hover) and (pointer:fine){.p-index .eh__list a:hover{padding-left:.6rem}.p-index .eh__list a:hover span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}}
+.p-index .eh__foot{margin-top:1.6rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(1.5rem,3vw,3rem);font-size:.95rem;color:var(--fg-2)}
+.p-index .eh__foot p:last-child{grid-column:2/span 2}
+.p-index .eh__quote{margin:clamp(4rem,8vw,7rem) auto 0;max-width:62rem;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:2.5rem;align-items:end}
+.p-index .eh__quote blockquote{grid-column:1/-1;font-family:var(--font-d);font-weight:300;font-style:italic;font-size:clamp(1.8rem,3.4vw,3.2rem);line-height:1.18;letter-spacing:-.01em;text-indent:-.45em;max-width:none}
+.p-index .eh__quote blockquote::before{content:"„"}
+.p-index .eh__quote blockquote::after{content:"”"}
+.p-index .eh__who{grid-column:2;margin-top:2rem;display:grid;grid-template-columns:4rem minmax(0,1fr);gap:1rem;align-items:center;font-size:.9rem;color:var(--fg-2);max-width:26rem}
+.p-index .eh__who img{width:4rem;height:5rem;object-fit:cover;object-position:50% 15%}
+.p-index .eh__who b{display:block;color:var(--fg);font-family:var(--font-d);font-weight:400;font-size:1.05rem}
 .p-index .eh__who span{display:block;line-height:1.4}
-.p-index .eh__who a{display:inline-block;margin-top:.35rem;font-family:var(--font-u);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:.3em}
-.p-index .eh__list{grid-column:6/span 7;display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;border-top:1px solid var(--line-2)}
-.p-index .eh__list a{display:grid;grid-template-columns:4.2rem minmax(0,1fr);column-gap:.8rem;align-items:baseline;padding:1rem 0;border-top:0;border-bottom:1px solid var(--line)}
-.p-index .eh__list a b{font-family:var(--font-d);font-weight:300;font-size:1.6rem;color:var(--fg);grid-row:1/span 2;line-height:1;display:grid}
-.p-index .eh__list a b i{font-family:var(--font-u);font-style:normal;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-2);margin-top:.35rem}
-.p-index .eh__list a span{font-size:1.15rem;font-weight:400}
-.p-index .eh__list a small{grid-column:2;font-size:.9rem;color:var(--fg-2);max-width:40ch;flex-basis:auto;line-height:1.45}
-.p-index .eh__list a:hover span{color:var(--hi)}
-.p-index .eh__foot{grid-column:6/span 7;margin-top:1.6rem;display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;font-size:.95rem;color:var(--fg-2)}
-.p-index .arcok__more{margin-top:2.5rem;text-align:right}
-.p-index .hogyan__more{margin-top:2.5rem}
-.p-index .haz{padding-block:var(--sec) calc(var(--sec)*.8)}
-.p-index .haz__head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:end;margin-bottom:2.5rem}
-.p-index .haz__head h2{grid-column:1/span 6}
-.p-index .haz__lead{grid-column:8/span 5;color:var(--fg-2);font-weight:300}
-.p-index .haz__row{align-items:end}
-.p-index .haz__row figure{width:clamp(260px,30vw,480px)}
-.p-index .haz__row figure img{aspect-ratio:4/3}
-.p-index .haz__row figure.is-wide{width:clamp(320px,44vw,720px)}
-.p-index .haz__row figure.is-wide img{aspect-ratio:3/2}
-.p-index .haz__row figure.is-tall{width:clamp(200px,22vw,360px)}
-.p-index .haz__row figure.is-tall img{aspect-ratio:3/4}
+.p-index .eh__who a{display:inline-block;margin-top:.3rem;font-family:var(--font-u);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- arcok: bento ---------- */
+.p-index .arcok__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:end}
+.p-index .arcok__h{grid-column:5/span 8;grid-row:1;text-align:right;font-size:clamp(2.4rem,4.8vw,5rem);line-height:1.02}
+.p-index .arcok__aside{grid-column:1/span 4;grid-row:1;color:var(--fg-2);font-size:1.02rem;max-width:34ch;padding-bottom:.6rem}
+.p-index .faces--bento{grid-column:1/-1;margin-top:clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:auto;gap:clamp(1rem,2vw,1.8rem);padding:0}
+.p-index .faces--bento .face:first-child{grid-column:1/span 2;grid-row:1/span 2}
+.p-index .faces--bento .face:first-child .face__name{font-size:1.7rem}
+.p-index .faces--bento .face:first-child img{aspect-ratio:4/4.6}
+.p-index .faces--bento .face figure{background:var(--forest-2)}
+.p-index .faces--bento .face__n{color:var(--hi)}
+.p-index .faces--bento .face__title{color:var(--fg-2)}
+.p-index .face--all{grid-column:5;grid-row:2;display:grid;align-content:space-between;padding:1.4rem;border:1px solid var(--line-2);min-height:100%;transition:background var(--t-ui) ease,color var(--t-ui) ease}
+.p-index .face--all b{font-family:var(--font-d);font-weight:300;font-size:clamp(4rem,7vw,7rem);line-height:.9;color:var(--hi)}
+.p-index .face--all span{font-family:var(--font-d);font-size:1.15rem;line-height:1.3;text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:.25em}
+.p-index .face--all:hover{background:var(--lamp);color:var(--ink)}
+.p-index .face--all:hover b{color:var(--ink)}
+
+/* ---------- lépcső: a négy lépés átlósan lefelé ---------- */
+.p-index .lepcso__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:0}
+.p-index .lepcso__h{grid-column:7/span 6;grid-row:1;text-align:right;font-size:clamp(3rem,7vw,7.4rem);line-height:.95;letter-spacing:-.025em}
+.p-index .lepcso__aside{grid-column:1/span 4;grid-row:1;align-self:end;font-size:1.05rem;color:var(--fg-2);max-width:34ch}
+.p-index .lepcso__step{grid-row:2;padding-top:1.1rem;border-top:1px solid var(--fg);margin-top:clamp(3rem,6vw,5rem)}
+.p-index .lepcso__step:nth-of-type(1){grid-column:1/span 3}
+.p-index .lepcso__step:nth-of-type(2){grid-column:4/span 3;margin-top:calc(clamp(3rem,6vw,5rem) + 5rem)}
+.p-index .lepcso__step:nth-of-type(3){grid-column:7/span 3;margin-top:calc(clamp(3rem,6vw,5rem) + 10rem)}
+.p-index .lepcso__step:nth-of-type(4){grid-column:10/span 3;margin-top:calc(clamp(3rem,6vw,5rem) + 15rem)}
+.p-index .lepcso__step .num{display:block;font-family:var(--font-d);font-weight:300;font-size:clamp(3.2rem,5vw,5rem);line-height:.9;letter-spacing:-.03em;color:var(--hi);margin-bottom:1rem}
+.p-index .lepcso__step h3{font-size:1.5rem;margin-bottom:.6rem}
+.p-index .lepcso__step p{font-size:1rem;line-height:1.55;max-width:30ch}
+
+/* ---------- ház: vízszintesen haladó szobák (sticky + scroll-arány, site.js). JS nélkül és mobilon: húzható sor ---------- */
+.p-index .haz{padding:0;position:relative}
+.p-index .haz__pin{padding-block:var(--sec)}
+.p-index .haz__track{display:flex;align-items:flex-end;gap:clamp(1.2rem,2.4vw,2.4rem);padding-inline:var(--side);overflow-x:auto}
+.p-index .haz__intro{flex:0 0 min(34rem,80vw);align-self:stretch;display:grid;align-content:space-between;gap:2rem;padding-right:2rem}
+.p-index .haz__intro h2{font-size:clamp(2.4rem,4.4vw,4.6rem);line-height:1.02}
+.p-index .haz__lead{color:var(--fg-2);font-weight:300;max-width:36ch}
+.p-index .haz__track figure{flex:0 0 auto;width:clamp(260px,30vw,480px)}
+.p-index .haz__track figure img{aspect-ratio:4/3;width:100%;object-fit:cover}
+.p-index .haz__track figure.is-wide{width:clamp(320px,44vw,720px)}
+.p-index .haz__track figure.is-wide img{aspect-ratio:3/2}
+.p-index .haz__track figure.is-tall{width:clamp(200px,22vw,360px)}
+.p-index .haz__track figure.is-tall img{aspect-ratio:3/4}
+.p-index .haz.is-h .haz__pin{position:sticky;top:0;height:100svh;overflow:clip;display:flex;align-items:center;padding-block:calc(var(--nav) + 1rem) 2rem}
+.p-index .haz.is-h .haz__track{overflow:visible;will-change:transform;width:max-content}
+.p-index .haz.is-h .haz__track figure,.p-index .haz.is-h .haz__track figure.is-wide,.p-index .haz.is-h .haz__track figure.is-tall{width:auto}
+.p-index .haz.is-h .haz__track figure img{height:min(58svh,560px);width:auto;max-width:none;aspect-ratio:4/3}
+.p-index .haz.is-h .haz__track figure.is-wide img{aspect-ratio:3/2}
+.p-index .haz.is-h .haz__track figure.is-tall img{aspect-ratio:3/4}
+.p-index .haz.is-h .haz__intro{align-self:center;flex-basis:min(30rem,34vw)}
+.p-index .haz__track figcaption{font-family:var(--font-u);font-size:.78rem;letter-spacing:.04em;color:var(--fg-2);margin-top:.7rem}
+
+/* ---------- záró: óriás 19:00 a cím mögött ---------- */
+.p-index .closer{position:relative;overflow:clip}
+.p-index .closer__clock{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-family:var(--font-d);font-weight:300;font-size:clamp(9rem,28vw,26rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(242,237,228,.16);white-space:nowrap;pointer-events:none;margin:0;max-width:none}
+.p-index .closer__body{position:relative}
 .p-index .closer .coord{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);justify-self:center}
+
 @media (max-width:900px){
-  .p-index .intez__fig,.p-index .intez__text,.p-index .eh__head,.p-index .eh__list,.p-index .eh__foot,.p-index .haz__head h2,.p-index .haz__lead{grid-column:1/-1}
-  .p-index .intez__fig{max-width:70%;margin-bottom:1.5rem}
-  .p-index .ledger{grid-template-columns:1fr}
-  .p-index .eh__head{position:static}
+  .p-index .muhely__grid,.p-index .arcok__grid,.p-index .lepcso__grid{grid-template-columns:1fr}
+  .p-index .muhely__label,.p-index .muhely__h,.p-index .muhely__fig,.p-index .muhely__text,.p-index .ledger,.p-index .arcok__h,.p-index .arcok__aside,.p-index .lepcso__h,.p-index .lepcso__aside,.p-index .lepcso__step{grid-column:1;grid-row:auto}
+  .p-index .muhely__fig{width:78%;justify-self:end;margin:2rem calc(var(--side)*-1) 0 0}
+  .p-index .muhely__text{padding-left:1rem}
+  .p-index .ledger{grid-template-columns:1fr;row-gap:1.8rem}
+  .p-index .eh__h>span:first-child{padding-left:0}.p-index .eh__h>span:last-child{padding-right:0}
   .p-index .eh__list,.p-index .eh__foot{grid-template-columns:1fr}
-  .p-index .haz__row figure,.p-index .haz__row figure.is-tall,.p-index .haz__row figure.is-wide{width:78vw}
+  .p-index .eh__foot p:last-child{grid-column:1}
+  .p-index .eh__quote{grid-template-columns:1fr}.p-index .eh__who{grid-column:1}
+  .p-index .arcok__h{text-align:left}.p-index .arcok__aside{margin-top:1rem}
+  .p-index .faces--bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p-index .faces--bento .face:first-child{grid-column:1/-1;grid-row:auto}
+  .p-index .face--all{grid-column:auto;grid-row:auto;min-height:12rem}
+  .p-index .lepcso__h{text-align:left}.p-index .lepcso__aside{margin-top:1rem}
+  .p-index .lepcso__step,.p-index .lepcso__step:nth-of-type(n){margin-top:2.2rem;padding-left:calc(var(--k,0)*1.2rem)}
+  .p-index .lepcso__step:nth-of-type(2){--k:1}.p-index .lepcso__step:nth-of-type(3){--k:2}.p-index .lepcso__step:nth-of-type(4){--k:3}
+  .p-index .haz__track figure,.p-index .haz__track figure.is-tall,.p-index .haz__track figure.is-wide{width:78vw}
+  .p-index .haz__intro{flex-basis:80vw}
 }

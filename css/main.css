@@ -68,6 +68,24 @@ em,i{font-style:italic}
 .sec__head--c .sec__aside{grid-column:4/span 6;margin-top:1rem}
 .sec__head--stack h2{grid-column:1/span 8}
 .sec__head--stack .sec__aside{grid-column:1/span 6;grid-row:2;margin-top:1.2rem}
+/* v4 · kreatív fej-változatok (David: „a szövegek elrendezése ne sablonos legyen”). Oldalon belül két egymást követő szekció nem kap azonos változatot.
+   --giant: óriás cím a teljes szélességen, a kísérő szöveg jobbra lent, dőlten · --hang: függő behúzás, az első sor kilóg balra a margóba
+   · .sec--rail: a rövid cím elforgatva, ragadós oldalsínként a tartalom mellett · .sec--ghost: óriás körvonalas szó a szekció mögött (data-ghost) */
+.sec__head--giant h2{grid-column:1/-1;font-size:clamp(2.8rem,6.2vw,6.6rem);line-height:.98;letter-spacing:-.025em;max-width:16ch}
+.sec__head--giant .sec__aside{grid-column:7/span 6;grid-row:2;margin-top:1.6rem;font-style:italic}
+.sec__head--hang h2{grid-column:3/span 9;font-size:clamp(2.4rem,4.6vw,4.8rem);line-height:1.02;--hang:calc(-2 * (100% + var(--gap)) / 9);text-indent:var(--hang)}
+.sec__head--hang h2.split{text-indent:0}.sec__head--hang h2.split .line:first-child{margin-left:var(--hang)}
+.sec__head--hang .sec__aside{grid-column:3/span 5;grid-row:2;margin-top:1.4rem;padding-left:1rem;border-left:1px solid var(--line-2)}
+.sec--rail>.wrap{display:grid;grid-template-columns:minmax(0,clamp(4rem,7vw,7rem)) minmax(0,1fr);column-gap:clamp(1.5rem,3vw,3rem)}
+.sec--rail>.wrap>*{grid-column:2;min-width:0}
+.sec--rail .sec__head{display:contents}
+.sec--rail .sec__head h2{grid-column:1;grid-row:1/span 40;align-self:start;position:sticky;top:calc(var(--stick,var(--nav)) + 2rem);writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(2.4rem,4.2vw,4.4rem);line-height:1;white-space:nowrap;margin:0}
+/* sín csak rövid címre (legfeljebb ~22 karakter), különben a hajtásnál levágódik */
+.sec--rail .sec__head .sec__aside{grid-column:2;grid-row:1;margin-bottom:clamp(2rem,4vw,3rem);max-width:52ch;font-size:1.3rem}
+.sec--ghost{position:relative;overflow:clip}
+.sec--ghost::before{content:attr(data-ghost);content:attr(data-ghost) / "";position:absolute;right:-.04em;top:.02em;font-family:var(--font-d);font-weight:300;font-size:clamp(10rem,26vw,24rem);line-height:.8;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px var(--line-2);pointer-events:none;white-space:nowrap}
+.sec--ghost>*{position:relative}
+.sec--ghost.is-left::before{right:auto;left:-.04em}
 
 /* ---------- 3. nav, panel, mobil lap ---------- */
 .nav{position:fixed;inset:0 0 auto 0;height:var(--nav);z-index:50;background:var(--paper);border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding-inline:var(--side);column-gap:var(--gap);transition:transform var(--t-ui) var(--ease-out)}
@@ -123,18 +141,40 @@ body.no-scroll{overflow:hidden}
 
 /* ---------- 5. hero-családok (asztalon pontosan egy képernyő a nav alatt) ---------- */
 .hero{position:relative}
-.hero--keret{height:calc(100svh - var(--nav) + 70svh)}
-.hero--keret .hero__stage{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));overflow:clip;background:var(--paper)}
-.hero--keret .hero__photo{position:absolute;inset:0;margin:0;--p:0;clip-path:inset(0 calc(var(--p)*6vw) calc(var(--p)*34vh) calc(var(--p)*44vw))}
-.hero--keret .hero__photo img{width:100%;height:100%;object-fit:cover;object-position:var(--focus,50% 45%)}
-.hero--keret .hero__card{position:absolute;left:var(--side);bottom:0;width:min(100% - 2*var(--side),46rem);background:var(--paper);padding:2.2rem 2.6rem 2.2rem 0;display:flex;flex-direction:column;gap:1.4rem;box-shadow:0 -18px 48px -24px rgba(26,31,28,.35)}
-.hero--keret .hero__card::before{content:"";position:absolute;top:0;bottom:0;right:100%;width:var(--side);background:var(--paper)}
-.hero--keret .hero__card h1{font-size:clamp(2rem,3.2vw,3.3rem);line-height:1.12;font-weight:300;display:block;width:auto;max-width:none;text-wrap:pretty}
-.hero--keret .hero__aside{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.2rem 2rem;align-items:end;font-size:1.02rem;line-height:1.5;color:var(--fg);font-weight:300}
-.hero--keret .hero__aside p{max-width:34ch}
-.hero--keret .hero__aside b{font-weight:400}
-.hero--keret .hero__aside .muted{color:var(--fg-2)}
-.hero--keret .hero__meta{position:absolute;right:var(--side);bottom:2rem;font-family:var(--font-u);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);text-shadow:0 1px 8px rgba(0,0,0,.35)}
+/* A · Küszöb (Hero-taxonómia 9, sticky átalakuló): boltíves ajtó a rendelő fotójával, a cím lépcsőzetesen körülötte (bal fent, jobb lent).
+   Görgetésre az ajtó kinyílik teljes képernyőre (site.js, clip-path inset + round). JS nélkül és reduced-motion alatt: álló boltív, egy képernyő. */
+.hero--kuszob{height:calc(100svh - var(--nav) + 90svh)}
+.kz__stage{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));overflow:clip;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;column-gap:clamp(1.5rem,3vw,3.5rem);padding:clamp(1.4rem,3vh,2.6rem) var(--side) clamp(1.4rem,3.2vh,2.4rem)}
+.kz__slot{grid-column:2;grid-row:1;align-self:stretch;width:clamp(220px,22vw,380px)}
+.kz__arch{position:absolute;inset:0;margin:0;background:var(--forest-2);clip-path:inset(var(--t,0) var(--r,0) var(--b,0) var(--l,0) round var(--rad,0) var(--rad,0) 0 0);z-index:0}
+.kz__arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 58%;transform:translate3d(calc(var(--mx,0)*1px),calc(var(--my,0)*1px),0) scale(var(--br,1.02))}
+.kz__l,.kz__r,.kz__foot{position:relative;z-index:1}
+.kz__h1{display:contents}
+.kz__l,.kz__r{grid-row:1;white-space:nowrap;font-family:var(--font-d);font-weight:300;font-size:clamp(2.2rem,3.7vw,4.4rem);line-height:1.04;letter-spacing:-.018em}
+.kz__l{grid-column:1;text-align:right;align-self:start;padding-top:clamp(1.5rem,9vh,6rem)}
+.kz__r{grid-column:3;text-align:left;align-self:end;padding-bottom:clamp(1.5rem,9vh,6rem)}
+.kz__l em{font-style:italic;color:var(--lamp)}
+.kz__foot{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:clamp(1.5rem,3vw,3.5rem);align-items:end;padding-top:clamp(1rem,2.4vh,1.8rem)}
+.kz__lead{grid-column:1;justify-self:end;max-width:36ch;font-size:1.05rem;line-height:1.5;color:var(--muted-ink);font-weight:300}
+.kz__lead b{color:var(--paper);font-weight:400}
+.kz__ctas{grid-column:2;justify-content:center;width:clamp(260px,26vw,440px)}
+.kz__meta{grid-column:3;justify-self:start;font-family:var(--font-u);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-ink)}
+.kz__meta b{display:block;color:var(--lamp);font-weight:500;margin-bottom:.35rem}
+html:not(.js) .kz__arch{position:relative;grid-column:2;grid-row:1;clip-path:none;border-radius:999px 999px 0 0;overflow:hidden}
+html:not(.js) .kz__slot{display:none}
+.motion-off .hero--kuszob{height:calc(100svh - var(--nav))}
+.motion-off .kz__stage{position:relative;top:auto}
+@media (max-width:900px){
+  .hero--kuszob,.motion-off .hero--kuszob{height:auto}
+  .kz__stage{position:relative;top:auto;height:auto;min-height:calc(100svh - var(--nav));grid-template-columns:1fr;grid-template-rows:auto;row-gap:1rem;padding-top:1.2rem;justify-items:center;text-align:center}
+  .kz__slot{grid-column:1;grid-row:auto;width:min(64vw,270px);height:auto;aspect-ratio:5/7;max-height:40svh;align-self:auto}
+  .kz__h1{display:block;margin-top:.4rem}
+  .kz__l,.kz__r{display:block;grid-column:1;grid-row:auto;text-align:center;padding:0;font-size:clamp(2.1rem,9.4vw,3rem)}
+  .kz__foot{grid-row:auto;grid-template-columns:1fr;row-gap:1.1rem;justify-items:center;padding-top:0}
+  .kz__lead,.kz__meta{grid-column:1;justify-self:center;text-align:center}
+  .kz__ctas{grid-column:1;width:auto}
+  html:not(.js) .kz__arch{grid-column:1;grid-row:auto;width:min(64vw,270px);aspect-ratio:5/7}
+}
 .hero__band{position:absolute;left:0;right:0;bottom:0;background:var(--paper);padding:2.5rem var(--side) 2.75rem;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:end}
 .hero__band h1{grid-column:1/span 8;font-size:clamp(2.3rem,3.9vw,4rem);font-weight:300;line-height:1.1}
 .hero__aside{grid-column:10/span 3;display:grid;gap:1rem;font-size:1rem;color:var(--fg-2);font-weight:300}
@@ -421,7 +461,10 @@ body.no-scroll{overflow:hidden}
   :root{--nav:56px}
   .nav__links{display:none}.nav__burger{display:inline-block}.panel{display:none}
   .g12,.sec__head,.closer,.story,.faq__group,.hero--type,.hero--statement,.hero--spread,.hero--name,.hero--row .hero__head{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .sec__head h2,.sec__head .sec__aside,.sec__head--r h2,.sec__head--r .sec__aside,.sec__head--c h2,.sec__head--c .sec__aside{grid-column:1/-1;text-align:left;grid-row:auto}
+  .sec--rail>.wrap{display:block}.sec--rail .sec__head{display:grid}.sec--rail .sec__head h2{writing-mode:horizontal-tb;transform:none;position:static;white-space:normal;max-height:none;margin-bottom:1rem}
+  .sec__head--hang h2{text-indent:0;--hang:0px}.sec__head--giant .sec__aside,.sec__head--hang .sec__aside{grid-row:auto}
+  .sec--ghost::before{font-size:9rem}
+  .sec__head h2,.sec__head .sec__aside,.sec__head--r h2,.sec__head--r .sec__aside,.sec__head--c h2,.sec__head--c .sec__aside,.sec__head--giant h2,.sec__head--giant .sec__aside,.sec__head--hang h2,.sec__head--hang .sec__aside{grid-column:1/-1;text-align:left;grid-row:auto}
   .hero__band h1,.hero__aside,.hero--cover.is-right .hero__band h1,.hero--cover.is-right .hero__aside,.hero--type h1,.hero--type .lead,.hero--type.is-two h1,.hero--type.is-two .hero__voice,.hero--statement h1,.hero--statement.is-right h1,.hero--spread h1,.hero--spread .hero__intro,.hero--spread .hero__fig,.hero--spread .hero__foot,.hero--name .meta,.hero--name .portrait,.hero--name .help,.hero--row h1,.hero--row .lead,.closer__body,.closer.is-center .closer__body,.story__media,.story__steps,.faq__group h2,.faq{grid-column:1/-1;grid-row:auto;text-align:left;justify-items:start}
   .hero--keret{height:auto}.hero--keret .hero__stage{position:relative;top:auto;height:auto;min-height:calc(100svh - var(--nav))}
   .hero--keret .hero__photo,.hero--cover .hero__photo{position:relative;height:52svh;clip-path:none}
