@@ -468,9 +468,9 @@ html:not(.js) .kz__slot{display:none}
   :root{--nav:56px}
   .nav__links{display:none}.nav__burger{display:inline-block}.panel{display:none}
   .g12,.sec__head,.closer,.story,.faq__group,.hero--type,.hero--statement,.hero--spread,.hero--name,.hero--row .hero__head{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .sec--rail>.wrap{display:block}.sec--rail .sec__head{display:grid}.sec--rail .sec__head h2{writing-mode:horizontal-tb;transform:none;position:static;white-space:normal;max-height:none;margin-bottom:1rem}
+  .sec--rail>.wrap{display:block}.sec--rail .sec__head{display:grid}.sec--rail .sec__head h2,.sec--rail .sec__head .sec__aside{grid-column:1/-1;grid-row:auto}.sec--rail .sec__head h2{writing-mode:horizontal-tb;transform:none;position:static;white-space:normal;max-height:none;margin-bottom:1rem}
   .sec__head--hang h2{text-indent:0;--hang:0px}.sec__head--giant .sec__aside,.sec__head--hang .sec__aside{grid-row:auto}
-  .sec--ghost::before{font-size:9rem}
+  .sec--ghost::before{display:none}
   .sec__head h2,.sec__head .sec__aside,.sec__head--r h2,.sec__head--r .sec__aside,.sec__head--c h2,.sec__head--c .sec__aside,.sec__head--giant h2,.sec__head--giant .sec__aside,.sec__head--hang h2,.sec__head--hang .sec__aside{grid-column:1/-1;text-align:left;grid-row:auto}
   .hero__band h1,.hero__aside,.hero--cover.is-right .hero__band h1,.hero--cover.is-right .hero__aside,.hero--type h1,.hero--type .lead,.hero--type.is-two h1,.hero--type.is-two .hero__voice,.hero--statement h1,.hero--statement.is-right h1,.hero--spread h1,.hero--spread .hero__intro,.hero--spread .hero__fig,.hero--spread .hero__foot,.hero--name .meta,.hero--name .portrait,.hero--name .help,.hero--row h1,.hero--row .lead,.closer__body,.closer.is-center .closer__body,.story__media,.story__steps,.faq__group h2,.faq{grid-column:1/-1;grid-row:auto;text-align:left;justify-items:start}
   .hero--keret{height:auto}.hero--keret .hero__stage{position:relative;top:auto;height:auto;min-height:calc(100svh - var(--nav))}
