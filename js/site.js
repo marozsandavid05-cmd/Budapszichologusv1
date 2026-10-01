@@ -45,18 +45,8 @@
   }
   BP.lenis = lenis;
 
-  /* ---------- nav: rejtés hiszterézissel, aktuális menüpont ---------- */
-  var nav = doc.querySelector('.nav'), lastY = scrollY || 0, downAcc = 0, upAcc = 0;
-  function onScroll() {
-    var y = scrollY || 0, d = y - lastY;
-    if (nav && !body.classList.contains('no-scroll')) {
-      if (d > 0) { downAcc += d; upAcc = 0; } else if (d < 0) { upAcc -= d; downAcc = 0; }
-      if (downAcc > 28 && y > 240) { if (!nav.classList.contains('is-hidden')) { nav.classList.add('is-hidden'); body.classList.add('nav-hidden'); closePanels(); } }
-      else if (upAcc > 160 || y <= 240) { nav.classList.remove('is-hidden'); body.classList.remove('nav-hidden'); }
-    }
-    lastY = y;
-  }
-  addEventListener('scroll', onScroll, { passive: true });
+  /* ---------- nav: a fejléc mindig látszik (David, 2026-10-01: görgetéskor sem tűnhet el), aktuális menüpont ---------- */
+  var nav = doc.querySelector('.nav');
   (function markCurrent() {
     var file = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
     var inProf = /\/szakemberek\//.test(location.pathname), inBlog = /\/blog\//.test(location.pathname);
