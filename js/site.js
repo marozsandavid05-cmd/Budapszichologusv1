@@ -86,7 +86,9 @@
   var kz = doc.querySelector('.hero--kuszob');
   if (kz) {
     var kst = kz.querySelector('.kz__stage'), kslot = kz.querySelector('[data-slot]'), karch = kz.querySelector('[data-arch]'), kimg = karch.querySelector('img');
-    var kl = kz.querySelector('.kz__l'), kr = kz.querySelector('.kz__r'), kft = kz.querySelector('.kz__foot'), box = {}, kp = 0, kpt = 0;
+    var kl = kz.querySelector('.kz__l'), kr = kz.querySelector('.kz__r'), kft = kz.querySelector('.kz__foot'), box = {}, kp = 0, kpt = 0, kq = 0;
+    var karr = kz.querySelector('.kz__arrive'), kwords = karr ? [].slice.call(karr.querySelectorAll('.kz__say .w')) : [];
+    var kseg = function (v, a, b) { return Math.max(0, Math.min(1, (v - a) / (b - a))); }, keo = function (v) { return 1 - Math.pow(1 - v, 3); };
     /* a két címfelet a kapu széle tolja ki: a bal szöveg pontosan annyit mozdul balra, amennyit a boltív bal széle,
        a jobb ugyanígy jobbra. Így a szöveg sosem kerül a fotóra (a régi változat a nyíló kép fölé csúszott, David:
        „még mindig buggos”), a két fél egyszerre indul és egyszerre ér ki, és a végén a képernyőn kívül áll. */
@@ -110,7 +112,8 @@
     if (!reduce) {
       var kmx = 0, kmy = 0, ktx = 0, kty = 0, kt0 = performance.now(), kvis = true, kraf = null;
       if (fine) addEventListener('mousemove', function (e) { ktx = (e.clientX / innerWidth - .5) * -18; kty = (e.clientY / innerHeight - .5) * -12; }, { passive: true });
-      var kcalc = function () { if (innerWidth <= 900) { kpt = 0; return; } var range = kz.offsetHeight - kst.offsetHeight; kpt = range > 0 ? Math.min(1, Math.max(0, (NAV() - kz.getBoundingClientRect().top) / range)) : 0; };
+      /* kq: a teljes hero-görgetés 0..1. A kapu az első 66%-ban nyílik ki (kpt), utána jön a panel, a végén rövid megállás. */
+      var kcalc = function () { if (innerWidth <= 900) { kpt = kq = 0; return; } var range = kz.offsetHeight - kst.offsetHeight; kq = range > 0 ? Math.min(1, Math.max(0, (NAV() - kz.getBoundingClientRect().top) / range)) : 0; kpt = Math.min(1, kq / .66); };
       addEventListener('scroll', kcalc, { passive: true }); addEventListener('resize', kcalc); kcalc();
       var kframe = function (now) {
         kmx += (ktx - kmx) * .06; kmy += (kty - kmy) * .06;
@@ -123,6 +126,12 @@
         var ku = Math.max(kinv(box.l * e, kg.l, kg.wl), kinv(box.r * e, kg.r, kg.wr));
         kl.style.transform = e ? 'translateX(' + (-kfwd(ku, kg.l, kg.wl)).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + kfwd(ku, kg.r, kg.wr).toFixed(1) + 'px)' : '';
         kl.style.opacity = kr.style.opacity = ''; kft.style.opacity = e ? Math.max(0, 1 - e * 2.2).toFixed(3) : '';
+        if (karr) {
+          var kon = innerWidth > 900; if (karr.hidden === kon) karr.hidden = !kon;
+          var up = keo(kseg(kq, .6, .84));
+          karr.style.transform = 'translateY(' + ((1 - up) * 105).toFixed(2) + '%)'; karr.style.visibility = up > 0 ? 'visible' : 'hidden';
+          kwords.forEach(function (w, i) { var k = keo(kseg(kq, .63 + i * .012, .8 + i * .006)); w.style.transform = 'translateY(' + ((1 - k) * .9).toFixed(3) + 'em)'; w.style.opacity = (.12 + k * .88).toFixed(3); });
+        }
         kraf = kvis ? requestAnimationFrame(kframe) : null;
       };
       if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { kvis = es[0].isIntersecting; if (kvis && !kraf) kraf = requestAnimationFrame(kframe); }).observe(kz);

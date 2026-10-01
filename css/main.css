@@ -148,7 +148,7 @@ body.no-scroll{overflow:hidden}
 .hero{position:relative}
 /* A · Küszöb (Hero-taxonómia 9, sticky átalakuló): boltíves ajtó a rendelő fotójával, a cím lépcsőzetesen körülötte (bal fent, jobb lent).
    Görgetésre az ajtó kinyílik teljes képernyőre (site.js, clip-path inset + round). JS nélkül és reduced-motion alatt: álló boltív, egy képernyő. */
-.hero--kuszob{height:calc(100svh - var(--nav) + 90svh)}
+.hero--kuszob{height:calc(100svh - var(--nav) + 135svh)}
 .kz__stage{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));overflow:clip;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;column-gap:clamp(1.5rem,3vw,3.5rem);padding:clamp(1.4rem,3vh,2.6rem) var(--side) clamp(1.4rem,3.2vh,2.4rem)}
 .kz__slot{grid-column:2;grid-row:1;align-self:stretch;width:clamp(220px,22vw,380px)}
 .kz__arch{position:absolute;inset:0;margin:0;background:var(--forest-2);clip-path:inset(var(--t,0) var(--r,0) var(--b,0) var(--l,0) round var(--rad,0) var(--rad,0) 0 0);z-index:0}
@@ -520,3 +520,15 @@ html:not(.js) .kz__slot{display:none}
    A .hero .h-in belépő transition-je (transform .6s + 80 ms késleltetés a jobb félen) eddig utánahúzta a szöveget:
    ettől „kullogott” a kapu után és csúszott rá a nyíló fotóra (David, 2026-10-01). Az első belépő után kikapcsol. */
 .hero--kuszob.is-in .kz__l,.hero--kuszob.is-in .kz__r{transition:none!important}
+
+/* Küszöb hero, 4. felvonás (az A2 prototípusból, David kérésére 2026-10-01): a kapu kinyílása után alulról felcsúszik a
+   padlizsán perem-panel, a mondat szavanként rendeződik, jobbra a Kivel kezdjem. Csak animált gépes nézetben (a site.js
+   veszi le a hidden-t); mobilon, reduced motion alatt és JS nélkül a hero saját alsó sora mondja ugyanezt. */
+.kz__arrive{position:absolute;left:var(--side);right:var(--side);bottom:0;z-index:3;background:var(--plum);color:var(--paper);border-radius:22px 22px 0 0;border-top:1px solid rgba(207,167,94,.55);padding:clamp(1.6rem,4vh,2.8rem) clamp(1.4rem,3vw,3rem) clamp(1.6rem,4vh,2.6rem);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:1.2rem;align-items:end;transform:translateY(105%);will-change:transform;visibility:hidden}
+.kz__arrive[hidden]{display:none}
+.kz__say{grid-column:1/span 8;font-family:var(--font-d);font-weight:300;font-size:clamp(1.6rem,2.7vw,3rem);line-height:1.12;letter-spacing:-.012em;color:var(--paper)}
+.kz__say em{font-style:italic;color:var(--lamp)}
+.kz__say .w{display:inline-block;will-change:transform,opacity}
+.kz__act{grid-column:9/-1;justify-self:end;text-align:right;display:grid;gap:1rem;justify-items:end}
+.kz__act p{font-size:1rem;line-height:1.5;color:var(--muted-ink);max-width:30ch}
+@media (max-width:900px){.kz__arrive{display:none!important}}
