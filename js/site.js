@@ -109,7 +109,11 @@
       var kcalc = function () { if (innerWidth <= 900) { kpt = 0; return; } var range = kz.offsetHeight - kst.offsetHeight; kpt = range > 0 ? Math.min(1, Math.max(0, (NAV() - kz.getBoundingClientRect().top) / range)) : 0; };
       addEventListener('scroll', kcalc, { passive: true }); addEventListener('resize', kcalc); kcalc();
       var kframe = function (now) {
-        kmx += (ktx - kmx) * .06; kmy += (kty - kmy) * .06; kp += (kpt - kp) * .12; if (Math.abs(kpt - kp) < .0005) kp = kpt;
+        kmx += (ktx - kmx) * .06; kmy += (kty - kmy) * .06;
+        /* a kapu és a címfelek KÖZVETLENÜL a görgetést követik: a Lenis már simít, egy második lerp itt ~200 ms késést adott
+           (mérve: visszagörgetésnél a kapu-út 55%-ával lemaradt, David: „buggosan késve jön vissza”). A görgetés-arányt itt, a
+           képkockán olvassuk ki, nem a scroll-eseményből, hogy egy képkockát se késsen. */
+        kcalc(); kp = kpt;
         kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kimg.style.setProperty('--br', (1.03 + Math.sin((now - kt0) / 2600) * .025).toFixed(4));
         var e = kp * kp * (3 - 2 * kp); kset(e);
         var ks = Math.min(1, e / .8);
