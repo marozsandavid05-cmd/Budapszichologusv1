@@ -110,7 +110,7 @@
     var krefresh = function () { kmeasure(); kset(kp * kp * (3 - 2 * kp)); };
     krefresh(); addEventListener('resize', krefresh); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(krefresh); addEventListener('load', krefresh);
     if (!reduce) {
-      var kmx = 0, kmy = 0, ktx = 0, kty = 0, kt0 = performance.now(), kvis = true, kraf = null;
+      var kmx = 0, kmy = 0, ktx = 0, kty = 0, kt0 = performance.now(), kvis = true, kraf = null, kbr = 1.03;
       if (fine) addEventListener('mousemove', function (e) { ktx = (e.clientX / innerWidth - .5) * -18; kty = (e.clientY / innerHeight - .5) * -12; }, { passive: true });
       /* kq: a teljes hero-görgetés 0..1. A kapu az első 66%-ban nyílik ki (kpt), utána jön a panel, a végén rövid megállás. */
       var kcalc = function () { if (innerWidth <= 900) { kpt = kq = 0; return; } var range = kz.offsetHeight - kst.offsetHeight; kq = range > 0 ? Math.min(1, Math.max(0, (NAV() - kz.getBoundingClientRect().top) / range)) : 0; kpt = Math.min(1, kq / .66); };
@@ -121,7 +121,7 @@
            (mérve: visszagörgetésnél a kapu-út 55%-ával lemaradt, David: „buggosan késve jön vissza”). A görgetés-arányt itt, a
            képkockán olvassuk ki, nem a scroll-eseményből, hogy egy képkockát se késsen. */
         kcalc(); kp = kpt;
-        kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kimg.style.setProperty('--br', (1.03 + Math.sin((now - kt0) / 2600) * .025).toFixed(4));
+        kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kbr += ((1.03 + Math.sin((now - kt0) / 2600) * .025) - kbr) * .05; kimg.style.setProperty('--br', kbr.toFixed(4));
         var e = kp * kp * (3 - 2 * kp); kset(e);
         var ku = Math.max(kinv(box.l * e, kg.l, kg.wl), kinv(box.r * e, kg.r, kg.wr));
         kl.style.transform = e ? 'translateX(' + (-kfwd(ku, kg.l, kg.wl)).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + kfwd(ku, kg.r, kg.wr).toFixed(1) + 'px)' : '';
@@ -134,7 +134,9 @@
         }
         kraf = kvis ? requestAnimationFrame(kframe) : null;
       };
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { kvis = es[0].isIntersecting; if (kvis && !kraf) kraf = requestAnimationFrame(kframe); }).observe(kz);
+      /* a hero alja a következő szekció határán: a rAF egy képernyőnyivel a hero ELŐTT már fut, és a „lélegző” kép-skála
+         lágyan úszik a céljára, így visszagörgetéskor nem ugrik a fotó (mérve: 1518 -> 1456 px egy képkockán, David: „ugrik egyet”) */
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { kvis = es[0].isIntersecting; if (kvis && !kraf) kraf = requestAnimationFrame(kframe); }, { rootMargin: '100% 0px 100% 0px' }).observe(kz);
       kraf = requestAnimationFrame(kframe);
     }
   }
