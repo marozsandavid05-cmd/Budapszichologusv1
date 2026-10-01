@@ -87,19 +87,23 @@
   if (kz) {
     var kst = kz.querySelector('.kz__stage'), kslot = kz.querySelector('[data-slot]'), karch = kz.querySelector('[data-arch]'), kimg = karch.querySelector('img');
     var kl = kz.querySelector('.kz__l'), kr = kz.querySelector('.kz__r'), kft = kz.querySelector('.kz__foot'), box = {}, kp = 0, kpt = 0;
-    /* a két címfél kiúszási útja: annyi, hogy a SZÖVEG (nem a doboz) teljesen kimenjen a képernyőről (bal balra, jobb jobbra) */
-    /* szimmetrikus kiúszás: a két szöveg UGYANABBAN a pillanatban éri el a saját képernyőszélét (gl, gr: a szöveg és a szél
-       közti rés, wl, wr: a szöveg szélessége), utána ugyanabban az ütemben megy ki. Így a jobb oldali nem késik a balhoz képest. */
-    var kgl = 0, kgr = 0, kwl = 0, kwr = 0, KS0 = .35;
+    /* a két címfelet a kapu széle tolja ki: a bal szöveg pontosan annyit mozdul balra, amennyit a boltív bal széle,
+       a jobb ugyanígy jobbra. Így a szöveg sosem kerül a fotóra (a régi változat a nyíló kép fölé csúszott, David:
+       „még mindig buggos”), a két fél egyszerre indul és egyszerre ér ki, és a végén a képernyőn kívül áll. */
+    /* közös fázis (u): u=1-nél MINDKÉT szöveg épp a saját képernyőszélénél van, u=2-nél mindkettő teljesen kint.
+       Mindig a nagyobb igény nyer: amelyiket a kapu széle jobban tolná, az diktál, a másik vele együtt megy.
+       Így a jobb oldali sem késik (szimmetrikus), és egyik sem csúszik rá a fotóra. */
+    var kg = { l: 0, r: 0, wl: 1, wr: 1 };
     var ktext = function (el) { var rg = doc.createRange(); rg.selectNodeContents(el); return rg.getBoundingClientRect(); };
     var kmeasure = function () {
       var st = kst.getBoundingClientRect(), r = kslot.getBoundingClientRect(); box = { t: r.top - st.top, l: r.left - st.left, r: st.right - r.right, b: st.bottom - r.bottom, w: r.width };
       var tl = kl.style.transform, tr = kr.style.transform; kl.style.transform = kr.style.transform = '';
       var a = ktext(kl), b = ktext(kr);
-      kgl = Math.max(0, a.left); kwl = a.width + 24; kgr = Math.max(0, innerWidth - b.right); kwr = b.width + 24;
+      kg = { l: Math.max(1, a.left), r: Math.max(1, innerWidth - b.right), wl: a.width + 8, wr: b.width + 8 };
       kl.style.transform = tl; kr.style.transform = tr;
     };
-    var koff = function (s, g, w) { return s <= KS0 ? s / KS0 * g : g + (s - KS0) / (1 - KS0) * w; };
+    var kinv = function (o, g, w) { return o <= g ? o / g : 1 + (o - g) / w; };
+    var kfwd = function (u, g, w) { return u <= 1 ? u * g : g + Math.min(1, u - 1) * w; };
     var kset = function (e) { var k = 1 - e; karch.style.setProperty('--t', (box.t * k).toFixed(1) + 'px'); karch.style.setProperty('--l', (box.l * k).toFixed(1) + 'px'); karch.style.setProperty('--r', (box.r * k).toFixed(1) + 'px'); karch.style.setProperty('--b', (box.b * k).toFixed(1) + 'px'); karch.style.setProperty('--rad', (box.w / 2 * k).toFixed(1) + 'px'); };
     var krefresh = function () { kmeasure(); kset(kp * kp * (3 - 2 * kp)); };
     krefresh(); addEventListener('resize', krefresh); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(krefresh); addEventListener('load', krefresh);
@@ -116,9 +120,9 @@
         kcalc(); kp = kpt;
         kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kimg.style.setProperty('--br', (1.03 + Math.sin((now - kt0) / 2600) * .025).toFixed(4));
         var e = kp * kp * (3 - 2 * kp); kset(e);
-        var ks = Math.min(1, e / .8);
-        kl.style.transform = e ? 'translateX(' + (-koff(ks, kgl, kwl)).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + koff(ks, kgr, kwr).toFixed(1) + 'px)' : '';
-        kl.style.opacity = kr.style.opacity = e ? Math.max(0, 1 - Math.max(0, e - .5) / .3).toFixed(3) : ''; kft.style.opacity = e ? Math.max(0, 1 - e * 2.2).toFixed(3) : '';
+        var ku = Math.max(kinv(box.l * e, kg.l, kg.wl), kinv(box.r * e, kg.r, kg.wr));
+        kl.style.transform = e ? 'translateX(' + (-kfwd(ku, kg.l, kg.wl)).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + kfwd(ku, kg.r, kg.wr).toFixed(1) + 'px)' : '';
+        kl.style.opacity = kr.style.opacity = ''; kft.style.opacity = e ? Math.max(0, 1 - e * 2.2).toFixed(3) : '';
         kraf = kvis ? requestAnimationFrame(kframe) : null;
       };
       if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { kvis = es[0].isIntersecting; if (kvis && !kraf) kraf = requestAnimationFrame(kframe); }).observe(kz);

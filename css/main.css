@@ -515,3 +515,8 @@ html:not(.js) .kz__slot{display:none}
 
 /* hero-fotó (folyosó): a boltív a képernyő közepén nyílik, ezért a kép szélesebb a színpadnál és balra tolva, így a virágcsokor és a lámpa esik a boltívbe (left:0, hogy nyitva se maradjon csík a bal szélen). Mobilon a kép a saját boltívét tölti ki. */
 @media (min-width:901px){.kz__arch img{width:145%;left:0;right:auto}}
+
+/* Küszöb hero: a két címfelet a görgetés mozgatja (site.js, képkockánként), ezért rajtuk NEM lehet CSS-átmenet.
+   A .hero .h-in belépő transition-je (transform .6s + 80 ms késleltetés a jobb félen) eddig utánahúzta a szöveget:
+   ettől „kullogott” a kapu után és csúszott rá a nyíló fotóra (David, 2026-10-01). Az első belépő után kikapcsol. */
+.hero--kuszob.is-in .kz__l,.hero--kuszob.is-in .kz__r{transition:none!important}
