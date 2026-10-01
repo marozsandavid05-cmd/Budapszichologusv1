@@ -88,14 +88,18 @@
     var kst = kz.querySelector('.kz__stage'), kslot = kz.querySelector('[data-slot]'), karch = kz.querySelector('[data-arch]'), kimg = karch.querySelector('img');
     var kl = kz.querySelector('.kz__l'), kr = kz.querySelector('.kz__r'), kft = kz.querySelector('.kz__foot'), box = {}, kp = 0, kpt = 0;
     /* a két címfél kiúszási útja: annyi, hogy a SZÖVEG (nem a doboz) teljesen kimenjen a képernyőről (bal balra, jobb jobbra) */
-    var kdl = 0, kdr = 0;
+    /* szimmetrikus kiúszás: a két szöveg UGYANABBAN a pillanatban éri el a saját képernyőszélét (gl, gr: a szöveg és a szél
+       közti rés, wl, wr: a szöveg szélessége), utána ugyanabban az ütemben megy ki. Így a jobb oldali nem késik a balhoz képest. */
+    var kgl = 0, kgr = 0, kwl = 0, kwr = 0, KS0 = .35;
     var ktext = function (el) { var rg = doc.createRange(); rg.selectNodeContents(el); return rg.getBoundingClientRect(); };
     var kmeasure = function () {
       var st = kst.getBoundingClientRect(), r = kslot.getBoundingClientRect(); box = { t: r.top - st.top, l: r.left - st.left, r: st.right - r.right, b: st.bottom - r.bottom, w: r.width };
       var tl = kl.style.transform, tr = kr.style.transform; kl.style.transform = kr.style.transform = '';
-      kdl = Math.max(0, ktext(kl).right) + 24; kdr = Math.max(0, innerWidth - ktext(kr).left) + 24;
+      var a = ktext(kl), b = ktext(kr);
+      kgl = Math.max(0, a.left); kwl = a.width + 24; kgr = Math.max(0, innerWidth - b.right); kwr = b.width + 24;
       kl.style.transform = tl; kr.style.transform = tr;
     };
+    var koff = function (s, g, w) { return s <= KS0 ? s / KS0 * g : g + (s - KS0) / (1 - KS0) * w; };
     var kset = function (e) { var k = 1 - e; karch.style.setProperty('--t', (box.t * k).toFixed(1) + 'px'); karch.style.setProperty('--l', (box.l * k).toFixed(1) + 'px'); karch.style.setProperty('--r', (box.r * k).toFixed(1) + 'px'); karch.style.setProperty('--b', (box.b * k).toFixed(1) + 'px'); karch.style.setProperty('--rad', (box.w / 2 * k).toFixed(1) + 'px'); };
     var krefresh = function () { kmeasure(); kset(kp * kp * (3 - 2 * kp)); };
     krefresh(); addEventListener('resize', krefresh); if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(krefresh); addEventListener('load', krefresh);
@@ -109,7 +113,7 @@
         kimg.style.setProperty('--mx', kmx.toFixed(2)); kimg.style.setProperty('--my', kmy.toFixed(2)); kimg.style.setProperty('--br', (1.03 + Math.sin((now - kt0) / 2600) * .025).toFixed(4));
         var e = kp * kp * (3 - 2 * kp); kset(e);
         var ks = Math.min(1, e / .8);
-        kl.style.transform = e ? 'translateX(' + (-ks * kdl).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + (ks * kdr).toFixed(1) + 'px)' : '';
+        kl.style.transform = e ? 'translateX(' + (-koff(ks, kgl, kwl)).toFixed(1) + 'px)' : ''; kr.style.transform = e ? 'translateX(' + koff(ks, kgr, kwr).toFixed(1) + 'px)' : '';
         kl.style.opacity = kr.style.opacity = e ? Math.max(0, 1 - Math.max(0, e - .5) / .3).toFixed(3) : ''; kft.style.opacity = e ? Math.max(0, 1 - e * 2.2).toFixed(3) : '';
         kraf = kvis ? requestAnimationFrame(kframe) : null;
       };
